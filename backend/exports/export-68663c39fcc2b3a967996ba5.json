@@ -1,0 +1,15 @@
+{
+  "user": {
+    "_id": "68663c39fcc2b3a967996ba5",
+    "email": "ayankashif956@gmail.com",
+    "__v": 0,
+    "createdAt": "2025-07-03T08:15:53.326Z",
+    "isVerified": true,
+    "name": "Ayan Kashif",
+    "notes": [],
+    "avatar": "uploads\\avatars\\avatar-1751530597601-186874278.jpg",
+    "bio": "I am dev"
+  },
+  "notes": [],
+  "exportedAt": "2025-07-03T09:04:24.707Z"
+}

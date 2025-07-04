@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Markdown Editor Styles */
+.markdown-editor .w-md-editor {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.markdown-editor .w-md-editor.w-md-editor-dark {
+  background-color: transparent !important;
+}
+
+.markdown-editor .w-md-editor-text-container {
+  border: none !important;
+}
+
+.markdown-editor .w-md-editor-text-textarea,
+.markdown-editor .w-md-editor-text-input,
+.markdown-editor .w-md-editor-text {
+  background-color: transparent !important;
+  color: inherit !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  border: none !important;
+  outline: none !important;
+  padding: 16px !important;
+  font-family: inherit !important;
+}
+
+.markdown-editor .w-md-editor-text-textarea:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.markdown-editor .w-md-editor-preview {
+  background-color: transparent !important;
+  color: inherit !important;
+  padding: 16px !important;
+  border: none !important;
+}
+
+.markdown-editor .w-md-editor-preview h1,
+.markdown-editor .w-md-editor-preview h2,
+.markdown-editor .w-md-editor-preview h3,
+.markdown-editor .w-md-editor-preview h4,
+.markdown-editor .w-md-editor-preview h5,
+.markdown-editor .w-md-editor-preview h6 {
+  color: inherit !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.markdown-editor .w-md-editor-preview h1 {
+  font-size: 2em !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid rgba(156, 163, 175, 0.3) !important;
+  padding-bottom: 0.3em !important;
+}
+
+.markdown-editor .w-md-editor-preview h2 {
+  font-size: 1.5em !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(156, 163, 175, 0.2) !important;
+  padding-bottom: 0.3em !important;
+}
+
+.markdown-editor .w-md-editor-preview h3 {
+  font-size: 1.25em !important;
+  font-weight: 600 !important;
+}
+
+.markdown-editor .w-md-editor-preview p,
+.markdown-editor .w-md-editor-preview li,
+.markdown-editor .w-md-editor-preview blockquote {
+  color: inherit !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1em !important;
+}
+
+.markdown-editor .w-md-editor-preview ul,
+.markdown-editor .w-md-editor-preview ol {
+  margin-left: 1.5em !important;
+  margin-bottom: 1em !important;
+}
+
+.markdown-editor .w-md-editor-preview li {
+  margin-bottom: 0.5em !important;
+}
+
+.markdown-editor .w-md-editor-preview blockquote {
+  border-left: 4px solid rgba(99, 102, 241, 0.5) !important;
+  padding-left: 1em !important;
+  margin-left: 0 !important;
+  font-style: italic !important;
+  background-color: rgba(99, 102, 241, 0.05) !important;
+  padding: 1em !important;
+  border-radius: 0.5rem !important;
+}
+
+.markdown-editor .w-md-editor-preview code {
+  background-color: rgba(156, 163, 175, 0.15) !important;
+  color: inherit !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.9em !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+}
+
+.markdown-editor .w-md-editor-preview pre {
+  background-color: rgba(156, 163, 175, 0.1) !important;
+  padding: 1em !important;
+  border-radius: 0.5rem !important;
+  overflow-x: auto !important;
+  margin: 1em 0 !important;
+  border: 1px solid rgba(156, 163, 175, 0.2) !important;
+}
+
+.markdown-editor .w-md-editor-preview pre code {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.markdown-editor .w-md-editor-preview table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 1em 0 !important;
+  border: 1px solid rgba(156, 163, 175, 0.3) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+
+.markdown-editor .w-md-editor-preview th,
+.markdown-editor .w-md-editor-preview td {
+  border: 1px solid rgba(156, 163, 175, 0.3) !important;
+  padding: 0.75em !important;
+  text-align: left !important;
+}
+
+.markdown-editor .w-md-editor-preview th {
+  background-color: rgba(156, 163, 175, 0.1) !important;
+  font-weight: 600 !important;
+}
+
+.markdown-editor .w-md-editor-preview a {
+  color: rgb(99, 102, 241) !important;
+  text-decoration: underline !important;
+}
+
+.markdown-editor .w-md-editor-preview a:hover {
+  color: rgb(79, 70, 229) !important;
+}
+
+.markdown-editor .w-md-editor-preview img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.5rem !important;
+  margin: 1em 0 !important;
+}
+
+.markdown-editor .w-md-editor-preview hr {
+  border: none !important;
+  border-top: 2px solid rgba(156, 163, 175, 0.3) !important;
+  margin: 2em 0 !important;
+}
+
+.markdown-editor .w-md-editor-preview strong {
+  font-weight: 700 !important;
+}
+
+.markdown-editor .w-md-editor-preview em {
+  font-style: italic !important;
+}
+
+.markdown-editor .w-md-editor-preview del {
+  text-decoration: line-through !important;
+  opacity: 0.7 !important;
+}
+
+/* Dark mode adjustments */
+.dark .markdown-editor .w-md-editor-preview code {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview pre {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  border-color: rgba(75, 85, 99, 0.4) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview table {
+  border-color: rgba(75, 85, 99, 0.5) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview th,
+.dark .markdown-editor .w-md-editor-preview td {
+  border-color: rgba(75, 85, 99, 0.5) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview th {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview blockquote {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  border-left-color: rgba(99, 102, 241, 0.7) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview h1 {
+  border-bottom-color: rgba(75, 85, 99, 0.5) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview h2 {
+  border-bottom-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.dark .markdown-editor .w-md-editor-preview hr {
+  border-top-color: rgba(75, 85, 99, 0.5) !important;
+}
+
+/* Custom scrollbar */
+.markdown-editor .w-md-editor-text-textarea::-webkit-scrollbar,
+.markdown-editor .w-md-editor-preview::-webkit-scrollbar {
+  width: 6px;
+}
+
+.markdown-editor .w-md-editor-text-textarea::-webkit-scrollbar-track,
+.markdown-editor .w-md-editor-preview::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.markdown-editor .w-md-editor-text-textarea::-webkit-scrollbar-thumb,
+.markdown-editor .w-md-editor-preview::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 3px;
+}
+
+.markdown-editor .w-md-editor-text-textarea::-webkit-scrollbar-thumb:hover,
+.markdown-editor .w-md-editor-preview::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Focus styles */
+.markdown-editor:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Ensure proper text selection */
+.markdown-editor .w-md-editor-text-textarea::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+}
+
+.dark .markdown-editor .w-md-editor-text-textarea::selection {
+  background-color: rgba(99, 102, 241, 0.4);
+}
