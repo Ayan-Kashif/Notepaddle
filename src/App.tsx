@@ -343,7 +343,7 @@ function App() {
     if (isAuthenticated) {
       try {
         await axios.put(
-          `http://localhost:5000/api/users/notes/${noteId}`,
+          `${import.meta.env.VITE_BASE_URL}/api/users/notes/${noteId}`,
           { isPinned: updatedPin },
           {
             headers: {
@@ -401,7 +401,7 @@ function App() {
     if (isAuthenticated) {
       try {
         await axios.put(
-          `http://localhost:5000/api/users/notes/${noteId}`,
+          `${import.meta.env.VITE_BASE_URL}/api/users/notes/${noteId}`,
           { isFavorite: updatedFavorite },
           {
             headers: {
