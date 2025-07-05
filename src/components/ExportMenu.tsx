@@ -87,65 +87,7 @@ const ExportMenu: React.FC<ExportMenuProps> = ({ note, isOpen, onClose }) => {
     onClose();
   };
 
-  // const exportAsPDF = async () => {
-  //   setIsExporting(true);
-    
-  //   // Create a clean PDF-like HTML structure with only title and content
-  //   const content = `
-  //     <html>
-  //       <head>
-  //         <meta charset="utf-8">
-  //         <title>${note.title}</title>
-  //         <style>
-  //           @page { margin: 1in; }
-  //           body { 
-  //             font-family: 'Times New Roman', serif; 
-  //             line-height: 1.8; 
-  //             color: #333;
-  //             max-width: 8.5in;
-  //             margin: 0;
-  //             padding: 0;
-  //           }
-  //           h1 { 
-  //             color: #000; 
-  //             border-bottom: 2px solid #000; 
-  //             padding-bottom: 15px; 
-  //             margin-bottom: 30px;
-  //             font-size: 24px;
-  //             font-weight: bold;
-  //           }
-  //           .content { 
-  //             white-space: pre-wrap; 
-  //             text-align: justify;
-  //             font-size: 12px;
-  //             line-height: 1.8;
-  //           }
-  //         </style>
-  //       </head>
-  //       <body>
-  //         <h1>${note.title || 'Untitled'}</h1>
-  //         <div class="content">${note.content}</div>
-  //       </body>
-  //     </html>
-  //   `;
-    
-  //   // Open in new window for printing to PDF
-  //   const printWindow = window.open('', '_blank');
-  //   if (printWindow) {
-  //     printWindow.document.write(content);
-  //     printWindow.document.close();
-  //     printWindow.focus();
-      
-  //     setTimeout(() => {
-  //       printWindow.print();
-  //       printWindow.close();
-  //     }, 500);
-  //   }
-    
-  //   setIsExporting(false);
-  //   onClose();
-  // };
-
+  
  
 
 const exportAsPDF = async () => {
