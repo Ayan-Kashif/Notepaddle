@@ -37,17 +37,34 @@ app.use(errorHandler)
 const PORT = process.env.PORT || 4000;
 app.post('/test', (req, res) => {
   try {
-    console.log('✅ /test called');
-    console.log('🔍 Body:', req.body);
+    console.log('✅ POST /test hit');
+    console.log('🔍 Headers:', req.headers);
 
-    // Simulate success
-    res.json({ success: true, data: req.body });
+    let bodyData = '';
+    req.on('data', chunk => {
+      bodyData += chunk.toString();
+    });
+
+    req.on('end', () => {
+      console.log('📦 Raw Body:', bodyData);
+
+      // Attempt to parse
+      try {
+        const parsed = JSON.parse(bodyData);
+        console.log('✅ Parsed body:', parsed);
+        res.json({ success: true, data: parsed });
+      } catch (jsonErr) {
+        console.error('❌ JSON Parse Error:', jsonErr.message);
+        res.status(400).json({ success: false, error: 'Invalid JSON' });
+      }
+    });
 
   } catch (err) {
-    console.error('🔥 Error in /test:', err);
-    res.status(500).json({ success: false, error: 'Internal Server Error' });
+    console.error('🔥 General Error:', err);
+    res.status(500).json({ success: false, error: err.message });
   }
 });
+
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
