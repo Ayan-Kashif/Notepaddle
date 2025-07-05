@@ -20,6 +20,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+console.log("Admin routes mounted");
 app.use(errorHandler)
 const PORT = process.env.PORT || 5000;
 
