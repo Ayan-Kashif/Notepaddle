@@ -54,7 +54,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
             headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
           });
           const data = await response.json();
-          setCategories(data.categories);
+          setCategories([...DEFAULT_CATEGORIES, ...data.categories]);
         } else {
           const saved = localStorage.getItem('guest_categories');
           const customCategories = saved ? JSON.parse(saved) : [];
