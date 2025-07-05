@@ -94,7 +94,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ user, onLogout }) => {
             {user?.avatar ? (
               // Show avatar image if it exists
               <img
-                 src={`http://localhost:5000/${user.avatar}`} 
+                 src={`${import.meta.env.VITE_BASE_URL}/${user.avatar}`} 
                 alt="User Avatar"
                 className="w-full h-full object-cover"
               />
