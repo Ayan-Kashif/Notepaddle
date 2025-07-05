@@ -16,6 +16,10 @@ const userRoutes = require('./routes/userRoutes')
 const app = express();
 console.log(">> Routes:");
 console.log(listEndpoints(app));
+console.log('>> Routes imported:');
+console.log('authRoutes:', typeof authRoutes, authRoutes?.stack?.length);
+console.log('adminRoutes:', typeof adminRoutes, adminRoutes?.stack?.length);
+console.log('userRoutes:', typeof userRoutes, userRoutes?.stack?.length);
 
 const errorHandler = require('./middleware/errorHandler')
 app.use(cors());
@@ -27,6 +31,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
 console.log("Admin routes mounted");
+app.get('/ping', (req, res) => res.send('pong'));
+
 app.use(errorHandler)
 const PORT = process.env.PORT || 5000;
 
