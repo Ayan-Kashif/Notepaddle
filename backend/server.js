@@ -64,7 +64,10 @@ app.post('/test', (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
-
+app.use((err, req, res, next) => {
+  console.error('💥 UNCAUGHT ERROR:', err.stack || err);
+  res.status(500).json({ success: false, error: err.message });
+});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
