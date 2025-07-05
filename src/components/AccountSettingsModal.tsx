@@ -43,7 +43,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
   // API client configuration
   const api = axios.create({
-    baseURL: 'http://localhost:5000/api/users', // Update with your API URL
+    baseURL: `${import.meta.env.VITE_BASE_URL}/api/users`, // Update with your API URL
     headers: {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
