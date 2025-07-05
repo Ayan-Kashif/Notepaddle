@@ -96,7 +96,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/users/avatar', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/users/avatar`, formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -199,7 +199,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
   const handleExportData = async () => {
     setIsLoading(true);
     try {
-      fetch('http://localhost:5000/api/users/export', {
+      fetch(`${import.meta.env.VITE_BASE_URL}/api/users/export`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -366,7 +366,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                       <div className="relative">
                         {profileImage ? (
                           <img
-                            src={`http://localhost:5000/${profileImage}`}
+                            src={`${import.meta.env.VITE_BASE_URL}/${profileImage}`}
                             alt="Profile"
                             className="w-20 h-20 rounded-full object-cover"
                           />
