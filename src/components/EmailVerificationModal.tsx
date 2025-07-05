@@ -30,7 +30,7 @@ const EmailVerificationModal: React.FC<EmailVerificationModalProps> = ({
   const handleResend = async () => {
     try {
       setIsResending(true);
-      const res = await fetch('http://localhost:5000/api/send-code', {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/send-code`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -57,7 +57,7 @@ const EmailVerificationModal: React.FC<EmailVerificationModalProps> = ({
 
     try {
       setIsVerifying(true);
-      const res = await fetch('http://localhost:5000/api/verify-code', {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/verify-code`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, code: verificationCode }),
