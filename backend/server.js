@@ -35,6 +35,19 @@ app.get('/ping', (req, res) => res.send('pong'));
 
 app.use(errorHandler)
 const PORT = process.env.PORT || 4000;
+app.post('/test', (req, res) => {
+  try {
+    console.log('✅ /test called');
+    console.log('🔍 Body:', req.body);
+
+    // Simulate success
+    res.json({ success: true, data: req.body });
+
+  } catch (err) {
+    console.error('🔥 Error in /test:', err);
+    res.status(500).json({ success: false, error: 'Internal Server Error' });
+  }
+});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
