@@ -87,7 +87,7 @@ const ShareModal: React.FC<ShareModalProps> = ({
       const shareId = `note_${note.id}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
       
       await axios.put(
-        `http://localhost:5000/api/users/notes/${note.id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/users/notes/${note.id}`,
         { isShared: true },
         {
           headers: {
