@@ -4,6 +4,7 @@ const path = require('path');
 const cors = require('cors');
 // require('dotenv').config();
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+console.log("Connecting to MongoDB URI:", process.env.MONGO_URI);
 
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin')
