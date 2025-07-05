@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 const listEndpoints = require('express-list-endpoints');
-console.log(">> Routes:");
-console.log(listEndpoints(app));
+
 // require('dotenv').config();
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 console.log("Connecting to MongoDB URI:", process.env.MONGO_URI);
@@ -13,6 +12,8 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/userRoutes')
 const app = express();
+console.log(">> Routes:");
+console.log(listEndpoints(app));
 
 const errorHandler = require('./middleware/errorHandler')
 app.use(cors());
