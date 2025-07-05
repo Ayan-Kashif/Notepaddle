@@ -34,7 +34,7 @@ console.log("Admin routes mounted");
 app.get('/ping', (req, res) => res.send('pong'));
 
 app.use(errorHandler)
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
