@@ -84,7 +84,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
     if (!token) return null;
 
     try {
-      const res = await axios.get('http://localhost:5000/api/users/get-user', {
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/users/get-user`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
