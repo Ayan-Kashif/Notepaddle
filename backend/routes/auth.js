@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const User = require('../models/User');
 const PendingUser = require('../models/PendingUser');
 const { sendVerificationEmail } = require('../utils/sendEmail');
-require('dotenv').config();
+
 const authenticate= require('../middleware/authenticate')
 const upload = require('../middleware/upload');
 const router = express.Router();
