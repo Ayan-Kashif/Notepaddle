@@ -291,7 +291,9 @@ router.patch('/users/:id/verify', adminAuth, async (req, res) => {
 
   res.json({ message: 'User verified' });
 });
-
+router.get('/test', (req, res) => {
+  res.send('Admin routes working!');
+});
 
 //Export Users
 router.get('/export/users', adminAuth, async (req, res) => {
