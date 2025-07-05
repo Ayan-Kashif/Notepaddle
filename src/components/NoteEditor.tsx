@@ -190,9 +190,9 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
     setCategories(mergedCategories);
 
     // If no saved categories exist yet, initialize storage with defaults
-    if (!saved) {
-      localStorage.setItem('guest_categories', JSON.stringify(mergedCategories));
-    }
+    // if (!saved) {
+    //   localStorage.setItem('guest_categories', JSON.stringify(mergedCategories));
+    // }
   };
 
   useEffect(() => {
@@ -213,7 +213,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
 
           const data = await response.json();
           console.log(data.categories)
-          setCategories(data.categories);
+           setCategories([...DEFAULT_CATEGORIES, ...data.categories]);
         } else {
           // Load from localStorage for guests
           loadGuestCategories()
