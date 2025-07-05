@@ -238,7 +238,7 @@ function App() {
   const loadNotes = async () => {
     if (isAuthenticated) {
       try {
-        const response = await axios.get('http://localhost:5000/api/users/notes', {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/users/notes`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
