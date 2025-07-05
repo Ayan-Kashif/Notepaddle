@@ -9,7 +9,7 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/userRoutes')
 const app = express();
-const path = require('path')
+
 const errorHandler = require('./middleware/errorHandler')
 app.use(cors());
 app.use(express.json());
