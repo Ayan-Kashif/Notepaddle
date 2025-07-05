@@ -10,6 +10,8 @@ console.log("Connecting to MongoDB URI:", process.env.MONGO_URI);
 
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin')
+console.log(">> Admin routes object:", adminRoutes);
+
 const userRoutes = require('./routes/userRoutes')
 const app = express();
 console.log(">> Routes:");
