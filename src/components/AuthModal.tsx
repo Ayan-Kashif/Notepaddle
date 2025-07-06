@@ -9,7 +9,7 @@ const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   isOpen,
   onClose,
 }) => {
-  const [isLoginMode, setIsLoginMode] = useState(false);
+  const [isLoginMode, setIsLoginMode] = useState(true);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
