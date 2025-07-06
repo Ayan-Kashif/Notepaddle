@@ -786,7 +786,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
                   )}
 
                   {/* Share button */}
-                  {isUserLoggedIn() && !isPrivate && (
+                  
                     <button
                       onClick={() => setIsShareModalOpen(true)}
                       className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors duration-200"
@@ -794,7 +794,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
                     >
                       <Share2 className="w-4 sm:w-5 h-4 sm:h-5" />
                     </button>
-                  )}
+                  
 
                   {/* Quick copy share link button */}
                   {/* {shareLink && !isPrivate && (
