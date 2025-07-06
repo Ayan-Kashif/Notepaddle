@@ -227,11 +227,11 @@ router.get('/shared/:noteId', async (req, res) => {
         }
 
         // Try to find in Note collection
-        let note = await Note.findOne({ _id: noteId, isShared: true });
+        let note = await Note.findOne({ _id: noteId });
 
         // If not found, try GuestNote
         if (!note) {
-            note = await GuestNote.findOne({ _id: noteId, isShared: true });
+            note = await GuestNote.findOne({ _id: noteId});
         }
 
         // If still not found
