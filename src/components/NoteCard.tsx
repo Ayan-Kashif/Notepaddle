@@ -4,6 +4,7 @@ import { Pin, Star, MoreVertical, Trash2, Edit3, Download, Lock, Shield } from '
 import ExportMenu from './ExportMenu';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import MDEditor from '@uiw/react-md-editor';
 
 interface NoteCardProps {
   note: Note;
@@ -156,11 +157,15 @@ const NoteCard: React.FC<NoteCardProps> = ({
         }`}>
         {getPreview(note.content)}
       </p> */}
-      <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {getPreview(note.content)}
-        </ReactMarkdown>
-      </div>
+    <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+        <MDEditor.Markdown
+            source={getPreview(note.content)}
+            style={{
+              background: 'transparent',
+              padding: 0,
+              color: 'black'
+            }}/>
+</div>
 
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2 min-w-0 flex-1">
