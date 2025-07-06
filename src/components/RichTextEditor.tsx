@@ -361,7 +361,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
         </div>
       </div>
 
-      {/* Markdown Toolbar */}
+        {/* Markdown Toolbar */}
       {!readOnly && !isPreviewMode && (
         <div className="flex flex-wrap items-center gap-1 p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
           {/* Text Formatting */}
@@ -416,10 +416,10 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
             </button>
           </div>
 
-          <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1" />
+        
 
           {/* Lists */}
-          <div className="flex items-center space-x-1">
+          {/* <div className="flex items-center space-x-1">
             <button
               onClick={() => insertMarkdown('- ', 'List item', false)}
               className="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors duration-200"
@@ -434,7 +434,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
             >
               <ListOrdered className="w-4 h-4" />
             </button>
-          </div>
+          </div> */}
 
           <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1" />
 
@@ -459,7 +459,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
           <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1" />
 
           {/* Code and Quote */}
-          <div className="flex items-center space-x-1">
+          {/* <div className="flex items-center space-x-1">
             <button
               onClick={() => insertMarkdown('`', 'inline code')}
               className="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors duration-200"
@@ -483,22 +483,20 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
             >
               <Quote className="w-4 h-4" />
             </button>
-          </div>
+          </div> */}
 
-          <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-1" />
+         
 
           {/* Table */}
-          <button
+          {/* <button
             onClick={insertTable}
             className="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors duration-200"
             title="Table"
           >
             <Table className="w-4 h-4" />
-          </button>
+          </button> */}
         </div>
       )}
-
-
 
 
       {/* Markdown Editor */}
