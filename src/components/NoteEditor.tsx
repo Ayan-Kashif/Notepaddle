@@ -621,7 +621,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
   const getCurrentNoteForExport = (): Note => {
     console.log(note?._id)
     return {
-      id: note?._id || 'temp-' + Date.now(),
+      id: note?._id || note?.id,
       title: title || 'Untitled',
       content,
       contentType,
