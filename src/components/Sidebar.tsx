@@ -56,17 +56,10 @@ const categoriesWithCounts = categories.map((category) => ({
 
   return (
     <>
-      <aside className="w-full h-full bg-white/60 dark:bg-gray-900/60 backdrop-blur-lg border-r border-gray-200/20 dark:border-gray-700/20 lg:border-r-0 lg:border-none">
+      <aside className="w-full h-full relative bottom-32 lg:bottom-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-lg border-r border-gray-200/20 dark:border-gray-700/20 lg:border-r-0 lg:border-none">
         <div className="p-4 h-full overflow-y-auto">
           {/* Mobile close button */}
-          <div className="lg:hidden flex justify-end mb-4">
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('closeSidebar'))}
-              className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+     
 
           
 
