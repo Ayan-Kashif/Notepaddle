@@ -35,6 +35,15 @@ type Note = {
     collaborators: Collaborator[];
 };
 
+export  function HtmlRenderer({ htmlContent }) {
+    return (
+        <div
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+    );
+}
+
 const SharedByMe = () => {
     const [notes, setNotes] = useState<Note[]>([]);
     const [loading, setLoading] = useState(true);
@@ -163,7 +172,7 @@ const SharedByMe = () => {
                                         alt="Notepadle"
                                         className="w-8 h-8 object-contain"
                                     />
-                                    <h1 className="text-lg text-purple-600 sm:text-xl font-bold ">
+                                    <h1 className="text-lg text-purple-700 sm:text-xl font-bold ">
                                         Notepadle
                                     </h1>
                               
@@ -209,7 +218,7 @@ const SharedByMe = () => {
                                     alt="Notepadle"
                                     className="w-8 h-8 object-contain"
                                 />
-                                <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent">
+                                <h1 className="text-lg sm:text-xl font-bold text-purple-700">
                                     Notepadle
                                 </h1>
                             </div>
@@ -301,11 +310,10 @@ const SharedByMe = () => {
                                 {note.content}
                             </p> */}
 
-                            <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                    {note.content}
-                                </ReactMarkdown>
-                            </div>
+                           <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+                                                              <HtmlRenderer htmlContent={note.content} />
+                                                          </div>
+
 
 
                             {note.tags.length > 0 && (
