@@ -192,21 +192,16 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                             className="flex items-center gap-2 cursor-pointer"
                         >
                             {/* Logo & Name */}
-                            <div
-                                onClick={() => navigate('/')}
-                                className="flex items-center gap-3 cursor-pointer"
-                            >
-                    
-                <img 
-                  src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png" 
-                  alt="Notepadle" 
-                  className="w-8 h-8 object-contain"
-                />
-                <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Notepadle
-                </h1>
-              </div>
-              </div>
+                            <div className="flex items-center space-x-3">
+                                <img
+                                    src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
+                                    alt="Notepadle"
+                                    className="w-8 h-8 object-contain"
+                                />
+                                <h1 className="text-lg text-purple-600 sm:text-xl font-bold ">
+                                    Notepadle
+                                </h1>
+                            </div>
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -242,19 +237,13 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                         className="flex items-center gap-2 cursor-pointer"
                     >
                         {/* Logo & Name */}
-                        <div
-                            onClick={() => navigate('/')}
-                            className="flex items-center gap-3 cursor-pointer"
-                        >
+                        <div className="flex items-center space-x-3">
                             <img
                                 src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
                                 alt="Notepadle"
-                                className="w-10 h-10 object-contain rounded-md shadow"
+                                className="w-8 h-8 object-contain"
                             />
-                            <h1
-                                className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
-                                style={{ fontFamily: `'Playfair Display', serif` }}
-                            >
+                            <h1 className="text-lg text-purple-600 sm:text-xl font-bold ">
                                 Notepadle
                             </h1>
                         </div>
@@ -355,3 +344,4 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
 };
 
 export default Collaborations;
+
