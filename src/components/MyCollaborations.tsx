@@ -157,7 +157,7 @@ const SharedByMe = () => {
                         >
                             
                                 {/* Logo & Name */}
-                                <div className="flex items-center space-x-3">
+                             
                                     <img
                                         src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
                                         alt="Notepadle"
@@ -166,7 +166,7 @@ const SharedByMe = () => {
                                     <h1 className="text-lg text-purple-600 sm:text-xl font-bold ">
                                         Notepadle
                                     </h1>
-                                </div>
+                              
                            
                         </div>
 
