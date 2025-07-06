@@ -328,7 +328,7 @@ useEffect(()=>{
 
         <div className="p-6 space-y-6 overflow-y-auto max-h-[70vh]">
           {/* Auto-Generated Share Link */}
-          {autoShareLink && (
+          {true && (
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-4 border border-blue-200 dark:border-blue-800">
               <div className="flex items-center space-x-2 mb-3">
                 <Globe className="w-5 h-5 text-blue-600 dark:text-blue-400" />
