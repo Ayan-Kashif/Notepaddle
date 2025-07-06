@@ -620,6 +620,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
   // Create a temporary note object for export and collaboration
   const getCurrentNoteForExport = (): Note => {
     console.log(note?._id)
+console.log('Note id:',note?.id,note?._id)
     return {
       id: note?._id || note?.id,
       title: title || 'Untitled',
