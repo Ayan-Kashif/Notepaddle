@@ -33,6 +33,15 @@ type Note = {
     updatedAt: string;
 };
 
+export  function HtmlRenderer({ htmlContent }) {
+    return (
+        <div
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+    );
+}
+
 const SharedNote = () => {
     const shareId = window.location.pathname.slice(8);
     const [note, setNote] = useState<Note | null>(null);
@@ -193,13 +202,15 @@ const SharedNote = () => {
                         {/* Content */}
                         <div className="prose max-w-none text-gray-800">
                             {note.contentType === 'plain' ? (
-                                <p className="whitespace-pre-line">{note.content}</p>
+                        <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+                                                              <HtmlRenderer htmlContent={note.content} />
+                                                          </div>
+
                             ) : (
-                                <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                       {note.content}
-                                    </ReactMarkdown>
-                                </div>
+                               <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+                                                              <HtmlRenderer htmlContent={note.content} />
+                                                          </div>
+
 
                             )}
                         </div>
