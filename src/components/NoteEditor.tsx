@@ -902,7 +902,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
               )}
 
               {/* Share Link Display */}
-              {shareLink && isUserLoggedIn() && !isPrivate && (
+              {shareLink && !isPrivate && (
                 <div className="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
