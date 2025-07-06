@@ -29,22 +29,19 @@ const Footer: React.FC = () => {
             {/* Brand Section */}
             <div className="col-span-1 sm:col-span-2 text-center sm:text-left">
               <div className="flex items-center justify-center sm:justify-start space-x-3 mb-4">
-                <div
-                  
-                  className="flex items-center gap-3 "
-                >
-                  <img
-                    src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
-                    alt="Notepadle"
-                    className="w-10 h-10 object-contain rounded-md shadow"
-                  />
-                  <h1
-                    className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
-                    style={{ fontFamily: `'Playfair Display', serif` }}
-                  >
-                    Notepadle
-                  </h1>
-                </div>
+                 <div className="flex items-center space-x-3">
+                {/* Logo & Name */}
+                  <div className="flex items-center space-x-3">
+                <img 
+                  src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png" 
+                  alt="Notepadle" 
+                  className="w-8 h-8 object-contain"
+                />
+                <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  Notepadle
+                </h1>
+              </div>
+              </div>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed text-center sm:text-left">
                 Your everyday digital companion for capturing thoughts and ideas.
