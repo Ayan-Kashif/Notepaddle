@@ -11,6 +11,14 @@ interface CollaborationNoteCardProps {
     onEdit: (note: Note) => void;
     onPasswordPrompt?: (note: Note) => void;
 }
+export  function HtmlRenderer({ htmlContent }) {
+    return (
+        <div
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+    );
+}
 
 const CollaborationNoteCard: React.FC<CollaborationNoteCardProps> = ({
     note,
@@ -172,11 +180,9 @@ const CollaborationNoteCard: React.FC<CollaborationNoteCardProps> = ({
       >
         {getPreview(note.content)}
       </p> */}
-            <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {getPreview(note.content)}
-                </ReactMarkdown>
-            </div>
+           <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+                                                              <HtmlRenderer htmlContent={note.content} />
+                                                          </div>
 
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 min-w-0 flex-1">
