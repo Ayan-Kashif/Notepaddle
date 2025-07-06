@@ -151,10 +151,7 @@ const SharedByMe = () => {
             <>
                 <nav className={`${navBg} backdrop-blur-md shadow-sm sticky top-0 z-50`}>
                     <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-                        <div
-                            onClick={() => handleNavigate('/')}
-                            className="flex items-center gap-2 cursor-pointer"
-                        >
+                   
                             {/* Logo & Name */}
                             <div
                                 onClick={() => navigate('/')}
