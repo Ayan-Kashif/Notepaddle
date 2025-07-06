@@ -135,8 +135,8 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
       console.debug('Saving note payload:', payload);
 
       const endpoint = isUpdate
-        ? `http://localhost:5000/api/users/notes/${note?._id}`
-        : 'http://localhost:5000/api/users/notes';
+        ? `${import.meta.env.VITE_BASE_URL}/api/users/notes/${note?._id}`
+        : `${import.meta.env.VITE_BASE_URL}/api/users/notes`;
 
       const method = isUpdate ? 'put' : 'post';
 
