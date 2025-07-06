@@ -256,7 +256,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
     try {
       if (isUserLoggedIn()) {
         // Update existing note in backend
-        await axios.put(`http://localhost:5000/api/users/notes/${note._id}`, noteData, {
+        await axios.put(`${import.meta.env.VITE_BASE_URL}/api/users/notes/${note._id}`, noteData, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
