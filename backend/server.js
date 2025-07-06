@@ -7,7 +7,7 @@ const listEndpoints = require('express-list-endpoints');
 // require('dotenv').config();
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 console.log("Connecting to MongoDB URI:", process.env.MONGO_URI);
-
+const guestRoutes = require('./routes/guestRoutes')
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin')
 console.log(">> Admin routes object:", adminRoutes);
@@ -30,6 +30,7 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/guests', guestRoutes);
 console.log("Admin routes mounted");
 app.get('/ping', (req, res) => res.send('pong'));
 
