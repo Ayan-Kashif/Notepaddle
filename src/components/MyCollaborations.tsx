@@ -160,9 +160,7 @@ const SharedByMe = () => {
                                 onClick={() => navigate('/')}
                                 className="flex items-center gap-3 cursor-pointer"
                             >
-                            
-                {/* Logo & Name */}
-                  <div className="flex items-center space-x-3">
+              
                 <img 
                   src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png" 
                   alt="Notepadle" 
