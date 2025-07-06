@@ -78,20 +78,7 @@ const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {isAuthenticated && (
-              <div>
-                <Link
-              
-                  to="/collaborations"
-                  className="flex items-center gap-2 px-4 py-2  dark:hover:bg-gray-800  hover:bg-gray-100 rounded-md"
-                >
-                  <User className='dark:text-white' size={18
-
-                  } />
-                </Link>
-
-              </div>
-            )}
+          
             {/* Search bar - hidden on small screens, shown on medium+ */}
             <div className="hidden md:flex flex-1 max-w-lg mx-8">
               <div className="relative w-full">
