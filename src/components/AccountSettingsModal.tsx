@@ -1,13 +1,11 @@
 
 
 
-
-
 import React, { useState, useRef } from 'react';
 import {
   X, User, Mail, Lock, Camera, Save, Eye, EyeOff,
   Shield, Bell, Palette, Globe, Download, Trash2,
-  AlertTriangle, Check, Upload
+  AlertTriangle, Check, Upload, Menu
 } from 'lucide-react';
 import axios from 'axios';
 
@@ -15,7 +13,7 @@ interface AccountSettingsModalProps {
   isOpen: boolean;
   onClose: () => void;
   user: any;
-  token: string; // Add token for authentication
+  token: string;
 }
 
 const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
@@ -39,18 +37,17 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
   const [profileImage, setProfileImage] = useState('')
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // API client configuration
   const api = axios.create({
-    baseURL: `${import.meta.env.VITE_BASE_URL}/api/users`, // Update with your API URL
+    baseURL: `${import.meta.env.VITE_BASE_URL}/api/users`,
     headers: {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
     }
   });
 
-  // Update form data when user prop changes
   React.useEffect(() => {
     if (user) {
       setFormData(prev => ({
@@ -60,7 +57,6 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
         bio: user.bio || '',
       }));
       setProfileImage(user.avatar || null);
-      console.log(profileImage)
     }
   }, [user]);
 
@@ -86,7 +82,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (file.size > 5 * 1024 * 1024) { // 5MB limit
+    if (file.size > 5 * 1024 * 1024) {
       setMessage({ type: 'error', text: 'Image size must be less than 5MB' });
       return;
     }
@@ -184,9 +180,8 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
         await api.delete('/');
         localStorage.removeItem('token')
         setMessage({ type: 'success', text: 'Account deleted successfully. Redirecting...' });
-        // Redirect or handle account deletion in parent component
         setTimeout(() => {
-          window.location.href = '/'; // Or use your router
+          window.location.href = '/';
         }, 2000);
       } catch (error) {
         setMessage({ type: 'error', text: 'Failed to delete account. Please try again.' });
@@ -213,7 +208,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
           const url = window.URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          a.download = 'my-export.txt'; // Can be dynamic
+          a.download = 'my-export.txt';
           document.body.appendChild(a);
           a.click();
           a.remove();
@@ -221,10 +216,8 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
         .catch(error => {
           console.error('Download failed:', error);
         });
-
-      setMessage({ type: 'success', text: response.data.message });
     } catch (error) {
-      // setMessage({ type: 'error', text: 'Failed to initiate data export. Please try again.' });
+      setMessage({ type: 'error', text: 'Failed to initiate data export. Please try again.' });
     } finally {
       setIsLoading(false);
     }
@@ -245,6 +238,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
       setProfileImage(user.avatar || null);
     }
     onClose();
+    setShowMobileMenu(false);
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -262,61 +256,80 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
     { id: 'data', name: 'Account Data', icon: Download },
   ];
 
-  // Rest of your JSX remains the same...
-  // Only the handler functions have been updated
-
   return (
     <div
-      className="fixed inset-0 bg-black/50 mt-[300px] backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
+      className="fixed mt-24 min-h-[90vh]   inset-0 bg-black/50 backdrop-blur-sm z-[9999] flex items-center justify-center p-4 overflow-y-auto"
       onClick={handleBackdropClick}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
     >
       <div
-        className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[85vh] overflow-hidden relative mx-auto"
+        className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full max-w-4xl mx-auto relative"
         onClick={(e) => e.stopPropagation()}
         style={{
-          maxHeight: 'calc(100vh - 2rem)',
-          maxWidth: '64rem',
-          width: '100%',
-          margin: '0 auto'
+          maxHeight: '90vh',
+          display: 'flex',
+          flexDirection: 'column'
         }}
       >
         {/* Header with Close Button */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 sticky top-0 z-10">
+        <div className="flex items-center justify-between  p-4 md:p-6 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 sticky bottom-[10] z-10">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
               <User className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h2 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                 Account Settings
               </h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
                 Manage your account and preferences
               </p>
             </div>
           </div>
-          <button
-            onClick={handleClose}
-            className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-            title="Close"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 md:hidden"
+              title="Menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+            <button
+              onClick={handleClose}
+              className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              title="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="flex h-[calc(85vh-120px)] max-h-[600px]">
-          {/* Sidebar */}
-          <div className="w-64 border-r border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 flex-shrink-0">
+        <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+          {/* Sidebar - Mobile */}
+          {showMobileMenu && (
+            <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 z-20 shadow-lg">
+              <nav className="p-2 space-y-1">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      setActiveTab(tab.id);
+                      setShowMobileMenu(false);
+                    }}
+                    className={`w-full flex items-center px-3 py-3 text-left rounded-lg transition-colors duration-200 ${activeTab === tab.id
+                      ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      }`}
+                  >
+                    <tab.icon className="w-4 h-4 mr-3" />
+                    {tab.name}
+                  </button>
+                ))}
+              </nav>
+            </div>
+          )}
+
+          {/* Sidebar - Desktop */}
+          <div className="hidden md:block w-56 lg:w-64 border-r border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 flex-shrink-0">
             <nav className="p-4 space-y-2">
               {tabs.map((tab) => (
                 <button
@@ -336,9 +349,9 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
           {/* Content */}
           <div className="flex-1 overflow-y-auto">
-            <div className="p-6">
+            <div className="p-4 md:p-6">
               {message.text && (
-                <div className={`mb-6 p-4 rounded-lg border ${message.type === 'success'
+                <div className={`mb-4 md:mb-6 p-3 md:p-4 rounded-lg border ${message.type === 'success'
                   ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300'
                   : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-300'
                   }`}>
@@ -348,40 +361,40 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                     ) : (
                       <AlertTriangle className="w-4 h-4 mr-2" />
                     )}
-                    {message.text}
+                    <span className="text-sm md:text-base">{message.text}</span>
                   </div>
                 </div>
               )}
 
               {/* Profile Tab */}
               {activeTab === 'profile' && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                       Profile Information
                     </h3>
 
                     {/* Profile Picture */}
-                    <div className="flex items-center space-x-6 mb-6">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 mb-4 md:mb-6">
                       <div className="relative">
                         {profileImage ? (
                           <img
                             src={`${import.meta.env.VITE_BASE_URL}/${profileImage}`}
                             alt="Profile"
-                            className="w-20 h-20 rounded-full object-cover"
+                            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover"
                           />
                         ) : (
-                          <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
-                            <span className="text-white font-medium text-xl">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <span className="text-white font-medium text-lg sm:text-xl">
                               {getInitials(formData.name)}
                             </span>
                           </div>
                         )}
                         <button
                           onClick={() => fileInputRef.current?.click()}
-                          className="absolute -bottom-1 -right-1 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-700 transition-colors duration-200"
+                          className="absolute -bottom-1 -right-1 w-7 h-7 sm:w-8 sm:h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-700 transition-colors duration-200"
                         >
-                          <Camera className="w-4 h-4" />
+                          <Camera className="w-3 h-3 sm:w-4 sm:h-4" />
                         </button>
                         <input
                           ref={fileInputRef}
@@ -391,27 +404,27 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                           className="hidden"
                         />
                       </div>
-                      <div>
+                      <div className="text-center sm:text-left">
                         <h4 className="font-medium text-gray-900 dark:text-white">
                           Profile Picture
                         </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-2">
                           Upload a new profile picture. Max size: 5MB
                         </p>
                         <button
                           onClick={() => fileInputRef.current?.click()}
-                          className="inline-flex items-center px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 text-sm"
+                          className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 text-xs sm:text-sm"
                         >
-                          <Upload className="w-3 h-3 mr-2" />
+                          <Upload className="w-3 h-3 mr-1 sm:mr-2" />
                           Upload Image
                         </button>
                       </div>
                     </div>
 
                     {/* Form Fields */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
                           Full Name *
                         </label>
                         <input
@@ -419,13 +432,13 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                          className="w-full px-3 py-2 text-xs sm:text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                           required
                         />
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
                           Email Address *
                         </label>
                         <input
@@ -433,22 +446,22 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                          className="w-full px-3 py-2 text-xs sm:text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                           required
                         />
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <div className="mt-4 sm:mt-6">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
                         Bio
                       </label>
                       <textarea
                         name="bio"
                         value={formData.bio}
                         onChange={handleInputChange}
-                        rows={4}
-                        className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                        rows={3}
+                        className="w-full px-3 py-2 text-xs sm:text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                         placeholder="Tell us a bit about yourself..."
                       />
                     </div>
@@ -456,9 +469,9 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                     <button
                       onClick={handleSaveProfile}
                       disabled={isLoading}
-                      className="inline-flex mt-2 items-center px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex mt-3 sm:mt-4 items-center px-4 py-2 sm:px-6 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                     >
-                      <Save className="w-4  h-4 mr-2" />
+                      <Save className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                       {isLoading ? 'Saving...' : 'Save Changes'}
                     </button>
                   </div>
@@ -467,9 +480,9 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
               {/* Account Tab */}
               {activeTab === 'account' && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                       Change Password
                     </h3>
 
@@ -477,10 +490,10 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                       e.preventDefault();
                       handleChangePassword();
                     }}>
-                      <div className="space-y-4 max-w-md">
+                      <div className="space-y-3 md:space-y-4 max-w-md">
                         {/* Current Password Field */}
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
                             Current Password
                           </label>
                           <div className="relative">
@@ -489,16 +502,26 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                               name="currentPassword"
                               value={formData.currentPassword}
                               onChange={handleInputChange}
-                              className="w-full px-3 py-2 pr-10 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                              className="w-full px-3 py-2 pr-10 text-xs sm:text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                               required
                             />
-                            {/* ... visibility toggle button ... */}
+                            <button
+                              type="button"
+                              onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                            >
+                              {showCurrentPassword ? (
+                                <EyeOff className="w-4 h-4" />
+                              ) : (
+                                <Eye className="w-4 h-4" />
+                              )}
+                            </button>
                           </div>
                         </div>
 
                         {/* New Password Field */}
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
                             New Password
                           </label>
                           <div className="relative">
@@ -507,17 +530,27 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                               name="newPassword"
                               value={formData.newPassword}
                               onChange={handleInputChange}
-                              className="w-full px-3 py-2 pr-10 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                              className="w-full px-3 py-2 pr-10 text-xs sm:text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                               required
                               minLength={6}
                             />
-                            {/* ... visibility toggle button ... */}
+                            <button
+                              type="button"
+                              onClick={() => setShowNewPassword(!showNewPassword)}
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                            >
+                              {showNewPassword ? (
+                                <EyeOff className="w-4 h-4" />
+                              ) : (
+                                <Eye className="w-4 h-4" />
+                              )}
+                            </button>
                           </div>
                         </div>
 
                         {/* Confirm Password Field */}
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
                             Confirm New Password
                           </label>
                           <div className="relative">
@@ -526,20 +559,30 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                               name="confirmPassword"
                               value={formData.confirmPassword}
                               onChange={handleInputChange}
-                              className="w-full px-3 py-2 pr-10 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                              className="w-full px-3 py-2 pr-10 text-xs sm:text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                               required
                               minLength={6}
                             />
-                            {/* ... visibility toggle button ... */}
+                            <button
+                              type="button"
+                              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                            >
+                              {showConfirmPassword ? (
+                                <EyeOff className="w-4 h-4" />
+                              ) : (
+                                <Eye className="w-4 h-4" />
+                              )}
+                            </button>
                           </div>
                         </div>
 
                         <button
                           type="submit"
                           disabled={isLoading}
-                          className="inline-flex items-center px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                         >
-                          <Lock className="w-4 h-4 mr-2" />
+                          <Lock className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                           {isLoading ? 'Changing...' : 'Change Password'}
                         </button>
                       </div>
@@ -547,14 +590,14 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                   </div>
 
                   {/* Account Info */}
-                  <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-4 md:pt-6">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                       Account Information
                     </h3>
-                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 space-y-3">
+                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3 md:p-4 space-y-2 md:space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-sm text-gray-600 dark:text-gray-400">Account Created:</span>
-                        <span className="text-sm font-medium text-gray-900 dark:text-white">
+                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Account Created:</span>
+                        <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">
                           {new Date(user.createdAt).toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
@@ -563,12 +606,12 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-sm text-gray-600 dark:text-gray-400">Account Type:</span>
-                        <span className="text-sm font-medium text-gray-900 dark:text-white">Free</span>
+                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Account Type:</span>
+                        <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">Free</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-sm text-gray-600 dark:text-gray-400">Storage Used:</span>
-                        <span className="text-sm font-medium text-gray-900 dark:text-white">2.3 MB / Unlimited</span>
+                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Storage Used:</span>
+                        <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">2.3 MB / Unlimited</span>
                       </div>
                     </div>
                   </div>
@@ -577,62 +620,62 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
               {/* Preferences Tab */}
               {activeTab === 'preferences' && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                       App Preferences
                     </h3>
 
-                    <div className="space-y-6">
-                      <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-                        <div className="flex items-center space-x-3">
-                          <Bell className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                    <div className="space-y-4 md:space-y-6">
+                      <div className="flex items-center justify-between p-3 md:p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                        <div className="flex items-center space-x-2 md:space-x-3">
+                          <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400" />
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-white">
+                            <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
                               Email Notifications
                             </h4>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                               Receive email updates about your notes
                             </p>
                           </div>
                         </div>
                         <label className="relative inline-flex items-center cursor-pointer">
                           <input type="checkbox" className="sr-only peer" defaultChecked />
-                          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 dark:peer-focus:ring-indigo-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
+                          <div className="w-9 h-5 sm:w-11 sm:h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 dark:peer-focus:ring-indigo-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
                         </label>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-                        <div className="flex items-center space-x-3">
-                          <Shield className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                      <div className="flex items-center justify-between p-3 md:p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                        <div className="flex items-center space-x-2 md:space-x-3">
+                          <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400" />
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-white">
+                            <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
                               Auto-save Notes
                             </h4>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                               Automatically save changes as you type
                             </p>
                           </div>
                         </div>
                         <label className="relative inline-flex items-center cursor-pointer">
                           <input type="checkbox" className="sr-only peer" defaultChecked />
-                          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 dark:peer-focus:ring-indigo-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
+                          <div className="w-9 h-5 sm:w-11 sm:h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 dark:peer-focus:ring-indigo-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
                         </label>
                       </div>
 
-                      <div className="p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-                        <div className="flex items-center space-x-3 mb-3">
-                          <Globe className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                      <div className="p-3 md:p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                        <div className="flex items-center space-x-2 md:space-x-3 mb-2 md:mb-3">
+                          <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400" />
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-white">
+                            <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
                               Default Note Visibility
                             </h4>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                               Choose the default privacy setting for new notes
                             </p>
                           </div>
                         </div>
-                        <select className="w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+                        <select className="w-full px-3 py-2 text-xs sm:text-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
                           <option value="private">Private (only you can see)</option>
                           <option value="public">Public (anyone with link can view)</option>
                         </select>
@@ -644,49 +687,49 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
               {/* Data Tab */}
               {activeTab === 'data' && (
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                       Account Data
                     </h3>
 
-                    <div className="space-y-4">
-                      <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                        <div className="flex items-start space-x-3">
-                          <Download className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5" />
+                    <div className="space-y-3 md:space-y-4">
+                      <div className="p-3 md:p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                        <div className="flex items-start space-x-2 md:space-x-3">
+                          <Download className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400 mt-0.5" />
                           <div className="flex-1">
-                            <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">
+                            <h4 className="text-sm sm:text-base font-medium text-blue-900 dark:text-blue-100 mb-1 md:mb-2">
                               Export Your Data
                             </h4>
-                            <p className="text-sm text-blue-700 dark:text-blue-300 mb-3">
+                            <p className="text-xs sm:text-sm text-blue-700 dark:text-blue-300 mb-2 md:mb-3">
                               Download a copy of all your notes and account data. This includes all your notes, categories, and settings.
                             </p>
                             <button
                               onClick={handleExportData}
-                              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm"
+                              className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-xs sm:text-sm"
                             >
-                              <Download className="w-4 h-4 mr-2" />
+                              <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                               Export Data
                             </button>
                           </div>
                         </div>
                       </div>
 
-                      <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-                        <div className="flex items-start space-x-3">
-                          <Trash2 className="w-5 h-5 text-red-600 dark:text-red-400 mt-0.5" />
+                      <div className="p-3 md:p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                        <div className="flex items-start space-x-2 md:space-x-3">
+                          <Trash2 className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 dark:text-red-400 mt-0.5" />
                           <div className="flex-1">
-                            <h4 className="font-medium text-red-900 dark:text-red-100 mb-2">
+                            <h4 className="text-sm sm:text-base font-medium text-red-900 dark:text-red-100 mb-1 md:mb-2">
                               Delete Account
                             </h4>
-                            <p className="text-sm text-red-700 dark:text-red-300 mb-3">
+                            <p className="text-xs sm:text-sm text-red-700 dark:text-red-300 mb-2 md:mb-3">
                               Permanently delete your account and all associated data. This action cannot be undone.
                             </p>
                             <button
                               onClick={handleDeleteAccount}
-                              className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200 text-sm"
+                              className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200 text-xs sm:text-sm"
                             >
-                              <Trash2 className="w-4 h-4 mr-2" />
+                              <Trash2 className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                               Delete Account
                             </button>
                           </div>
