@@ -276,37 +276,51 @@ router.put('/notes/:id', authenticateToken, async (req, res, next) => {
 
 
 
+router.get('/shared/:noteId', async (req, res) => {
+    try {
+        const { noteId } = req.params;
 
-router.get('/shared/:shareId', async (req, res) => {
-    const { shareId } = req.params;
-    console.log(shareId)
-    const note = await Note.findOne({
-        _id: new mongoose.Types.ObjectId(shareId),
-        isShared: true
-    });
 
-    if (!note) {
-        return res.status(404).json({ error: 'Note not found or not shared.' });
+        console.log(noteId)
+        if (!mongoose.Types.ObjectId.isValid(noteId)) {
+            return res.status(400).json({ error: 'Invalid shareId format or note ID.' });
+        }
+
+        // Try to find in Note collection
+        let note = await Note.findOne({ _id: noteId, isShared: true });
+
+        // If not found, try GuestNote
+        if (!note) {
+            note = await GuestNote.findOne({ _id: noteId, isShared: true });
+        }
+
+        // If still not found
+        if (!note) {
+            return res.status(404).json({ error: 'Note not found or not shared.' });
+        }
+
+        // Return shared note data
+        res.json({
+            id: note._id,
+            title: note.title,
+            content: note.content,
+            contentType: note.contentType,
+            category: note.category,
+            tags: note.tags,
+            isPinned: note.isPinned,
+            isFavorite: note.isFavorite,
+            isShared: note.isShared,
+            version: note.version,
+            isPrivate: note.isPrivate,
+            createdAt: note.createdAt,
+            updatedAt: note.updatedAt,
+        });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
     }
-
-    res.json({
-        id: note.id,
-        title: note.title,
-        content: note.content,
-        category: note.category,
-        contentType: note.contentType,
-        tags: note.tags,
-        isPinned: note.isPinned,
-        isFavorite: note.isFavorite,
-        isShared: note.isShared,
-        vrsion: note.version,
-        isPrivate: note.isPrivate,
-        createdAt: note.createdAt,
-        updatedAt: note.updatedAt
-    });
 });
-
-
 
 
 
