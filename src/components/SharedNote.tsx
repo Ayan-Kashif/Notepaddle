@@ -39,29 +39,58 @@ const SharedNote = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        if (!shareId) return;
+   useEffect(() => {
+  const pathParts = window.location.pathname.split('/');
+  const shareId = pathParts[pathParts.length - 1];
 
-        const noteId = shareId.slice(5, 29);
-        if (!noteId) {
-            setError('🔗 Invalid share link.');
-            setLoading(false);
-            return;
+  if (!shareId.startsWith('note_')) {
+    setError('🔗 Invalid share link.');
+    setLoading(false);
+    return;
+  }
+
+  // Split by underscore to get parts: ["note", noteId, timestamp, random]
+  const parts = shareId.split('_');
+  const noteId = parts[1];
+  console.log(noteId)
+
+  if (!noteId) {
+    setError('❌ Invalid share ID format.');
+    setLoading(false);
+    return;
+  }
+
+  const fetchNote = async () => {
+    if (noteId.startsWith('local-')) {
+      const localNote = localStorage.getItem(noteId);
+      if (localNote) {
+        try {
+          const parsed = JSON.parse(localNote);
+          setNote(parsed);
+        } catch {
+          setError('⚠️ Failed to parse local note.');
         }
+      } else {
+        setError('❌ Local note not found.');
+      }
+      setLoading(false);
+      return;
+    }
 
-        const fetchNote = async () => {
-            try {
-                const res = await axios.get(`${BASE_URL}/api/users/shared/${noteId}`);
-                setNote(res.data);
-            } catch (err) {
-                setError('❌ Note not found or no longer shared.');
-            } finally {
-                setLoading(false);
-            }
-        };
+    // Fetch from backend for registered user note
+    try {
+      const res = await axios.get(`${BASE_URL}/api/users/shared/${noteId}`);
+      setNote(res.data);
+    } catch {
+      setError('❌ Note not found or no longer shared.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-        fetchNote();
-    }, [shareId]);
+  fetchNote();
+}, []);
+
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col">
