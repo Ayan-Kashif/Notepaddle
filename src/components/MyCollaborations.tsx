@@ -146,44 +146,50 @@ const SharedByMe = () => {
             </div>
         );
 
-   if (notes.length === 0)
-    return (
-        <>
-            <nav className={`${navBg} backdrop-blur-md shadow-sm sticky top-0 z-50`}>
-                <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-                    {/* Logo & Name */}
-                    <div
-                        onClick={() => navigate('/')}
-                        className="flex items-center gap-3 cursor-pointer"
-                    >
-                        <img
-                            src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
-                            alt="Notepadle"
-                            className="w-8 h-8 object-contain"
-                        />
-                        <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                            Notepadle
-                        </h1>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <button
-                            onClick={() => handleNavigate('/collaborations')}
-                            className="flex items-center gap-1 px-3 py-1.5 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition"
+    if (notes.length === 0)
+        return (
+            <>
+                <nav className={`${navBg} backdrop-blur-md shadow-sm sticky top-0 z-50`}>
+                    <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+                        <div
+                            onClick={() => handleNavigate('/')}
+                            className="flex items-center gap-2 cursor-pointer"
                         >
-                            <PlusCircle className="w-4 h-4" />
-                            <span>Notes Shared With Me</span>
-                        </button>
+                            
+                                {/* Logo & Name */}
+                                <div className="flex items-center space-x-3">
+                                    <img
+                                        src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
+                                        alt="Notepadle"
+                                        className="w-8 h-8 object-contain"
+                                    />
+                                    <h1 className="text-lg text-purple-600 sm:text-xl font-bold ">
+                                        Notepadle
+                                    </h1>
+                                </div>
+                           
+                        </div>
+
+                        <div className="flex items-center gap-4">
+                            <button
+                                onClick={() => {
+                                    handleNavigate('/collaborations');
+
+                                }}
+                                className="flex items-center gap-1 px-3 py-1.5 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition"
+                            >
+                                <PlusCircle className="w-4 h-4" />
+                                <span>Notes Shared With Me</span>
+                            </button>
+                        </div>
                     </div>
+                </nav>
+                <div className={`flex min-h-screen flex-col items-center justify-center h-[70vh] ${subTextColor} ${bgColor}`}>
+                    <FileText size={36} />
+                    <p className="mt-3">No notes shared by you.</p>
                 </div>
-            </nav>
-
-            <div className={`flex min-h-screen flex-col items-center justify-center h-[70vh] ${subTextColor} ${bgColor}`}>
-                <FileText size={36} />
-                <p className="mt-3">No notes shared by you.</p>
-            </div>
-        </>
-    );
-
+            </>
+        );
 
     return (
         <div className={`min-h-screen transition-colors duration-300  ${bgColor}`}>
@@ -195,21 +201,18 @@ const SharedByMe = () => {
                         className="flex items-center gap-2 cursor-pointer"
                     >
                         {/* Logo & Name */}
-                        <div
-                            onClick={() => navigate('/')}
-                            className="flex items-center gap-3 cursor-pointer"
-                        >
-                            <img
-                                src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
-                                alt="Notepadle"
-                                className="w-10 h-10 object-contain rounded-md shadow"
-                            />
-                            <h1
-                                className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent"
-                                style={{ fontFamily: `'Playfair Display', serif` }}
-                            >
-                                Notepadle
-                            </h1>
+                        <div onClick={() => navigate('/')} className="flex items-center space-x-3">
+                            {/* Logo & Name */}
+                            <div className="flex items-center space-x-3">
+                                <img
+                                    src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
+                                    alt="Notepadle"
+                                    className="w-8 h-8 object-contain"
+                                />
+                                <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent">
+                                    Notepadle
+                                </h1>
+                            </div>
                         </div>
                     </div>
 
@@ -369,3 +372,4 @@ const SharedByMe = () => {
 };
 
 export default SharedByMe;
+
