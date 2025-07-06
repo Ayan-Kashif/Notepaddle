@@ -14,7 +14,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const mongoose = require('mongoose')
 const fs = require('fs');
 const path = require('path');
-
+const GuestNote = require('../models/GuestNote')
 const Note = require('../models/Note')
 
 
@@ -84,9 +84,104 @@ router.post('/notes', authenticateToken, async (req, res, next) => {
 
 
 
+// router.put('/notes/:id', authenticateToken, async (req, res, next) => {
+//     try {
+//         console.log('Request Body:', req.body);
+
+//         const updates = Object.keys(req.body);
+//         const allowedUpdates = [
+//             'title',
+//             'content',
+//             'contentType',
+//             'category',
+//             'tags',
+//             'isPinned',
+//             'isFavorite',
+//             'isPrivate',
+//             'isShared',
+//             'isDeleted',
+//             'password',
+//             'passwordHint',
+//             'version',
+//             'sharedWith',
+//             'collaborators',
+//             'lastEditedBy',
+//             'updatedAt'
+//         ];
+
+//         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
+//         console.log(isValidOperation)
+//         if (!isValidOperation) {
+//             return res.status(400).json({
+//                 success: false,
+//                 error: 'Invalid updates!'
+//             });
+//         }
+
+//         if (req.body.isPrivate) {
+//             console.log(req.body.isPrivate)
+//             req.body.isShared = false;
+//             req.body.shareId = null;
+//             req.body.sharePermissions = null;
+//         }
+
+//         const updateData = {
+//             ...req.body,
+//             updatedAt: Date.now(),
+//         };
+
+//         // 👉 Handle deletedAt based on isDeleted
+//         if ('isDeleted' in req.body) {
+//             if (req.body.isDeleted === true) {
+//                 updateData.deletedAt = new Date();
+//             } else {
+//                 updateData.deletedAt = null;
+//             }
+//         }
+
+
+//         const note = await Note.findOneAndUpdate(
+//             {
+//                 _id: req.params.id,
+//                 $or: [
+//                     { userId: req.user.id }, // Owner
+//                     {
+//                         collaborators: {
+//                             $elemMatch: { userId: req.user.id, permission: 'edit' }
+//                         }
+//                     }
+//                 ]
+//             },
+//             updateData,
+//             { new: true, runValidators: true }
+//         );
+
+
+//         if (!note) {
+//             return res.status(404).json({
+//                 success: false,
+//                 error: 'Note not found'
+//             });
+//         }
+
+//         console.log('Note: ', note)
+
+//         res.json({
+//             success: true,
+//             data: note
+//         });
+
+//     } catch (error) {
+//         console.error('Error updating note:', error);
+//         next(error);
+//     }
+// });
+
+
 router.put('/notes/:id', authenticateToken, async (req, res, next) => {
     try {
         console.log('Request Body:', req.body);
+
 
         const updates = Object.keys(req.body);
         const allowedUpdates = [
@@ -106,7 +201,8 @@ router.put('/notes/:id', authenticateToken, async (req, res, next) => {
             'sharedWith',
             'collaborators',
             'lastEditedBy',
-            'updatedAt'
+            'updatedAt',
+            'shareId'
         ];
 
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
@@ -165,7 +261,7 @@ router.put('/notes/:id', authenticateToken, async (req, res, next) => {
         }
 
         console.log('Note: ', note)
-
+        await note.save()
         res.json({
             success: true,
             data: note
@@ -176,7 +272,6 @@ router.put('/notes/:id', authenticateToken, async (req, res, next) => {
         next(error);
     }
 });
-
 
 
 
