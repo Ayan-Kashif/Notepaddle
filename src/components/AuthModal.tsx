@@ -1,15 +1,16 @@
 
 
 //   export default AuthModal;
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { X, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 import { toast } from 'react-hot-toast';
-const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
+const AuthModal: React.FC<{ isLogin: boolean; isOpen: boolean; onClose: () => void }> = ({
   isOpen,
+  isLogin
   onClose,
 }) => {
-  const [isLoginMode, setIsLoginMode] = useState(true);
+  const [isLoginMode, setIsLoginMode] = useState(isLogin);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -72,6 +73,11 @@ const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
       setIsLoading(false);
     }
   };
+
+    // Sync when prop changes
+  useEffect(() => {
+    setIsLoginMode(isLogin);
+  }, [isLogin]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
