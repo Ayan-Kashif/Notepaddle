@@ -3,6 +3,9 @@ import {
   Heart,
   Github,
   Twitter,
+  Facebook,
+  Instagram,
+  X,
   Mail,
   Shield,
   FileText,
@@ -12,7 +15,7 @@ import {
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsOfService from './TermsOfService';
 import ReportAbusePolicy from './ReportAbusePolicy';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Footer: React.FC = () => {
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
@@ -29,22 +32,22 @@ const Footer: React.FC = () => {
             {/* Brand Section */}
             <div className="col-span-1 sm:col-span-2 text-center sm:text-left">
               <div className="flex items-center justify-center sm:justify-start space-x-3 mb-4">
-                 <div className="flex items-center space-x-3">
-                {/* Logo & Name */}
+                <div className="flex items-center space-x-3">
+                  {/* Logo & Name */}
                   <div className="flex items-center space-x-3">
-                <img 
-                  src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png" 
-                  alt="Notepadle" 
-                  className="w-8 h-8 object-contain"
-                />
-                <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Notepadle
-                </h1>
-              </div>
-              </div>
+                    <img
+                      src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
+                      alt="Notepadle"
+                      className="w-8 h-8 object-contain"
+                    />
+                    <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      Notepadle
+                    </h1>
+                  </div>
+                </div>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed text-center sm:text-left">
-                Your everyday digital companion for capturing thoughts and ideas.
+               Notepadle is a clean and secure online notepad, and it’s 100% free.
               </p>
             </div>
 
@@ -87,30 +90,36 @@ const Footer: React.FC = () => {
               <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Connect</h4>
               <div className="flex justify-center sm:justify-start space-x-3">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/notepadle/ "
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200"
-                  title="GitHub"
+                  title="Facebook"
                 >
-                  <Github className="w-4 h-4" />
+                  <Facebook className="w-4 h-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/notepadle/  "
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200"
+                  title="Instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://x.com/notepadle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-green-100 dark:hover:bg-green-900/30 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200"
                   title="Twitter"
                 >
-                  <Twitter className="w-4 h-4" />
-                </a>
-                <a
-                  href="mailto:support@notepadle.com"
-                  className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-green-100 dark:hover:bg-green-900/30 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200"
-                  title="Email Support"
-                >
-                  <Mail className="w-4 h-4" />
+                  <X className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-         
+
           </div>
 
           {/* Bottom Bar */}
@@ -124,7 +133,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               <div className="text-xs text-gray-400 dark:text-gray-500 text-center sm:text-right">
-                Version 1.0.0 
+                Version 1.0.0
               </div>
             </div>
           </div>
@@ -149,5 +158,7 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+
 
 
