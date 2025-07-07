@@ -100,6 +100,7 @@ function App() {
   const [isDark, setIsDark] = useState(false);
   const [isNoteBinOpen, setIsNoteBinOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isLogin, setIsLogin] = useState(true)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [passwordPrompt, setPasswordPrompt] = useState({
     isOpen: false,
@@ -704,8 +705,9 @@ function App() {
   };
 
 
-  const handleOpenAuthModal = () => {
+  const handleOpenAuthModal = (x) => {
     setIsAuthModalOpen(true);
+     setIsLogin(x)
   };
 
   const handleCloseAuthModal = () => {
@@ -908,6 +910,7 @@ function App() {
             user={user}
             isAuthenticated={isAuthenticated}
             onLogin={login}
+            isLogin={isLogin}
             onRegister={register}
             onLogout={handleLogout}
             onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -964,14 +967,14 @@ function App() {
                           You're using Notepadle as a guest
                         </h3>
                         <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
-                          Your notes are saved locally. Sign in to sync across devices and never lose your notes.
+                          Your notes are saved locally. Sign up to sync across devices and never lose your notes.
                         </p>
                       </div>
                       <button
-                        onClick={handleOpenAuthModal}
+                        onClick={()=>handleOpenAuthModal(false)}
                         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium whitespace-nowrap"
                       >
-                        Signin Free
+                        Sign Up Free
                       </button>
                     </div>
                   </div>
