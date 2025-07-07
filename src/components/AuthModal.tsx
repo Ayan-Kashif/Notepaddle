@@ -6,8 +6,8 @@ import { X, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 import { toast } from 'react-hot-toast';
 const AuthModal: React.FC<{ isLogin: boolean; isOpen: boolean; onClose: () => void }> = ({
+  isLogin,
   isOpen,
-  isLogin
   onClose,
 }) => {
   const [isLoginMode, setIsLoginMode] = useState(isLogin);
