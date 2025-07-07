@@ -12,6 +12,7 @@ interface HeaderProps {
   onThemeToggle: () => void;
   onNewNote: () => void;
   user: any;
+   isLogin: boolean;
   isAuthenticated: boolean;
   onLogin: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   onRegister: (email: string, password: string, name: string) => Promise<{ success: boolean; error?: string }>;
@@ -37,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({
   onLogin,
   onRegister,
   onLogout,
+  isLogin,
   onToggleSidebar,
   isSidebarOpen,
   onResendVerification,
@@ -126,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({
                 <UserMenu user={user} onLogout={onLogout} />
               ) : (
                 <button
-                  onClick={onOpenAuthModal}
+                 onClick={() => onOpenAuthModal(true)}
                   className="inline-flex items-center px-3 sm:px-4 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200"
                 >
                   <LogIn className="w-4 h-4 sm:mr-2" />
@@ -157,6 +159,7 @@ const Header: React.FC<HeaderProps> = ({
         isOpen={isAuthModalOpen}
         onClose={onCloseAuthModal}
         onLogin={onLogin}
+        isLogin={isLogin}
         onRegister={onRegister}
         onResendVerification={onResendVerification}
         onVerifyEmail={onVerifyEmail}
