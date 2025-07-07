@@ -4,14 +4,18 @@ import {
   Github,
   Twitter,
   Facebook,
+  Newspaper,
   Instagram,
+  FileText,
   X,
   Mail,
   Shield,
-  FileText,
+
   AlertTriangle,
-  LayoutDashboard
+  LayoutDashboard,
+
 } from 'lucide-react';
+
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsOfService from './TermsOfService';
 import ReportAbusePolicy from './ReportAbusePolicy';
@@ -47,7 +51,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed text-center sm:text-left">
-               Notepadle is a clean and secure online notepad, and it’s 100% free.
+                Notepadle is a clean and secure online notepad, and it’s 100% free.
               </p>
             </div>
 
@@ -82,6 +86,17 @@ const Footer: React.FC = () => {
                     Report Abuse
                   </button>
                 </li>
+                <li className="flex justify-center sm:justify-start">
+                  <Link
+                    to='blog.notepaddle.com'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 text-sm transition-colors duration-200 flex items-center"
+                  >
+                    <Newspaper className="w-3 h-3 mr-2" />
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -115,6 +130,15 @@ const Footer: React.FC = () => {
                   title="Twitter"
                 >
                   <X className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:support@notepaddle.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-green-100 dark:hover:bg-green-900/30 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200"
+                  title="Email"
+                >
+                  <Mail className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -158,6 +182,9 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+
+
 
 
 
