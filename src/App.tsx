@@ -162,6 +162,7 @@ function App() {
     }
   }, [isDark]);
 
+console.log(import.meta.env.VITE_BASE_URL)
 
 
   const [announcement, setAnnouncement] = useState('');
