@@ -58,11 +58,11 @@ function App() {
 
   //Recent Notes Handler
   const getRecentNotes = useCallback((notes: Note[]): Note[] => {
-    const now = Date.now(); // More efficient than `new Date()`
+    const now = Date.now();
     return notes.filter(note => {
       const createdAt = new Date(note.createdAt).getTime();
       const diffInDays = (now - createdAt) / (1000 * 60 * 60 * 24);
-      return diffInDays <= 7;
+      return diffInDays <= 7 && !note.isDeleted;
     });
   }, []);
 
@@ -594,9 +594,9 @@ console.log(import.meta.env.VITE_BASE_URL)
 
 
 
-  const pinnedCount = notes.filter(note => note.isPinned).length;
-  const favoriteCount = notes.filter(note => note.isFavorite).length;
-  const recentCount = Math.min(10, notes.length);
+  const pinnedCount = notes.filter(note => note.isPinned && !note.isDeleted).length;
+  const favoriteCount = notes.filter(note => note.isFavorite && !note.isDeleted).length;
+  const recentCount = Math.min(10, notes.filter(note => !note.isDeleted).length);
   const deletedCount = deletedNotes.length;
 
 
