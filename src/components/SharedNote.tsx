@@ -52,26 +52,19 @@ const SharedNote = () => {
   const pathParts = window.location.pathname.split('/');
   const shareId = pathParts[pathParts.length - 1];
 
-  if (!shareId.startsWith('note_')) {
-    setError('🔗 Invalid share link.');
-    setLoading(false);
-    return;
-  }
 
-  // Split by underscore to get parts: ["note", noteId, timestamp, random]
-  const parts = shareId.split('_');
-  const noteId = parts[1];
-  console.log(noteId)
+        if (!shareId || shareId.length < 6) {
+            setError('🔗 Invalid share link.');
+            setLoading(false);
+            return;
+        }
 
-  if (!noteId) {
-    setError('❌ Invalid share ID format.');
-    setLoading(false);
-    return;
-  }
+        console.log("Short ID:", shareId);
+
 
   const fetchNote = async () => {
-    if (noteId.startsWith('local-')) {
-      const localNote = localStorage.getItem(noteId);
+    if (shareId.startsWith('local-')) {
+      const localNote = localStorage.getItem(shareId);
       if (localNote) {
         try {
           const parsed = JSON.parse(localNote);
@@ -88,7 +81,7 @@ const SharedNote = () => {
 
     // Fetch from backend for registered user note
     try {
-      const res = await axios.get(`${BASE_URL}/api/users/shared/${noteId}`);
+      const res = await axios.get(`${BASE_URL}/api/users/shared/${shareId}`);
       setNote(res.data);
     } catch {
       setError('❌ Note not found or no longer shared.');
