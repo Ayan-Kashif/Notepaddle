@@ -69,14 +69,14 @@ const userSchema = new mongoose.Schema({
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
 
-  try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch (error) {
-    next(error);
-  }
+  // 💡 Skip hashing if password is already hashed
+  if (this.password.startsWith('$2')) return next();
+
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
 });
+
 // Auto-add default category
 userSchema.pre('save', function(next) {
   if (this.isNew && this.categories.length === 0) {
