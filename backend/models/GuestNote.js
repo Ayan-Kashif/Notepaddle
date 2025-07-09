@@ -4,7 +4,7 @@ const GuestNoteSchema = new mongoose.Schema({
  // custom ID like local-xxxx
   title: String,
   content: String,
-  contentType: String,
+ contentType: { type: String, default: 'plain' },
   category: String,
   tags: [String],
   isPinned: Boolean,
