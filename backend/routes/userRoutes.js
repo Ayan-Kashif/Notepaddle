@@ -213,57 +213,44 @@ router.put('/notes/:id', authenticateToken, async (req, res, next) => {
 //     });
 // });
 
+router.get('/shared/:shareId', async (req, res) => {
+  try {
+    const { shareId } = req.params;
 
+    // Get all Notes (in small projects this is okay; for large DBs, add `shareId` field)
+    const allNotes = await Note.find({});
+    let note = allNotes.find(n => n._id.toString().startsWith(shareId));
 
-
-router.get('/shared/:noteId', async (req, res) => {
-    try {
-        const { noteId } = req.params;
-
-
-        console.log(noteId)
-        if (!mongoose.Types.ObjectId.isValid(noteId)) {
-            return res.status(400).json({ error: 'Invalid shareId format or note ID.' });
-        }
-
-        // Try to find in Note collection
-        let note = await Note.findOne({ _id: noteId });
-
-        // If not found, try GuestNote
-        if (!note) {
-            note = await GuestNote.findOne({ _id: noteId});
-        }
-
-        // If still not found
-        if (!note) {
-            return res.status(404).json({ error: 'Note not found or not shared.' });
-        }
-
-        // Return shared note data
-        res.json({
-            id: note._id,
-            title: note.title,
-            content: note.content,
-            contentType: note.contentType,
-            category: note.category,
-            tags: note.tags,
-            isPinned: note.isPinned,
-            isFavorite: note.isFavorite,
-            isShared: note.isShared,
-            version: note.version,
-            isPrivate: note.isPrivate,
-            createdAt: note.createdAt,
-            updatedAt: note.updatedAt,
-        });
-
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Internal server error' });
+    if (!note) {
+      const guestNotes = await GuestNote.find({});
+      note = guestNotes.find(n => n._id.toString().startsWith(shareId));
     }
+
+    if (!note) {
+      return res.status(404).json({ error: 'Note not found or not shared.' });
+    }
+
+    res.json({
+      id: note._id,
+      title: note.title,
+      content: note.content,
+      contentType: note.contentType,
+      category: note.category,
+      tags: note.tags,
+      isPinned: note.isPinned,
+      isFavorite: note.isFavorite,
+      isShared: note.isShared,
+      version: note.version,
+      isPrivate: note.isPrivate,
+      createdAt: note.createdAt,
+      updatedAt: note.updatedAt,
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
-
-
-
 
 
 
