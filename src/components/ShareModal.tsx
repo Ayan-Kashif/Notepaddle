@@ -625,104 +625,114 @@ useEffect(()=>{
   // };
 
 
-const generateAutoShareLink = async () => {
-  if (isGenerating) return; // Prevent duplicate calls
-  setIsGenerating(true);
+  const generateAutoShareLink = async () => {
+    if (isGenerating) return; // Prevent duplicate calls
+    setIsGenerating(true);
 
-  try {
-    console.log('Note', note);
+    try {
+      console.log('Note', note);
 
-    // Already shared? Just use the existing shareId
-    if (note.shareId) {
-      const shareUrl = `${window.location.origin}/shared/${note.shareId}`;
-      setAutoShareLink(shareUrl);
-      return;
-    }
-
-    // GUEST NOTE LOGIC
-    if (note.id.startsWith('local-')) {
-      const guestNotes = JSON.parse(localStorage.getItem("guestNotes") || "[]");
-      const localNoteIndex = guestNotes.findIndex((n) => n.id === note.id);
-
-      if (localNoteIndex === -1) {
-        console.error("❌ Guest note not found in localStorage.");
-        return;
-      }
-
-      const localNote = guestNotes[localNoteIndex];
-
-      if (localNote.isShared && localNote.shareId) {
-        const shareUrl = `${window.location.origin}/shared/${localNote.shareId}`;
+      // Already shared? Just use the existing shareId
+      if (note.shareId) {
+        const shareUrl = `${window.location.origin}/shared/${note.shareId}`;
         setAutoShareLink(shareUrl);
         return;
       }
 
-      // Create guest note remotely
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/guests/notes`, {
-        ...localNote,
-        isShared: true,
-      });
+      // ======= GUEST NOTE LOGIC =======
+      if (note.id.startsWith('local-')) {
+        const guestNotes = JSON.parse(localStorage.getItem("guestNotes") || "[]");
+        const localNoteIndex = guestNotes.findIndex((n) => n.id === note.id);
 
-      const newNoteId = res.data._id;
+        if (localNoteIndex === -1) {
+          console.error("❌ Guest note not found in localStorage.");
+          return;
+        }
 
-      // Generate shareId ONCE
-      const shareId = `note_${newNoteId}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      const shareUrl = `${window.location.origin}/shared/${shareId}`;
+        const localNote = guestNotes[localNoteIndex];
+        console.log(guestNotes[localNoteIndex])
+        // Already shared? Just return existing link
+        if (localNote.isShared && localNote.shareId) {
+          const shareUrl = `${window.location.origin}/shared/${localNote.shareId}`;
+          setAutoShareLink(shareUrl);
+          return;
+        }
 
-      // Update remote note with shareId
-      await axios.put(`${import.meta.env.VITE_BASE_URL}/api/guests/notes/${newNoteId}`, {
-        shareId,
-      });
+        // Create guest note remotely
+        const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/guests/notes`, {
+          ...localNote,
+          isShared: true,
+        });
 
-      // Save locally
-      const updatedNote = {
-        ...localNote,
-        isShared: true,
-        shareId,
-        sharePermissions: "view",
-      };
+        const newNoteId = res.data._id;
+        const shareId = newNoteId.slice(0, 10); // Short unique ID
+        const shareUrl = `${window.location.origin}/shared/${shareId}`;
 
-      guestNotes[localNoteIndex] = updatedNote;
-      localStorage.setItem("guestNotes", JSON.stringify(guestNotes));
+        // Update remote note with shareId
+        await axios.put(`${import.meta.env.VITE_BASE_URL}/api/guests/notes/${newNoteId}`, {
+          shareId,
+        });
 
-      setAutoShareLink(shareUrl);
-      onUpdateNote?.(note.id, updatedNote);
-    }
-
-    // AUTHENTICATED USER LOGIC
-    else {
-      const shareId = `note_${note.id}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      const shareUrl = `${window.location.origin}/shared/${shareId}`;
-
-      await axios.put(
-        `${import.meta.env.VITE_BASE_URL}/api/users/notes/${note.id}`,
-        {
+        // Update guest note locally
+        const updatedNote = {
+          ...localNote,
           isShared: true,
           shareId,
-        },
-        {
-          headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
-            'Content-Type': 'application/json',
-          },
+          sharePermissions: "view",
+        };
+
+        guestNotes[localNoteIndex] = updatedNote;
+        localStorage.setItem("guestNotes", JSON.stringify(guestNotes));
+
+        // Update UI state
+        setAutoShareLink(shareUrl);
+        onUpdateNote?.(note.id, updatedNote);
+        return;
+      }
+
+      // ======= AUTHENTICATED USER LOGIC =======
+      else {
+        // Already shared? Shouldn't happen here, but just in case
+        if (note.shareId) {
+          const shareUrl = `${window.location.origin}/shared/${note.shareId}`;
+          setAutoShareLink(shareUrl);
+          return;
         }
-      );
 
-      onUpdateNote?.(note.id, {
-        isShared: true,
-        shareId,
-        sharePermissions: 'view',
-      });
+        const shareId = note.id.slice(0, 10); // Short unique ID
+        const shareUrl = `${window.location.origin}/shared/${shareId}`;
 
-      setAutoShareLink(shareUrl);
+        await axios.put(
+          `${import.meta.env.VITE_BASE_URL}/api/users/notes/${note.id}`,
+          {
+            isShared: true,
+            shareId,
+          },
+          {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        // Update UI state
+        const updatedNote = {
+          ...note,
+          isShared: true,
+          shareId,
+          sharePermissions: 'view',
+        };
+
+        onUpdateNote?.(note.id, updatedNote);
+        setAutoShareLink(shareUrl);
+      }
+    } catch (err) {
+      console.error("❌ Error generating share link:", err);
+    } finally {
+      setIsGenerating(false);
     }
-  } catch (err) {
-    console.error("❌ Error generating share link:", err);
-  } finally {
-    setIsGenerating(false);
-  }
-};
-
+  };
 
 
   const copyToClipboard = async (url: string, linkId?: string) => {
