@@ -5,6 +5,21 @@ const GuestNote = require('../models/GuestNote');
 // POST /api/guests/notes — Create a guest note
 router.post('/notes', async (req, res) => {
     try {
+
+         const { title, content, category, tags, contentType } = req.body;
+
+        // Check for existing note with same structure
+        const existingNote = await GuestNote.findOne({
+            title,
+            content,
+            category,
+            tags,
+            contentType,
+        });
+
+        if (existingNote) {
+            return res.status(200).json(existingNote); // or 409 Conflict if you want
+        }
         const { id, ...rest } = req.body;
         const note = new GuestNote(rest);
         await note.save();
