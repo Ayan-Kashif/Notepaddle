@@ -80,7 +80,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ user, onLogout }) => {
      toast.success('Logged Out!')
     onLogout(); // ✅ Also call the logout handler to reset app state
   };
-console.log(`url: ${import.meta.env.FRONTEND_URL}/${user?.avatar}`)
+console.log(`url: https://notepadle.com${user?.avatar}`)
   console.log('User:',user)
 
   return (
@@ -95,7 +95,7 @@ console.log(`url: ${import.meta.env.FRONTEND_URL}/${user?.avatar}`)
             {user?.avatar ? (
               // Show avatar image if it exists
               <img
-                 src={`${import.meta.env.FRONTEND_URL}/${user.avatar}`}
+                 src={` https://notepadle.com${user.avatar}`}
                 alt="User Avatar"
                 className="w-full h-full object-cover"
               />
