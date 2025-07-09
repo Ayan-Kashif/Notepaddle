@@ -379,7 +379,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                       <div className="relative">
                         {profileImage ? (
                           <img
-                            src={`${import.meta.env.VITE_BASE_URL}/${profileImage}`}
+                            src={`${import.meta.env.FRONTEND_URL}/${profileImage}`}
                             alt="Profile"
                             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover"
                           />
