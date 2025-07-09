@@ -81,7 +81,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ user, onLogout }) => {
     onLogout(); // ✅ Also call the logout handler to reset app state
   };
   const fullPath = user?.avatar;
-const relativePath = fullPath.split('/var/www/Notepaddle/')[1];
+const relativePath = fullPath?.split('/var/www/Notepaddle/')[1];
 console.log(relativePath); 
 
 console.log(`url: https://notepadle.com/${relativePath}`)
