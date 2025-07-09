@@ -80,7 +80,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ user, onLogout }) => {
      toast.success('Logged Out!')
     onLogout(); // ✅ Also call the logout handler to reset app state
   };
-console.log(`url: ${import.meta.env.FRONTEND_URL}/${user.avatar}`)
+console.log(`url: ${import.meta.env.FRONTEND_URL}/${user?.avatar}`)
+  console.log('User:',user)
 
   return (
     <>
