@@ -25,7 +25,8 @@ const errorHandler = require('./middleware/errorHandler')
 app.use(cors());
 app.use(express.json());
 // Serve static files from uploads directory
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+app.use('/uploads', express.static('/var/www/Notepaddle/uploads'));
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
