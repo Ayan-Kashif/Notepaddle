@@ -4,6 +4,7 @@
 import React, { useState,useEffect } from 'react';
 import { X, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
+import {Link} from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 const AuthModal: React.FC<{ isLogin: boolean; isOpen: boolean; onClose: () => void }> = ({
   isLogin,
@@ -205,6 +206,12 @@ const AuthModal: React.FC<{ isLogin: boolean; isOpen: boolean; onClose: () => vo
               {isLoading ? 'Please wait...' : isLoginMode ? 'Sign In' : 'Create Account'}
             </button>
           </form>
+            <p className="text-sm mt-2 text-right">
+              <Link to="/forgot-password" className="text-blue-600 hover:underline transition">
+                Forgot Password?
+              </Link>
+            </p>
+
 
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600 dark:text-gray-400">
