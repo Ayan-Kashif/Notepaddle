@@ -3,7 +3,7 @@ const path = require('path');
 
 // Create uploads directory if it doesn't exist
 const fs = require('fs');
-const uploadDir = 'uploads/avatars';
+const uploadDir = '/var/www/Notepaddle/uploads/avatars';
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
