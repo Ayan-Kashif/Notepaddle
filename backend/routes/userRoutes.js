@@ -344,7 +344,7 @@ router.post('/avatar', authenticateToken, upload.single('avatar'), async (req, r
     try {
         const user = await User.findByIdAndUpdate(
             req.user.id,
-            { avatar: req.file.path },
+             { avatar: `uploads/avatars/${req.file.filename}` },
             { new: true }
         ).select('-password');
 
