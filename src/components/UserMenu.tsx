@@ -80,7 +80,11 @@ const UserMenu: React.FC<UserMenuProps> = ({ user, onLogout }) => {
      toast.success('Logged Out!')
     onLogout(); // ✅ Also call the logout handler to reset app state
   };
-console.log(`url: https://notepadle.com${user?.avatar}`)
+  const fullPath = user?.avatar;
+const relativePath = fullPath.split('/var/www/Notepaddle/')[1];
+console.log(relativePath); 
+
+console.log(`url: https://notepadle.com/${relativePath}`)
   console.log('User:',user)
 
   return (
@@ -95,7 +99,7 @@ console.log(`url: https://notepadle.com${user?.avatar}`)
             {user?.avatar ? (
               // Show avatar image if it exists
               <img
-                 src={` https://notepadle.com${user.avatar}`}
+                 src={` https://notepadle.com/${relativePath}`}
                 alt="User Avatar"
                 className="w-full h-full object-cover"
               />
