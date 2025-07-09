@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const User = require('../models/User');
+const nodemailer = require('nodemailer');
 const PendingUser = require('../models/PendingUser');
 const { sendVerificationEmail } = require('../utils/sendEmail');
 
@@ -224,6 +225,63 @@ router.put('/password',authenticateToken, async (req,res) => {
     return res.status(500).json({ message: 'Server error' });
   }
 });
+
+
+//Reset Password
+router.post('/request-reset', async (req, res) => {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    const token = crypto.randomBytes(32).toString('hex');
+    user.resetPasswordToken = token;
+    user.resetPasswordExpires = Date.now() + 1000 * 60 * 15; // 15 mins
+    await user.save();
+
+    const resetURL = `${process.env.FRONTEND_URL}/reset-password?token=${token}`;
+
+    const transporter = nodemailer.createTransport({
+        service: 'Zoho',
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+        },
+    });
+
+    await transporter.sendMail({
+        to: user.email,
+        from: process.env.EMAIL_USER,
+        subject: 'Reset Your Notepadle Password',
+        html: `<p>Click to reset password: <a href="${resetURL}">${resetURL}</a></p>`,
+    });
+
+    res.json({ message: 'Reset link sent to your email' });
+});
+
+router.post('/reset-password', async (req, res) => {
+    const { token, password } = req.body;
+    console.log("Raw password from frontend:", password);
+
+    const user = await User.findOne({
+        resetPasswordToken: token,
+        resetPasswordExpires: { $gt: Date.now() },
+    });
+
+    if (!user) return res.status(400).json({ message: 'Token expired or invalid' });
+
+    const bcrypt = require('bcrypt');
+    const hashedPassword = await bcrypt.hash(password, 10);
+    console.log("Hashed:", hashedPassword);
+    user.password = hashedPassword;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+    await user.save();
+
+    res.json({ message: 'Password reset successful' });
+});
+
+
+
 module.exports = router;
 
 
