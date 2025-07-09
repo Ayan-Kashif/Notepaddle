@@ -84,7 +84,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ user, onLogout }) => {
 const relativePath = fullPath?.split('/var/www/Notepaddle/')[1];
 console.log(relativePath); 
 
-console.log(`url: https://notepadle.com/${relativePath}`)
+console.log(`url: https://notepadle.com/${user?.avatar}`)
   console.log('User:',user)
 
   return (
@@ -99,7 +99,7 @@ console.log(`url: https://notepadle.com/${relativePath}`)
             {user?.avatar ? (
               // Show avatar image if it exists
               <img
-                 src={` https://notepadle.com/${relativePath}`}
+                 src={` https://notepadle.com/${user?.avatar}`}
                 alt="User Avatar"
                 className="w-full h-full object-cover"
               />
