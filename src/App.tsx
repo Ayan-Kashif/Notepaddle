@@ -24,6 +24,8 @@ import { Toaster } from 'react-hot-toast';
 import AdminDashboard from './components/AdminDashboard';
 import AdminLogin from './components/AdminLogin';
 import ChangePassword from './components/ChangePassword';
+import ForgotPassword from './components/ForgotPassword'
+import ResetPassword from './components/ResetPassword'
 
 
 function App() {
@@ -193,7 +195,8 @@ console.log(import.meta.env.VITE_BASE_URL)
   const isSharedRoute = window.location.pathname.startsWith('/shared');
   const isCollaborationRoute = window.location.pathname === '/collaborations' && user?.isBanned !== true;
   const isMyCollabRoute = window.location.pathname === '/my-collabs' && user?.isBanned !== true;
-
+  const isForgotRoute = window.location.pathname === '/forgot-password' && user?.isBanned !== true;
+  const isResetRoute = window.location.pathname === '/reset-password' && user?.isBanned !== true;
 
   //Edit Handler
 
@@ -509,6 +512,12 @@ console.log(import.meta.env.VITE_BASE_URL)
     return <SharedByMe />;
   }
 
+  if (isResetRoute) {
+    return <ResetPassword/>
+  }
+  if (isForgotRoute) {
+    return <ForgotPassword/>
+  }
 
   if (isSharedRoute) {
     return <SharedNote />
