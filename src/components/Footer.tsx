@@ -162,7 +162,7 @@ const Footer: React.FC = () => {
                 <li className="flex items-center space-x-2">
                   <Newspaper className="w-4 h-4 text-gray-600 dark:text-gray-300" />
                   <Link
-                    to="https://notepaddle.com/blog"
+                    to="https://notepadle.com/blog"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
