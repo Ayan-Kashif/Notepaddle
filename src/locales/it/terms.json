@@ -1,0 +1,50 @@
+{
+  "title": "Termini di Servizio",
+  "subtitle": "Termini e condizioni per l'utilizzo di Notepadle",
+  "header": "Termini di Servizio – Notepadle",
+  "effective": "Data di Entrata in Vigore",
+  "updated": "Ultimo Aggiornamento",
+  "effective_date": "29 Dicembre 2024",
+  "last_updated": "29 Dicembre 2024",
+
+  "accept_heading": "1. Accettazione dei Termini",
+  "accept_text": "Accedendo o utilizzando Notepadle (\"il Servizio\"), accetti di essere vincolato da questi Termini...",
+
+  "description_heading": "2. Descrizione del Servizio",
+  "description_intro": "Notepadle è un'applicazione per prendere appunti digitali che consente agli utenti di:",
+  "description_list": [
+    "Creare, modificare e organizzare note personali",
+    "Salvare note localmente o nel cloud",
+    "Esportare note in formato testo, markdown o PDF",
+    "Collaborare alle note con altri",
+    "Utilizzare tag, categorie e ricerca",
+    "Proteggere le note con password",
+    "Ricevere notifiche via email"
+  ],
+  "description_note": "Il servizio è gratuito e può offrire funzionalità premium opzionali.",
+
+  "contact_heading": "Informazioni di Contatto",
+  "contact_intro": "Se hai domande riguardo questi Termini di Servizio, ti preghiamo di contattarci:",
+  "contact_email_label": "Email:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Oggetto:",
+  "contact_subject": "Richiesta Termini di Servizio",
+  "contact_time_label": "Tempo di Risposta:",
+  "contact_time": "Ci impegniamo a rispondere entro 48 ore",
+
+  "summary_heading": "Riepilogo dei Termini",
+  "summary_rights_heading": "✓ I Tuoi Diritti:",
+  "summary_rights_list": [
+    "Possiedi completamente i tuoi contenuti",
+    "Esporta i dati in qualsiasi momento",
+    "Utilizza il servizio in modo anonimo",
+    "Cancella l’account in qualsiasi momento"
+  ],
+  "summary_resp_heading": "ℹ Le Tue Responsabilità:",
+  "summary_resp_list": [
+    "Segui le linee guida sui contenuti",
+    "Mantieni sicuro l'account",
+    "Rispetta i diritti degli altri",
+    "Esegui il backup dei dati importanti"
+  ]
+}

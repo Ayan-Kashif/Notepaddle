@@ -1,0 +1,54 @@
+{
+  "title": "舉報濫用政策",
+  "subtitle": "如何舉報不當內容和行為",
+  "header": "舉報濫用政策 – Notepadle",
+  "effective_date": "生效日期：2024年12月29日",
+  "last_updated": "最後更新：2024年12月29日",
+  "commitment_heading": "我們對用戶安全的承諾",
+  "commitment_body": "我們致力於維護一個安全且互相尊重的環境。如果您發現違反我們條款或指南的內容，請依照以下步驟進行舉報。",
+  "report_heading": "如何舉報濫用行為",
+  "primary_method": "主要舉報方式：",
+  "email_label": "電子郵件：",
+  "subject_line": "主旨：「濫用舉報 - [簡短描述]」",
+  "step_1_title": "1. 濫用描述",
+  "step_1_desc": "提供清楚且詳細的違規內容說明",
+  "step_2_title": "2. 連結或位置",
+  "step_2_desc": "提供連結、使用者名稱、筆記 ID 或其他資訊以協助定位",
+  "step_3_title": "3. 證據（如有）",
+  "step_3_desc": "提供螢幕截圖、時間戳記或其他支持證據",
+  "step_4_title": "4. 您的聯絡資訊",
+  "step_4_desc": "以便我們後續聯絡（將保密處理）",
+  "contact_heading": "聯絡資訊",
+  "abuse_reports_heading": "濫用舉報：",
+  "general_support_heading": "一般客服：",
+  "abuse_details": [
+    "電子郵件：support@notepadle.com",
+    "主旨：「濫用舉報 - [描述]」",
+    "回覆時間：48 小時內"
+  ],
+  "support_details": [
+    "電子郵件：support@notepadle.com",
+    "主旨：「一般詢問」",
+    "回覆時間：24–48 小時"
+  ],
+  "summary_heading": "快速參考",
+  "how_to_report": [
+    "發送電子郵件至 support@notepadle.com",
+    "提供詳細說明內容",
+    "若有，提供支持證據",
+    "留下您的聯絡資訊"
+  ],
+  "response_times": [
+    "● 確認收到：24 小時內",
+    "● 調查處理：48 小時",
+    "● 必要時採取行動",
+    "● 後續通知"
+  ],
+  "confidentiality": [
+    "• 所有舉報內容將保密處理",
+    "• 舉報者身分受保護",
+    "• 禁止報復行為",
+    "• 安全的調查流程"
+  ]
+}
+    

@@ -1,0 +1,46 @@
+{
+  "title": "服务条款",
+  "subtitle": "使用Notepadle的条款和条件",
+  "header": "服务条款 – Notepadle",
+  "effective": "生效日期",
+  "updated": "最新更新",
+  "effective_date": "2024年12月29日",
+  "last_updated": "2024年12月29日",
+  "accept_heading": "1. 接受条款",
+  "accept_text": "访问或使用Notepadle（“服务”），即表示您同意这些条款...",
+  "description_heading": "2. 服务说明",
+  "description_intro": "Notepadle 是一个数字笔记应用，允许用户：",
+  "description_list": [
+    "创建、编辑并组织个人笔记",
+    "本地或云端保存笔记",
+    "导出笔记为文本、Markdown 或 PDF",
+    "与他人共享并协作笔记",
+    "使用标签、分类和搜索",
+    "用密码保护笔记",
+    "接收账户活动的邮件通知"
+  ],
+  "description_note": "该服务免费，可能提供可选高级功能。",
+  "contact_heading": "联系信息",
+  "contact_intro": "如果您对这些服务条款有任何疑问，请联系我们：",
+  "contact_email_label": "邮箱：",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "主题：",
+  "contact_subject": "服务条款询问",
+  "contact_time_label": "回复时间：",
+  "contact_time": "我们力争在48小时内回复",
+  "summary_heading": "条款概览",
+  "summary_rights_heading": "✓ 您的权利：",
+  "summary_rights_list": [
+    "完全拥有您的内容",
+    "随时导出您的数据",
+    "匿名使用服务",
+    "随时删除您的账户"
+  ],
+  "summary_resp_heading": "ℹ 您的责任：",
+  "summary_resp_list": [
+    "遵守内容指南",
+    "保持账户安全",
+    "尊重他人权利",
+    "备份重要数据"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Podmínky služby",
+  "subtitle": "Podmínky pro použití Notepadle",
+  "header": "Podmínky služby – Notepadle",
+  "effective": "Datum účinnosti",
+  "updated": "Poslední aktualizace",
+  "effective_date": "29. prosince 2024",
+  "last_updated": "29. prosince 2024",
+  "accept_heading": "1. Přijetí podmínek",
+  "accept_text": "Přístupem nebo používáním Notepadle („Služba“) souhlasíte s těmito podmínkami…",
+  "description_heading": "2. Popis služby",
+  "description_intro": "Notepadle je digitální aplikace pro poznámky, která umožňuje uživatelům:",
+  "description_list": [
+    "Vytvářet, upravovat a organizovat osobní poznámky",
+    "Ukládat poznámky lokálně nebo v cloudu",
+    "Exportovat poznámky jako text, Markdown nebo PDF",
+    "Spolupracovat na poznámkách s ostatními",
+    "Používat štítky, kategorie a vyhledávání",
+    "Chránit poznámky heslem",
+    "Dostávat e-mailová oznámení"
+  ],
+  "description_note": "Služba je zdarma a může nabízet prémiové funkce navíc.",
+  "contact_heading": "Kontaktní informace",
+  "contact_intro": "Máte-li dotazy k těmto podmínkám, kontaktujte nás:",
+  "contact_email_label": "Email:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Předmět:",
+  "contact_subject": "Dotaz ohledně podmínek služby",
+  "contact_time_label": "Doba odezvy:",
+  "contact_time": "Odpovíme do 48 hodin",
+  "summary_heading": "Shrnutí podmínek",
+  "summary_rights_heading": "✓ Vaše práva:",
+  "summary_rights_list": [
+    "Plné vlastnictví vašich dat",
+    "Export dat kdykoli",
+    "Anonymní používání služby",
+    "Smazání účtu kdykoli"
+  ],
+  "summary_resp_heading": "ℹ Vaše povinnosti:",
+  "summary_resp_list": [
+    "Dodržujte pravidla obsahu",
+    "Chraňte svůj účet",
+    "Respektujte práva druhých",
+    "Zálohujte si důležitá data"
+  ]
+}

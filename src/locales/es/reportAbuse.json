@@ -1,0 +1,53 @@
+{
+  "title": "Política de Reporte de Abuso",
+  "subtitle": "Cómo reportar contenido o comportamiento inapropiado",
+  "header": "Política de Reporte de Abuso – Notepadle",
+  "effective_date": "29 de diciembre de 2024",
+  "last_updated": "29 de diciembre de 2024",
+  "commitment_heading": "Nuestro Compromiso con la Seguridad del Usuario",
+  "commitment_body": "Estamos comprometidos a mantener un entorno seguro y respetuoso. Si encuentra contenido que viole nuestras Condiciones o directrices, por favor repórtelo utilizando los pasos a continuación.",
+  "report_heading": "Cómo Reportar Abuso",
+  "primary_method": "Método Principal de Reporte:",
+  "email_label": "Correo electrónico:",
+  "subject_line": "Asunto: \"Abuse Report - [Breve Descripción]\"",
+  "step_1_title": "Descripción del Abuso",
+  "step_1_desc": "Proporcione una descripción clara y detallada de la infracción",
+  "step_2_title": "Enlace o Ubicación",
+  "step_2_desc": "Comparta enlace, nombre de usuario, ID de nota, etc.",
+  "step_3_title": "Evidencia (si está disponible)",
+  "step_3_desc": "Capturas de pantalla, marcas de tiempo u otras pruebas",
+  "step_4_title": "Su Información de Contacto",
+  "step_4_desc": "Para que podamos contactarlo si es necesario (se mantendrá confidencial)",
+  "contact_heading": "Información de Contacto",
+  "abuse_reports_heading": "Reportes de Abuso:",
+  "general_support_heading": "Soporte General:",
+  "abuse_details": [
+    "Correo: support@notepadle.com",
+    "Asunto: \"Abuse Report - [Descripción]\"",
+    "Tiempo de respuesta: dentro de 48 horas"
+  ],
+  "support_details": [
+    "Correo: support@notepadle.com",
+    "Asunto: \"General Inquiry\"",
+    "Tiempo de respuesta: 24–48 horas"
+  ],
+  "summary_heading": "Referencia Rápida",
+  "how_to_report": [
+    "Enviar correo a support@notepadle.com",
+    "Incluir descripción detallada",
+    "Proporcionar evidencia si la hay",
+    "Incluir información de contacto"
+  ],
+  "response_times": [
+    "● Confirmación: 24 horas",
+    "● Investigación: 48 horas",
+    "● Acción si es necesario",
+    "● Notificación de seguimiento"
+  ],
+  "confidentiality": [
+    "• Todos los reportes son confidenciales",
+    "• Identidad protegida",
+    "• No se permite represalias",
+    "• Proceso de investigación seguro"
+  ]
+}

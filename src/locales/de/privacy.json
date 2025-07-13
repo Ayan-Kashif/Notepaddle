@@ -1,0 +1,77 @@
+{
+  "title": "Datenschutzerklärung",
+  "subtitle": "Wie wir Ihre Daten behandeln und Ihre Privatsphäre schützen",
+  "header_title": "Datenschutzerklärung – Notepadle",
+  "effective_date": "Gültig ab: 29. Dezember 2024",
+  "last_updated": "Zuletzt aktualisiert: 29. Dezember 2024",
+  "introduction_heading": "Einleitung",
+  "introduction_body": "Notepadle („wir“, „uns“ oder „unser“) bietet einen kostenlosen Online-Notizdienst an, um Nutzern das Schreiben und Speichern von Notizen zu erleichtern. Diese Datenschutzerklärung erklärt, wie wir mit Ihren Daten umgehen und wie wir uns zum Schutz Ihrer Privatsphäre verpflichten.",
+  "data_collection_heading": "1. Welche Daten wir erheben",
+  "anonymous_heading": "Anonyme Nutzer:",
+  "anonymous_list": [
+    "Von anonymen Nutzern werden keine personenbezogenen Daten erhoben",
+    "Notizen werden lokal in Ihrem Browser über localStorage gespeichert",
+    "Designpräferenzen und Einstellungen werden lokal gespeichert",
+    "Es werden keine Daten an unsere Server übertragen"
+  ],
+  "registered_heading": "Registrierte Nutzer (optional):",
+  "registered_intro": "Wir können folgende Daten erheben:",
+  "registered_list": [
+    "E-Mail-Adresse zur Kontoerstellung und -authentifizierung",
+    "Notizen, die Sie in unserer Cloud speichern möchten",
+    "Sprach- und Designpräferenzen",
+    "Zeitpunkte der Kontoerstellung und des letzten Logins",
+    "Einstellungen zum Teilen und zur Zusammenarbeit bei Notizen"
+  ],
+  "use_data_heading": "2. Wie wir Ihre Daten verwenden",
+  "use_data_list": [
+    "Zum Speichern und Synchronisieren Ihrer Notizen auf verschiedenen Geräten",
+    "Zur Bereitstellung des Zugriffs auf Ihr Konto und gespeicherte Inhalte",
+    "Zur Verbesserung der Benutzererfahrung und der App-Funktionen",
+    "Zur Aktivierung von Kollaborationsfunktionen, wenn Sie Notizen teilen",
+    "Zur Bereitstellung von Kundensupport auf Anfrage",
+    "Zum Versenden wichtiger kontobezogener E-Mails (Verifizierung, Passwortzurücksetzung)"
+  ],
+  "email_heading": "3. E-Mail-Kommunikation",
+  "email_intro": "Wir senden E-Mails von support@notepadle.com für:",
+  "email_list": [
+    "E-Mail-Verifizierung bei der Kontoerstellung",
+    "Anfragen zur Passwortzurücksetzung",
+    "Wichtige Sicherheitsbenachrichtigungen",
+    "Updates und Änderungen zum Konto",
+    "Antworten vom Kundenservice"
+  ],
+  "email_note": "Wir senden keine Werbe- oder Marketing-E-Mails, es sei denn, Sie stimmen ausdrücklich zu.",
+  "cookies_heading": "4. Cookies & LocalStorage",
+  "localstorage_heading": "Verwendung von LocalStorage:",
+  "localstorage_list": [
+    "Wir nutzen localStorage, um Notizen für anonyme Nutzer zu speichern",
+    "Designpräferenzen (Dunkel-/Hellmodus) werden lokal gespeichert",
+    "Kategorieneinstellungen und Organisationspräferenzen der Notizen"
+  ],
+  "cookies_usage_heading": "Verwendung von Cookies:",
+  "cookies_usage_list": [
+    "Sitzungscookies, um Ihren Login-Status aufrechtzuerhalten",
+    "Präferenz-Cookies für Design- und Spracheinstellungen",
+    "Keine Tracking- oder Werbe-Cookies werden verwendet"
+  ],
+  "contact_heading": "Kontakt",
+  "contact_intro": "Wenn Sie Fragen zu dieser Datenschutzerklärung oder unseren Datenpraktiken haben, kontaktieren Sie uns bitte:",
+  "contact_email": "E-Mail: support@notepadle.com",
+  "contact_response": "Antwortzeit: Wir bemühen uns, innerhalb von 48 Stunden zu antworten",
+  "summary_heading": "Datenschutz-Zusammenfassung",
+  "summary_do": "✓ Wir tun:",
+  "summary_do_list": [
+    "Alle Ihre Daten verschlüsseln",
+    "Ihre Datenschutzentscheidungen respektieren",
+    "Anonyme Nutzung ermöglichen",
+    "Ihnen volle Kontrolle über Ihre Daten geben"
+  ],
+  "summary_dont": "✗ Wir tun nicht:",
+  "summary_dont_list": [
+    "Ihre persönlichen Daten verkaufen",
+    "Tracking-Cookies verwenden",
+    "Notizen ohne Ihre Erlaubnis teilen",
+    "Unnötige Daten sammeln"
+  ]
+}

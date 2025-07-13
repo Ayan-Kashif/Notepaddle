@@ -1,0 +1,46 @@
+{
+  "title": "Warunki korzystania",
+  "subtitle": "Zasady korzystania z Notepadle",
+  "header": "Warunki korzystania – Notepadle",
+  "effective": "Data wejścia w życie",
+  "updated": "Ostatnia aktualizacja",
+  "effective_date": "29 grudnia 2024",
+  "last_updated": "29 grudnia 2024",
+  "accept_heading": "1. Akceptacja warunków",
+  "accept_text": "Uzyskując dostęp do Notepadle („Usługa”) lub z niego korzystając, zgadzasz się na te Warunki…",
+  "description_heading": "2. Opis usługi",
+  "description_intro": "Notepadle to cyfrowa aplikacja do notatek, która pozwala użytkownikom:",
+  "description_list": [
+    "Tworzyć, edytować i organizować osobiste notatki",
+    "Zapisywać notatki lokalnie lub w chmurze",
+    "Eksportować notatki jako tekst, Markdown lub PDF",
+    "Współpracować nad notatkami z innymi",
+    "Korzystać z tagów, kategorii i wyszukiwania",
+    "Chronić notatki hasłem",
+    "Otrzymywać powiadomienia e‑mail"
+  ],
+  "description_note": "Usługa jest bezpłatna i może oferować opcjonalne funkcje premium.",
+  "contact_heading": "Dane kontaktowe",
+  "contact_intro": "Jeśli masz pytania dotyczące Warunków korzystania, skontaktuj się z nami:",
+  "contact_email_label": "Email:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Temat:",
+  "contact_subject": "Zapytanie o Warunki korzystania",
+  "contact_time_label": "Czas odpowiedzi:",
+  "contact_time": "Odpowiemy w ciągu 48 godzin",
+  "summary_heading": "Podsumowanie warunków",
+  "summary_rights_heading": "✓ Twoje prawa:",
+  "summary_rights_list": [
+    "Masz pełne prawa do swojej zawartości",
+    "Możesz eksportować dane w dowolnym momencie",
+    "Możesz korzystać z usługi anonimowo",
+    "Możesz usunąć konto w dowolnym czasie"
+  ],
+  "summary_resp_heading": "ℹ Twoje obowiązki:",
+  "summary_resp_list": [
+    "Przestrzegaj wytycznych dotyczących treści",
+    "Chroń bezpieczeństwo konta",
+    "Szanuj prawa innych",
+    "Twórz kopie zapasowe ważnych danych"
+  ]
+}

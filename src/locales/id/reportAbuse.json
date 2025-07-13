@@ -1,0 +1,53 @@
+    {
+  "title": "Kebijakan Pelaporan Penyalahgunaan",
+  "subtitle": "Cara melaporkan konten dan perilaku yang tidak pantas",
+  "header": "Kebijakan Pelaporan Penyalahgunaan – Notepadle",
+  "effective_date": "Tanggal Berlaku: 29 Desember 2024",
+  "last_updated": "Terakhir Diperbarui: 29 Desember 2024",
+  "commitment_heading": "Komitmen Kami terhadap Keamanan Pengguna",
+  "commitment_body": "Kami berkomitmen untuk menjaga lingkungan yang aman dan saling menghormati. Jika Anda menemukan konten yang melanggar Ketentuan atau pedoman kami, silakan laporkan menggunakan langkah-langkah berikut.",
+  "report_heading": "Cara Melaporkan Penyalahgunaan",
+  "primary_method": "Metode Pelaporan Utama:",
+  "email_label": "Email:",
+  "subject_line": "Subjek: \"Laporan Penyalahgunaan - [Deskripsi Singkat]\"",
+  "step_1_title": "1. Deskripsi Penyalahgunaan",
+  "step_1_desc": "Berikan deskripsi yang jelas dan rinci tentang pelanggaran",
+  "step_2_title": "2. Tautan atau Lokasi",
+  "step_2_desc": "Berikan tautan, nama pengguna, ID catatan, atau informasi lain yang relevan",
+  "step_3_title": "3. Bukti (Jika Ada)",
+  "step_3_desc": "Tangkapan layar, cap waktu, atau bukti pendukung lainnya",
+  "step_4_title": "4. Informasi Kontak Anda",
+  "step_4_desc": "Agar kami dapat menindaklanjuti jika diperlukan (tetap rahasia)",
+  "contact_heading": "Informasi Kontak",
+  "abuse_reports_heading": "Laporan Penyalahgunaan:",
+  "general_support_heading": "Dukungan Umum:",
+  "abuse_details": [
+    "Email: support@notepadle.com",
+    "Subjek: \"Laporan Penyalahgunaan - [Deskripsi]\"",
+    "Waktu Respons: Dalam 48 jam"
+  ],
+  "support_details": [
+    "Email: support@notepadle.com",
+    "Subjek: \"Pertanyaan Umum\"",
+    "Waktu Respons: 24–48 jam"
+  ],
+  "summary_heading": "Referensi Cepat",
+  "how_to_report": [
+    "Kirim email ke support@notepadle.com",
+    "Sertakan deskripsi lengkap",
+    "Sertakan bukti jika ada",
+    "Sertakan informasi kontak Anda"
+  ],
+  "response_times": [
+    "● Tanggapan awal: 24 jam",
+    "● Penyelidikan: 48 jam",
+    "● Tindakan jika diperlukan",
+    "● Notifikasi tindak lanjut"
+  ],
+  "confidentiality": [
+    "• Semua laporan bersifat rahasia",
+    "• Identitas pelapor dilindungi",
+    "• Tidak ada pembalasan",
+    "• Proses investigasi aman"
+  ]
+}

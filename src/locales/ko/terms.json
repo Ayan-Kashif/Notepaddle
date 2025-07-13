@@ -1,0 +1,46 @@
+{
+  "title": "서비스 약관",
+  "subtitle": "Notepadle 사용을 위한 약관 및 조건",
+  "header": "서비스 약관 – Notepadle",
+  "effective": "시행일",
+  "updated": "최종 업데이트",
+  "effective_date": "2024년 12월 29일",
+  "last_updated": "2024년 12월 29일",
+  "accept_heading": "1. 약관 동의",
+  "accept_text": "Notepadle(“서비스”)에 접근하거나 사용함으로써, 귀하는 본 약관에 동의하게 됩니다...",
+  "description_heading": "2. 서비스 설명",
+  "description_intro": "Notepadle은 사용자가 다음을 할 수 있는 디지털 메모 애플리케이션입니다:",
+  "description_list": [
+    "개인 메모 생성, 편집 및 구성",
+    "메모를 로컬 또는 클라우드에 저장",
+    "메모를 텍스트, 마크다운 또는 PDF로 내보내기",
+    "다른 사람과 메모 협업",
+    "태그, 카테고리 및 검색 사용",
+    "메모를 비밀번호로 보호",
+    "이메일 알림 수신"
+  ],
+  "description_note": "이 서비스는 무료이며 선택적 프리미엄 기능을 제공할 수 있습니다.",
+  "contact_heading": "연락처 정보",
+  "contact_intro": "본 서비스 약관에 대한 문의가 있으시면 아래로 연락주세요:",
+  "contact_email_label": "이메일:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "제목:",
+  "contact_subject": "서비스 약관 문의",
+  "contact_time_label": "응답 시간:",
+  "contact_time": "48시간 내에 답변 드리겠습니다",
+  "summary_heading": "약관 요약",
+  "summary_rights_heading": "✓ 귀하의 권리:",
+  "summary_rights_list": [
+    "콘텐츠에 대한 완전한 소유권",
+    "언제든지 데이터 내보내기",
+    "익명으로 서비스 사용",
+    "언제든지 계정 삭제"
+  ],
+  "summary_resp_heading": "ℹ 귀하의 책임:",
+  "summary_resp_list": [
+    "콘텐츠 가이드라인 준수",
+    "계정 보안 유지",
+    "타인의 권리 존중",
+    "중요한 데이터 백업"
+  ]
+}

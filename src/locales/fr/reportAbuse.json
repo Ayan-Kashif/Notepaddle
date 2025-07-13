@@ -1,0 +1,53 @@
+{
+  "title": "Politique de Signalement d’Abus",
+  "subtitle": "Comment signaler un contenu ou comportement inapproprié",
+  "header": "Politique de Signalement d’Abus – Notepadle",
+  "effective_date": "29 décembre 2024",
+  "last_updated": "29 décembre 2024",
+  "commitment_heading": "Notre Engagement envers la Sécurité des Utilisateurs",
+  "commitment_body": "Nous nous engageons à maintenir un environnement sûr et respectueux. Si vous trouvez un contenu qui enfreint nos Conditions ou directives, veuillez le signaler en suivant les étapes ci-dessous.",
+  "report_heading": "Comment Signaler un Abus",
+  "primary_method": "Méthode Principale de Signalement :",
+  "email_label": "Email :",
+  "subject_line": "Objet : \"Abuse Report - [Brève description]\"",
+  "step_1_title": "Description de l’Abus",
+  "step_1_desc": "Fournissez une description claire et détaillée de la violation",
+  "step_2_title": "Lien ou Emplacement",
+  "step_2_desc": "Partagez le lien, nom d'utilisateur, ID de la note ou autre info",
+  "step_3_title": "Preuves (si disponibles)",
+  "step_3_desc": "Captures d’écran, horodatages ou autres preuves",
+  "step_4_title": "Vos Informations de Contact",
+  "step_4_desc": "Pour que nous puissions vous recontacter si besoin (restera confidentiel)",
+  "contact_heading": "Informations de Contact",
+  "abuse_reports_heading": "Signalements d’Abus :",
+  "general_support_heading": "Support Général :",
+  "abuse_details": [
+    "Email : support@notepadle.com",
+    "Objet : \"Abuse Report - [Description]\"",
+    "Délai de réponse : sous 48 heures"
+  ],
+  "support_details": [
+    "Email : support@notepadle.com",
+    "Objet : \"General Inquiry\"",
+    "Délai de réponse : 24–48 heures"
+  ],
+  "summary_heading": "Résumé Rapide",
+  "how_to_report": [
+    "Envoyer un email à support@notepadle.com",
+    "Inclure une description détaillée",
+    "Fournir des preuves si disponibles",
+    "Inclure vos informations de contact"
+  ],
+  "response_times": [
+    "● Accusé de réception : 24 heures",
+    "● Enquête : 48 heures",
+    "● Action si nécessaire",
+    "● Notification de suivi"
+  ],
+  "confidentiality": [
+    "• Tous les rapports sont confidentiels",
+    "• Identité du rapporteur protégée",
+    "• Aucune représaille tolérée",
+    "• Procédure d'enquête sécurisée"
+  ]
+}

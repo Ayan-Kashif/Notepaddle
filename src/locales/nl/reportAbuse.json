@@ -1,0 +1,53 @@
+{
+  "title": "Beleid voor het melden van misbruik",
+  "subtitle": "Hoe ongepast gedrag en inhoud te melden",
+  "header": "Beleid voor het melden van misbruik – Notepadle",
+  "effective_date": "Ingangsdatum: 29 december 2024",
+  "last_updated": "Laatst bijgewerkt: 29 december 2024",
+  "commitment_heading": "Onze inzet voor gebruikersveiligheid",
+  "commitment_body": "Wij zetten ons in voor een veilige en respectvolle omgeving. Als je inhoud tegenkomt die in strijd is met onze richtlijnen, meld dit dan via de onderstaande stappen.",
+  "report_heading": "Hoe misbruik te melden",
+  "primary_method": "Primaire meldmethode:",
+  "email_label": "E-mail:",
+  "subject_line": "Onderwerp: \"Melding van misbruik - [Korte beschrijving]\"",
+  "step_1_title": "1. Beschrijving van het misbruik",
+  "step_1_desc": "Geef een duidelijke en gedetailleerde beschrijving van de overtreding",
+  "step_2_title": "2. Link of locatie",
+  "step_2_desc": "Deel een link, gebruikersnaam, notitie-ID of andere info om ons te helpen het te vinden",
+  "step_3_title": "3. Bewijs (indien beschikbaar)",
+  "step_3_desc": "Schermafbeeldingen, tijdstempels of andere ondersteunende gegevens",
+  "step_4_title": "4. Jouw contactinformatie",
+  "step_4_desc": "Zodat we indien nodig kunnen opvolgen (vertrouwelijk behandeld)",
+  "contact_heading": "Contactinformatie",
+  "abuse_reports_heading": "Meldingen van misbruik:",
+  "general_support_heading": "Algemene ondersteuning:",
+  "abuse_details": [
+    "E-mail: support@notepadle.com",
+    "Onderwerp: \"Melding van misbruik - [Beschrijving]\"",
+    "Reactietijd: Binnen 48 uur"
+  ],
+  "support_details": [
+    "E-mail: support@notepadle.com",
+    "Onderwerp: \"Algemene vraag\"",
+    "Reactietijd: 24–48 uur"
+  ],
+  "summary_heading": "Snelle referentie",
+  "how_to_report": [
+    "E-mail naar support@notepadle.com",
+    "Voeg een gedetailleerde beschrijving toe",
+    "Geef bewijs als dat beschikbaar is",
+    "Voeg je contactgegevens toe"
+  ],
+  "response_times": [
+    "● Bevestiging: binnen 24 uur",
+    "● Onderzoek: binnen 48 uur",
+    "● Actie indien nodig",
+    "● Follow-up melding"
+  ],
+  "confidentiality": [
+    "• Alle meldingen zijn vertrouwelijk",
+    "• Identiteit van melder wordt beschermd",
+    "• Geen vergelding toegestaan",
+    "• Veilig onderzoeksproces"
+  ]
+}

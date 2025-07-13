@@ -1,0 +1,46 @@
+{
+  "title": "Användarvillkor",
+  "subtitle": "Villkor för användning av Notepadle",
+  "header": "Användarvillkor – Notepadle",
+  "effective": "Giltig Från",
+  "updated": "Senast Uppdaterad",
+  "effective_date": "29 december 2024",
+  "last_updated": "29 december 2024",
+  "accept_heading": "1. Acceptans av Villkor",
+  "accept_text": "Genom att använda eller få tillgång till Notepadle (\"Tjänsten\"), godkänner du dessa villkor…",
+  "description_heading": "2. Tjänstebeskrivning",
+  "description_intro": "Notepadle är en digital anteckningsapp som låter användare:",
+  "description_list": [
+    "Skapa, redigera och organisera personliga anteckningar",
+    "Spara anteckningar lokalt eller i molnet",
+    "Exportera anteckningar som text, Markdown eller PDF",
+    "Samarbeta kring anteckningar med andra",
+    "Använda taggar, kategorier och sökning",
+    "Skydda anteckningar med lösenord",
+    "Ta emot e-postmeddelanden"
+  ],
+  "description_note": "Tjänsten är gratis och kan erbjuda premiumfunktioner.",
+  "contact_heading": "Kontaktinformation",
+  "contact_intro": "Om du har frågor om dessa användarvillkor, vänligen kontakta oss:",
+  "contact_email_label": "E‑post:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Ämne:",
+  "contact_subject": "Fråga om användarvillkor",
+  "contact_time_label": "Svarstid:",
+  "contact_time": "Vi strävar efter att svara inom 48 timmar",
+  "summary_heading": "Villkorens sammanfattning",
+  "summary_rights_heading": "✓ Dina rättigheter:",
+  "summary_rights_list": [
+    "Full äganderätt till ditt innehåll",
+    "Exportera dina data när som helst",
+    "Använd tjänsten anonymt",
+    "Radera ditt konto när du vill"
+  ],
+  "summary_resp_heading": "ℹ Dina ansvar:",
+  "summary_resp_list": [
+    "Följ innehållsriktlinjer",
+    "Håll ditt konto säkert",
+    "Respektera andras rättigheter",
+    "Säkerhetskopiera viktiga data"
+  ]
+}

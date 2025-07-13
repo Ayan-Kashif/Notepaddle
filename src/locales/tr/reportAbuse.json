@@ -1,0 +1,53 @@
+{
+  "title": "Kötüye Kullanımı Bildirme Politikası",
+  "subtitle": "Uygunsuz içerik ve davranışları nasıl bildirirsiniz",
+  "header": "Kötüye Kullanımı Bildirme Politikası – Notepadle",
+  "effective_date": "Yürürlük Tarihi: 29 Aralık 2024",
+  "last_updated": "Son Güncelleme: 29 Aralık 2024",
+  "commitment_heading": "Kullanıcı Güvenliğine Bağlılığımız",
+  "commitment_body": "Güvenli ve saygılı bir ortam sağlamaya kararlıyız. Şartlarımızı veya yönergelerimizi ihlal eden içerikle karşılaşırsanız, aşağıdaki adımları izleyerek bunu bize bildirin.",
+  "report_heading": "Kötüye Kullanım Nasıl Bildirilir",
+  "primary_method": "Birincil Bildirim Yöntemi:",
+  "email_label": "E-posta:",
+  "subject_line": "Konu: \"Kötüye Kullanım Bildirimi - [Kısa Açıklama]\"",
+  "step_1_title": "1. Kötüye Kullanım Açıklaması",
+  "step_1_desc": "İhlalin net ve ayrıntılı bir açıklamasını sağlayın",
+  "step_2_title": "2. Bağlantı veya Konum",
+  "step_2_desc": "Bulmamıza yardımcı olacak bağlantı, kullanıcı adı, not kimliği veya diğer bilgileri paylaşın",
+  "step_3_title": "3. Kanıtlar (Varsa)",
+  "step_3_desc": "Ekran görüntüleri, zaman damgaları veya raporunuzu destekleyen herhangi bir şey",
+  "step_4_title": "4. İletişim Bilgileriniz",
+  "step_4_desc": "Gerekirse sizinle iletişime geçebilmemiz için (gizli tutulur)",
+  "contact_heading": "İletişim Bilgileri",
+  "abuse_reports_heading": "Kötüye Kullanım Bildirimleri:",
+  "general_support_heading": "Genel Destek:",
+  "abuse_details": [
+    "E-posta: support@notepadle.com",
+    "Konu: \"Kötüye Kullanım Bildirimi - [Açıklama]\"",
+    "Yanıt Süresi: 48 saat içinde"
+  ],
+  "support_details": [
+    "E-posta: support@notepadle.com",
+    "Konu: \"Genel Sorgu\"",
+    "Yanıt Süresi: 24–48 saat"
+  ],
+  "summary_heading": "Hızlı Referans",
+  "how_to_report": [
+    "support@notepadle.com adresine e-posta gönderin",
+    "Ayrıntılı açıklama ekleyin",
+    "Varsa kanıt sağlayın",
+    "İletişim bilgilerinizi ekleyin"
+  ],
+  "response_times": [
+    "● Onay: 24 saat içinde",
+    "● Soruşturma: 48 saat içinde",
+    "● Gerekirse işlem yapılır",
+    "● Takip bildirimi"
+  ],
+  "confidentiality": [
+    "• Tüm raporlar gizlidir",
+    "• Bildiren kişinin kimliği korunur",
+    "• Misillemeye izin verilmez",
+    "• Güvenli soruşturma süreci"
+  ]
+}

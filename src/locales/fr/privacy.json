@@ -1,0 +1,77 @@
+{
+  "title": "Politique de confidentialité",
+  "subtitle": "Comment nous gérons vos données et protégeons votre confidentialité",
+  "header_title": "Politique de confidentialité – NotePadle",
+  "effective_date": "Date d'entrée en vigueur : 29 décembre 2024",
+  "last_updated": "Dernière mise à jour : 29 décembre 2024",
+  "introduction_heading": "Introduction",
+  "introduction_body": "NotePadle (« nous », « notre ») propose un service de bloc‑notes en ligne gratuit pour aider les utilisateurs à écrire et sauvegarder facilement des notes. Cette politique de confidentialité explique comment nous traitons vos données et notre engagement à protéger votre vie privée.",
+  "data_collection_heading": "1. Quelles données recueillons‑nous ?",
+  "anonymous_heading": "Utilisateurs anonymes :",
+  "anonymous_list": [
+    "Aucune donnée personnelle n’est collectée pour les utilisateurs anonymes",
+    "Les notes sont enregistrées localement dans votre navigateur via localStorage",
+    "Les préférences de thème et les paramètres sont stockés localement",
+    "Aucune donnée n’est transmise à nos serveurs"
+  ],
+  "registered_heading": "Utilisateurs enregistrés (optionnel) :",
+  "registered_intro": "Nous pouvons collecter :",
+  "registered_list": [
+    "Adresse e‑mail pour la création de compte et l’authentification",
+    "Notes que vous choisissez d’enregistrer dans notre stockage cloud",
+    "Préférences de langue et de thème",
+    "Dates de création de compte et de dernière connexion",
+    "Paramètres de partage et de collaboration des notes"
+  ],
+  "use_data_heading": "2. Comment utilisons‑nous vos données ?",
+  "use_data_list": [
+    "Pour stocker et synchroniser vos notes sur plusieurs appareils",
+    "Pour donner accès à votre compte et contenu enregistré",
+    "Pour améliorer l’expérience utilisateur et les fonctionnalités de l’application",
+    "Pour activer les fonctionnalités de collaboration lorsque vous partagez des notes",
+    "Pour fournir une assistance client si vous le demandez",
+    "Pour envoyer des e‑mails importants liés au compte (vérification, réinitialisation du mot de passe)"
+  ],
+  "email_heading": "3. Communications par e‑mail",
+  "email_intro": "Nous envoyons des e‑mails depuis support@notepadle.com pour :",
+  "email_list": [
+    "Vérification de l’adresse e‑mail lors de la création de compte",
+    "Demandes de réinitialisation du mot de passe",
+    "Notifications de sécurité importantes",
+    "Mises à jour et modifications du compte",
+    "Réponses du support client"
+  ],
+  "email_note": "Nous n'envoyons pas d’e‑mails promotionnels sauf si vous y avez explicitement consenti.",
+  "cookies_heading": "4. Cookies et stockage local",
+  "localstorage_heading": "Utilisation du stockage local :",
+  "localstorage_list": [
+    "Nous utilisons localStorage pour enregistrer les notes des utilisateurs anonymes",
+    "Les préférences de thème (mode sombre/claire) sont stockées localement",
+    "Paramètres d’organisation des notes et catégories"
+  ],
+  "cookies_usage_heading": "Utilisation des cookies :",
+  "cookies_usage_list": [
+    "Cookies de session pour maintenir votre connexion",
+    "Cookies de préférence pour le thème et la langue",
+    "Aucun cookie de suivi ou publicitaire n’est utilisé"
+  ],
+  "contact_heading": "Nous contacter",
+  "contact_intro": "Si vous avez des questions concernant cette politique de confidentialité ou nos pratiques en matière de données, veuillez nous contacter :",
+  "contact_email": "E‑mail : support@notepadle.com",
+  "contact_response": "Délai de réponse : nous visons à répondre sous 48 heures",
+  "summary_heading": "Résumé de la confidentialité",
+  "summary_do": "✓ Ce que nous faisons :",
+  "summary_do_list": [
+    "Nous chiffrons toutes vos données",
+    "Nous respectons vos choix en matière de confidentialité",
+    "Nous permettons une utilisation anonyme",
+    "Nous vous donnons un contrôle total sur vos données"
+  ],
+  "summary_dont": "✗ Ce que nous ne faisons pas :",
+  "summary_dont_list": [
+    "Nous ne vendons pas vos informations personnelles",
+    "Nous n’utilisons pas de cookies de suivi",
+    "Nous ne partageons pas de notes sans autorisation",
+    "Nous ne collectons pas de données inutiles"
+  ]
+}

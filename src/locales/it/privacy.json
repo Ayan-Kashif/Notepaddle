@@ -1,0 +1,77 @@
+{
+  "title": "Informativa sulla privacy",
+  "subtitle": "Come gestiamo i tuoi dati e proteggiamo la tua privacy",
+  "header_title": "Informativa sulla privacy – Notepadle",
+  "effective_date": "Valida dal: 29 dicembre 2024",
+  "last_updated": "Ultimo aggiornamento: 29 dicembre 2024",
+  "introduction_heading": "Introduzione",
+  "introduction_body": "Notepadle (“noi”, “nostro/a/e”) offre un servizio gratuito di blocco note online per aiutare gli utenti a scrivere e salvare note facilmente. Questa informativa spiega come gestiamo i tuoi dati e il nostro impegno a proteggere la tua privacy.",
+  "data_collection_heading": "1. Dati raccolti",
+  "anonymous_heading": "Utenti anonimi:",
+  "anonymous_list": [
+    "Non raccogliamo dati personali dagli utenti anonimi",
+    "Le note vengono salvate localmente nel browser usando localStorage",
+    "Preferenze di tema e impostazioni vengono memorizzate localmente",
+    "Non vengono trasmessi dati ai nostri server"
+  ],
+  "registered_heading": "Utenti registrati (opzionale):",
+  "registered_intro": "Potremmo raccogliere:",
+  "registered_list": [
+    "Indirizzo e-mail per creazione account e autenticazione",
+    "Note che decidi di salvare nel cloud",
+    "Preferenze di lingua e tema",
+    "Timestamp di creazione account e ultimo accesso",
+    "Impostazioni di condivisione e collaborazione sulle note"
+  ],
+  "use_data_heading": "2. Come utilizziamo i tuoi dati",
+  "use_data_list": [
+    "Per salvare e sincronizzare le note su dispositivi diversi",
+    "Per permettere l’accesso al tuo account e ai contenuti salvati",
+    "Per migliorare l’esperienza utente e le funzionalità dell’app",
+    "Per attivare funzioni di collaborazione se condividi note",
+    "Per fornire supporto clienti su richiesta",
+    "Per inviare e-mail importanti relative all’account (verifica, reset password)"
+  ],
+  "email_heading": "3. Comunicazioni via e-mail",
+  "email_intro": "Invio di e-mail da support@notepadle.com per:",
+  "email_list": [
+    "Verifica e-mail alla creazione dell’account",
+    "Richieste di reimpostazione della password",
+    "Notifiche di sicurezza importanti",
+    "Aggiornamenti o modifiche all’account",
+    "Risposte del servizio clienti"
+  ],
+  "email_note": "Non inviamo e-mail promozionali o marketing a meno che non acconsenti esplicitamente.",
+  "cookies_heading": "4. Cookie e LocalStorage",
+  "localstorage_heading": "Uso di LocalStorage:",
+  "localstorage_list": [
+    "Usiamo localStorage per salvare note di utenti anonimi",
+    "Preferenze di tema (modalità scura/chiara) sono salvate localmente",
+    "Impostazioni di categorie e organizzazione delle note"
+  ],
+  "cookies_usage_heading": "Uso dei cookie:",
+  "cookies_usage_list": [
+    "Cookie di sessione per mantenere lo stato di login",
+    "Cookie di preferenza per lingua e tema",
+    "Non utilizziamo cookie di tracking o pubblicitari"
+  ],
+  "contact_heading": "Contattaci",
+  "contact_intro": "Per domande su questa informativa o sulle nostre pratiche, contattaci:",
+  "contact_email": "E-mail: support@notepadle.com",
+  "contact_response": "Tempo di risposta: rispondiamo entro 48 ore",
+  "summary_heading": "Riepilogo sulla privacy",
+  "summary_do": "✓ Facciamo:",
+  "summary_do_list": [
+    "Cifriamo tutti i tuoi dati",
+    "Rispettiamo le tue scelte sulla privacy",
+    "Consentiamo l’uso anonimo",
+    "Ti diamo pieno controllo sui tuoi dati"
+  ],
+  "summary_dont": "✗ Non facciamo:",
+  "summary_dont_list": [
+    "Non vendiamo i tuoi dati personali",
+    "Non usiamo cookie di tracking",
+    "Non condividiamo note senza permesso",
+    "Non raccogliamo dati inutili"
+  ]
+}

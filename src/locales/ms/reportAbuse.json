@@ -1,0 +1,53 @@
+{
+  "title": "Dasar Laporan Penyalahgunaan",
+  "subtitle": "Cara melaporkan kandungan dan tingkah laku yang tidak sesuai",
+  "header": "Dasar Laporan Penyalahgunaan – Notepadle",
+  "effective_date": "Tarikh Berkuat Kuasa: 29 Disember 2024",
+  "last_updated": "Tarikh Kemas Kini: 29 Disember 2024",
+  "commitment_heading": "Komitmen Kami terhadap Keselamatan Pengguna",
+  "commitment_body": "Kami komited untuk mengekalkan persekitaran yang selamat dan penuh hormat. Jika anda menemui kandungan yang melanggar Syarat atau garis panduan kami, sila laporkan menggunakan langkah-langkah di bawah.",
+  "report_heading": "Cara Melaporkan Penyalahgunaan",
+  "primary_method": "Kaedah Pelaporan Utama:",
+  "email_label": "E-mel:",
+  "subject_line": "Subjek: \"Laporan Penyalahgunaan - [Penerangan Ringkas]\"",
+  "step_1_title": "1. Penerangan Mengenai Penyalahgunaan",
+  "step_1_desc": "Berikan penerangan yang jelas dan terperinci mengenai pelanggaran",
+  "step_2_title": "2. Pautan atau Lokasi",
+  "step_2_desc": "Kongsi pautan, nama pengguna, ID nota atau maklumat lain untuk membantu kami mengenal pasti",
+  "step_3_title": "3. Bukti (Jika Ada)",
+  "step_3_desc": "Tangkapan skrin, cap masa, atau apa-apa sahaja yang menyokong laporan anda",
+  "step_4_title": "4. Maklumat Perhubungan Anda",
+  "step_4_desc": "Agar kami dapat membuat susulan jika perlu (akan dirahsiakan)",
+  "contact_heading": "Maklumat Perhubungan",
+  "abuse_reports_heading": "Laporan Penyalahgunaan:",
+  "general_support_heading": "Sokongan Am:",
+  "abuse_details": [
+    "E-mel: support@notepadle.com",
+    "Subjek: \"Laporan Penyalahgunaan - [Penerangan]\"",
+    "Masa Respon: Dalam masa 48 jam"
+  ],
+  "support_details": [
+    "E-mel: support@notepadle.com",
+    "Subjek: \"Pertanyaan Am\"",
+    "Masa Respon: 24–48 jam"
+  ],
+  "summary_heading": "Rujukan Pantas",
+  "how_to_report": [
+    "E-mel ke support@notepadle.com",
+    "Sertakan penerangan terperinci",
+    "Sediakan bukti jika ada",
+    "Sertakan maklumat hubungan anda"
+  ],
+  "response_times": [
+    "● Pengesahan: 24 jam",
+    "● Siasatan: 48 jam",
+    "● Tindakan diambil jika perlu",
+    "● Makluman susulan"
+  ],
+  "confidentiality": [
+    "• Semua laporan adalah sulit",
+    "• Identiti pelapor dilindungi",
+    "• Tiada balasan dendam dibenarkan",
+    "• Proses siasatan yang selamat"
+  ]
+}

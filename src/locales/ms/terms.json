@@ -1,0 +1,46 @@
+{
+  "title": "Terma Perkhidmatan",
+  "subtitle": "Terma dan syarat untuk menggunakan Notepadle",
+  "header": "Terma Perkhidmatan – Notepadle",
+  "effective": "Tarikh Berkuat Kuasa",
+  "updated": "Dikemas Kini Terakhir",
+  "effective_date": "29 Disember 2024",
+  "last_updated": "29 Disember 2024",
+  "accept_heading": "1. Penerimaan Terma",
+  "accept_text": "Dengan mengakses atau menggunakan Notepadle (\"Perkhidmatan\"), anda bersetuju untuk terikat dengan Terma ini...",
+  "description_heading": "2. Penerangan Perkhidmatan",
+  "description_intro": "Notepadle ialah aplikasi nota digital yang membolehkan pengguna untuk:",
+  "description_list": [
+    "Mencipta, menyunting dan menyusun nota peribadi",
+    "Menyimpan nota secara tempatan atau dalam awan",
+    "Mengeksport nota dalam teks, markdown atau PDF",
+    "Berkolaborasi pada nota dengan orang lain",
+    "Menggunakan tag, kategori dan carian",
+    "Melindungi nota dengan kata laluan",
+    "Menerima pemberitahuan melalui emel"
+  ],
+  "description_note": "Perkhidmatan ini adalah percuma dan mungkin menawarkan ciri premium pilihan.",
+  "contact_heading": "Maklumat Hubungan",
+  "contact_intro": "Jika anda mempunyai sebarang pertanyaan mengenai Terma Perkhidmatan ini, sila hubungi kami:",
+  "contact_email_label": "Emel:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Baris Subjek:",
+  "contact_subject": "Pertanyaan Terma Perkhidmatan",
+  "contact_time_label": "Masa Respons:",
+  "contact_time": "Kami berusaha menjawab dalam 48 jam",
+  "summary_heading": "Ringkasan Terma",
+  "summary_rights_heading": "✓ Hak Anda:",
+  "summary_rights_list": [
+    "Anda memiliki kandungan anda sepenuhnya",
+    "Eksport data bila-bila masa",
+    "Gunakan perkhidmatan secara anonim",
+    "Padam akaun bila-bila masa"
+  ],
+  "summary_resp_heading": "ℹ Tanggungjawab Anda:",
+  "summary_resp_list": [
+    "Mengikut garis panduan kandungan",
+    "Menjaga keselamatan akaun",
+    "Menghormati hak orang lain",
+    "Membuat sandaran data penting"
+  ]
+}

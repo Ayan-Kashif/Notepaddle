@@ -1,0 +1,53 @@
+{
+  "title": "Retningslinjer for rapportering av misbruk",
+  "subtitle": "Hvordan rapportere upassende innhold og oppførsel",
+  "header": "Retningslinjer for rapportering av misbruk – Notepadle",
+  "effective_date": "Ikrafttredelsesdato: 29. desember 2024",
+  "last_updated": "Sist oppdatert: 29. desember 2024",
+  "commitment_heading": "Vårt engasjement for brukersikkerhet",
+  "commitment_body": "Vi er forpliktet til å opprettholde et trygt og respektfullt miljø. Hvis du finner innhold som bryter med våre retningslinjer, kan du rapportere det ved å følge trinnene nedenfor.",
+  "report_heading": "Hvordan rapportere misbruk",
+  "primary_method": "Hovedmetode for rapportering:",
+  "email_label": "E-post:",
+  "subject_line": "Emne: \"Misbruksrapport – [Kort beskrivelse]\"",
+  "step_1_title": "1. Beskrivelse av misbruk",
+  "step_1_desc": "Gi en klar og detaljert beskrivelse av bruddet",
+  "step_2_title": "2. Lenke eller plassering",
+  "step_2_desc": "Del lenke, brukernavn, notat-ID eller annen info for å hjelpe oss med å finne det",
+  "step_3_title": "3. Bevis (hvis tilgjengelig)",
+  "step_3_desc": "Skjermbilder, tidsstempler eller annet som støtter rapporten",
+  "step_4_title": "4. Din kontaktinformasjon",
+  "step_4_desc": "Slik at vi kan følge opp ved behov (holdes konfidensielt)",
+  "contact_heading": "Kontaktinformasjon",
+  "abuse_reports_heading": "Rapportering av misbruk:",
+  "general_support_heading": "Generell støtte:",
+  "abuse_details": [
+    "E-post: support@notepadle.com",
+    "Emne: \"Misbruksrapport – [Beskrivelse]\"",
+    "Svarfrist: Innen 48 timer"
+  ],
+  "support_details": [
+    "E-post: support@notepadle.com",
+    "Emne: \"Generell forespørsel\"",
+    "Svarfrist: 24–48 timer"
+  ],
+  "summary_heading": "Hurtigoversikt",
+  "how_to_report": [
+    "Send e-post til support@notepadle.com",
+    "Inkluder detaljert beskrivelse",
+    "Legg ved bevis hvis tilgjengelig",
+    "Inkluder din kontaktinformasjon"
+  ],
+  "response_times": [
+    "● Bekreftelse: 24 timer",
+    "● Undersøkelse: 48 timer",
+    "● Tiltak ved behov",
+    "● Oppfølgingsvarsel"
+  ],
+  "confidentiality": [
+    "• Alle rapporter er konfidensielle",
+    "• Rapportørens identitet beskyttes",
+    "• Gjengjeldelse er ikke tillatt",
+    "• Sikker undersøkelsesprosess"
+  ]
+}

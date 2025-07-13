@@ -1,0 +1,53 @@
+{
+  "title": "Politica di Segnalazione Abusi",
+  "subtitle": "Come segnalare contenuti e comportamenti inappropriati",
+  "header": "Politica di Segnalazione Abusi – Notepadle",
+  "effective_date": "Data di Entrata in Vigore: 29 dicembre 2024",
+  "last_updated": "Ultimo Aggiornamento: 29 dicembre 2024",
+  "commitment_heading": "Il Nostro Impegno per la Sicurezza degli Utenti",
+  "commitment_body": "Siamo impegnati a mantenere un ambiente sicuro e rispettoso. Se trovi contenuti che violano i nostri Termini o linee guida, segnalali seguendo i passaggi seguenti.",
+  "report_heading": "Come Segnalare un Abuso",
+  "primary_method": "Metodo di Segnalazione Principale:",
+  "email_label": "Email:",
+  "subject_line": "Oggetto: \"Segnalazione Abuso - [Breve Descrizione]\"",
+  "step_1_title": "1. Descrizione dell'Abuso",
+  "step_1_desc": "Fornisci una descrizione chiara e dettagliata della violazione",
+  "step_2_title": "2. Link o Posizione",
+  "step_2_desc": "Fornisci link, nome utente, ID della nota o altre informazioni utili",
+  "step_3_title": "3. Prove (se disponibili)",
+  "step_3_desc": "Screenshot, timestamp o qualsiasi elemento che supporti la tua segnalazione",
+  "step_4_title": "4. Le Tue Informazioni di Contatto",
+  "step_4_desc": "Per consentirci di ricontattarti se necessario (rimarranno riservate)",
+  "contact_heading": "Informazioni di Contatto",
+  "abuse_reports_heading": "Segnalazioni di Abuso:",
+  "general_support_heading": "Supporto Generale:",
+  "abuse_details": [
+    "Email: support@notepadle.com",
+    "Oggetto: \"Segnalazione Abuso - [Descrizione]\"",
+    "Tempo di risposta: entro 48 ore"
+  ],
+  "support_details": [
+    "Email: support@notepadle.com",
+    "Oggetto: \"Richiesta Generale\"",
+    "Tempo di risposta: 24–48 ore"
+  ],
+  "summary_heading": "Riepilogo Rapido",
+  "how_to_report": [
+    "Invia un'email a support@notepadle.com",
+    "Fornisci una descrizione dettagliata",
+    "Allega prove, se disponibili",
+    "Indica le tue informazioni di contatto"
+  ],
+  "response_times": [
+    "● Conferma: 24 ore",
+    "● Indagine: 48 ore",
+    "● Azione se necessaria",
+    "● Notifica di aggiornamento"
+  ],
+  "confidentiality": [
+    "• Tutte le segnalazioni sono riservate",
+    "• L'identità del segnalatore è protetta",
+    "• Nessuna ritorsione è tollerata",
+    "• Processo di indagine sicuro"
+  ]
+}

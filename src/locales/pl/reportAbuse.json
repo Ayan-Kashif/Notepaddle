@@ -1,0 +1,53 @@
+{
+  "title": "Polityka zgłaszania nadużyć",
+  "subtitle": "Jak zgłaszać nieodpowiednie treści i zachowania",
+  "header": "Polityka zgłaszania nadużyć – Notepadle",
+  "effective_date": "Data wejścia w życie: 29 grudnia 2024",
+  "last_updated": "Ostatnia aktualizacja: 29 grudnia 2024",
+  "commitment_heading": "Nasze zobowiązanie do bezpieczeństwa użytkowników",
+  "commitment_body": "Zobowiązujemy się do utrzymania bezpiecznego i pełnego szacunku środowiska. Jeśli znajdziesz treści naruszające nasze zasady, zgłoś je, postępując zgodnie z poniższymi krokami.",
+  "report_heading": "Jak zgłosić nadużycie",
+  "primary_method": "Główna metoda zgłaszania:",
+  "email_label": "E-mail:",
+  "subject_line": "Temat: „Zgłoszenie nadużycia – [Krótki opis]”",
+  "step_1_title": "1. Opis nadużycia",
+  "step_1_desc": "Podaj jasny i szczegółowy opis naruszenia",
+  "step_2_title": "2. Link lub lokalizacja",
+  "step_2_desc": "Podaj link, nazwę użytkownika, ID notatki lub inne informacje ułatwiające lokalizację",
+  "step_3_title": "3. Dowody (jeśli dostępne)",
+  "step_3_desc": "Zrzuty ekranu, znaczniki czasu lub inne dowody wspierające zgłoszenie",
+  "step_4_title": "4. Twoje dane kontaktowe",
+  "step_4_desc": "Abyśmy mogli się z Tobą skontaktować (pozostają poufne)",
+  "contact_heading": "Dane kontaktowe",
+  "abuse_reports_heading": "Zgłoszenia nadużyć:",
+  "general_support_heading": "Wsparcie ogólne:",
+  "abuse_details": [
+    "E-mail: support@notepadle.com",
+    "Temat: „Zgłoszenie nadużycia – [Opis]”",
+    "Czas odpowiedzi: do 48 godzin"
+  ],
+  "support_details": [
+    "E-mail: support@notepadle.com",
+    "Temat: „Ogólne zapytanie”",
+    "Czas odpowiedzi: 24–48 godzin"
+  ],
+  "summary_heading": "Szybkie przypomnienie",
+  "how_to_report": [
+    "Wyślij e-mail na adres support@notepadle.com",
+    "Dołącz szczegółowy opis",
+    "Dodaj dowody, jeśli są dostępne",
+    "Podaj swoje dane kontaktowe"
+  ],
+  "response_times": [
+    "● Potwierdzenie: 24 godziny",
+    "● Dochodzenie: 48 godzin",
+    "● Podjęcie działań w razie potrzeby",
+    "● Powiadomienie zwrotne"
+  ],
+  "confidentiality": [
+    "• Wszystkie zgłoszenia są poufne",
+    "• Tożsamość zgłaszającego jest chroniona",
+    "• Zakaz działań odwetowych",
+    "• Bezpieczny proces dochodzenia"
+  ]
+}

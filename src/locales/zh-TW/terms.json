@@ -1,0 +1,46 @@
+{
+  "title": "服務條款",
+  "subtitle": "使用 Notepadle 的條款與條件",
+  "header": "服務條款 – Notepadle",
+  "effective": "生效日期",
+  "updated": "最後更新",
+  "effective_date": "2024 年 12 月 29 日",
+  "last_updated": "2024 年 12 月 29 日",
+  "accept_heading": "1. 接受條款",
+  "accept_text": "使用或存取 Notepadle（「本服務」）即表示您同意受本條款約束…",
+  "description_heading": "2. 服務內容",
+  "description_intro": "Notepadle 是一款數位筆記應用程式，允許使用者：",
+  "description_list": [
+    "建立、編輯和整理個人筆記",
+    "將筆記儲存在本機或雲端",
+    "以文字、Markdown 或 PDF 形式匯出筆記",
+    "與他人協作處理筆記",
+    "使用標籤、分類與搜尋功能",
+    "以密碼保護筆記",
+    "接收電子郵件通知"
+  ],
+  "description_note": "本服務為免費，並可能提供額外的進階功能。",
+  "contact_heading": "聯絡資訊",
+  "contact_intro": "若您對本服務條款有任何疑問，請聯絡我們：",
+  "contact_email_label": "電子郵件：",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "主旨：",
+  "contact_subject": "服務條款詢問",
+  "contact_time_label": "回覆時間：",
+  "contact_time": "我們會在 48 小時內回覆您",
+  "summary_heading": "條款摘要",
+  "summary_rights_heading": "✓ 您的權利：",
+  "summary_rights_list": [
+    "您完全擁有自己的內容",
+    "隨時匯出您的資料",
+    "可匿名使用本服務",
+    "隨時刪除帳號"
+  ],
+  "summary_resp_heading": "ℹ 您的責任：",
+  "summary_resp_list": [
+    "遵守內容指引",
+    "保護您的帳號安全",
+    "尊重他人權利",
+    "備份重要資料"
+  ]
+}

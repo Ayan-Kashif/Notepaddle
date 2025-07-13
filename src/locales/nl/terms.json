@@ -1,0 +1,46 @@
+{
+  "title": "Gebruiksvoorwaarden",
+  "subtitle": "Voorwaarden voor het gebruik van Notepadle",
+  "header": "Gebruiksvoorwaarden – Notepadle",
+  "effective": "Ingangsdatum",
+  "updated": "Laatst bijgewerkt",
+  "effective_date": "29 december 2024",
+  "last_updated": "29 december 2024",
+  "accept_heading": "1. Acceptatie van voorwaarden",
+  "accept_text": "Door toegang te krijgen tot of gebruik te maken van Notepadle (\"de Dienst\"), gaat u akkoord met deze Voorwaarden…",
+  "description_heading": "2. Beschrijving van de dienst",
+  "description_intro": "Notepadle is een digitale notitie-app waarmee gebruikers:",
+  "description_list": [
+    "Persoonlijke notities creëren, bewerken en organiseren",
+    "Notities lokaal of in de cloud opslaan",
+    "Notities exporteren als tekst, Markdown of PDF",
+    "Samenwerken aan notities met anderen",
+    "Labels, categorieën en zoeken gebruiken",
+    "Notities beveiligen met een wachtwoord",
+    "E-mailmeldingen ontvangen"
+  ],
+  "description_note": "De dienst is gratis en kan optionele premiumfuncties bieden.",
+  "contact_heading": "Contactinformatie",
+  "contact_intro": "Als u vragen heeft over deze Gebruiksvoorwaarden, neem dan contact met ons op:",
+  "contact_email_label": "Email:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Onderwerp:",
+  "contact_subject": "Vraag over Gebruiksvoorwaarden",
+  "contact_time_label": "Reactietijd:",
+  "contact_time": "We streven ernaar binnen 48 uur te reageren",
+  "summary_heading": "Samenvatting voorwaarden",
+  "summary_rights_heading": "✓ Uw rechten:",
+  "summary_rights_list": [
+    "U bezit volledig uw inhoud",
+    "Gegevens exporteren wanneer u maar wilt",
+    "De dienst anoniem gebruiken",
+    "Account te allen tijde verwijderen"
+  ],
+  "summary_resp_heading": "ℹ Uw verantwoordelijkheden:",
+  "summary_resp_list": [
+    "Volg de inhoudsrichtlijnen",
+    "Houd uw account veilig",
+    "Respecteer de rechten van anderen",
+    "Maak back-ups van belangrijke gegevens"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Kebijakan Privasi",
+  "subtitle": "Bagaimana kami menangani data Anda dan melindungi privasi Anda",
+  "header_title": "Kebijakan Privasi – Notepadle",
+  "effective_date": "Berlaku sejak: 29 Desember 2024",
+  "last_updated": "Terakhir diperbarui: 29 Desember 2024",
+  "introduction_heading": "Pendahuluan",
+  "introduction_body": "Notepadle (“kami”) menyediakan layanan notepad online gratis untuk membantu pengguna menulis dan menyimpan catatan dengan mudah. Kebijakan privasi ini menjelaskan bagaimana kami menangani data Anda dan komitmen kami terhadap privasi Anda.",
+  "data_collection_heading": "1. Data yang Kami Kumpulkan",
+  "anonymous_heading": "Pengguna anonim:",
+  "anonymous_list": [
+    "Tidak ada data pribadi yang dikumpulkan dari pengguna anonim",
+    "Catatan disimpan secara lokal di browser menggunakan localStorage",
+    "Preferensi tema dan pengaturan disimpan secara lokal",
+    "Tidak ada data yang dikirim ke server kami"
+  ],
+  "registered_heading": "Pengguna terdaftar (opsional):",
+  "registered_intro": "Kami mungkin mengumpulkan:",
+  "registered_list": [
+    "Alamat email untuk pembuatan dan autentikasi akun",
+    "Catatan yang Anda pilih simpan ke cloud",
+    "Preferensi bahasa dan tema",
+    "Waktu pembuatan akun dan login terakhir",
+    "Pengaturan berbagi dan kolaborasi catatan"
+  ],
+  "use_data_heading": "2. Bagaimana Kami Menggunakan Data Anda",
+  "use_data_list": [
+    "Untuk menyimpan dan menyinkronkan catatan di berbagai perangkat",
+    "Untuk memberikan akses ke akun dan konten yang disimpan",
+    "Untuk meningkatkan pengalaman pengguna dan fungsionalitas aplikasi",
+    "Untuk mengaktifkan kolaborasi saat Anda berbagi catatan",
+    "Untuk menyediakan dukungan pelanggan jika diminta",
+    "Untuk mengirim email penting terkait akun (verifikasi, reset password)"
+  ],
+  "email_heading": "3. Komunikasi Email",
+  "email_intro": "Kami mengirim email dari support@notepadle.com untuk:",
+  "email_list": [
+    "Verifikasi email saat membuat akun",
+    "Permintaan reset kata sandi",
+    "Notifikasi keamanan penting",
+    "Pembaruan dan perubahan akun",
+    "Balasan dukungan pelanggan"
+  ],
+  "email_note": "Kami tidak mengirim email promosi atau pemasaran kecuali Anda secara eksplisit menyetujuinya.",
+  "cookies_heading": "4. Cookie & LocalStorage",
+  "localstorage_heading": "Penggunaan LocalStorage:",
+  "localstorage_list": [
+    "Kami menggunakan localStorage untuk menyimpan catatan pengguna anonim",
+    "Preferensi tema (gelap/terang) disimpan secara lokal",
+    "Pengaturan kategori dan organisasi catatan"
+  ],
+  "cookies_usage_heading": "Penggunaan Cookie:",
+  "cookies_usage_list": [
+    "Cookie sesi untuk menjaga status login Anda",
+    "Cookie preferensi untuk tema dan bahasa",
+    "Tidak menggunakan cookie pelacakan atau iklan"
+  ],
+  "contact_heading": "Hubungi Kami",
+  "contact_intro": "Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau praktik data kami, silakan hubungi:",
+  "contact_email": "Email: support@notepadle.com",
+  "contact_response": "Waktu tanggapan: Kami berusaha merespon dalam 48 jam",
+  "summary_heading": "Ringkasan Privasi",
+  "summary_do": "✓ Kami Melakukan:",
+  "summary_do_list": [
+    "Mengenkripsi semua data Anda",
+    "Menghormati pilihan privasi Anda",
+    "Memungkinkan penggunaan anonim",
+    "Memberikan kontrol penuh atas data Anda"
+  ],
+  "summary_dont": "✗ Kami Tidak:",
+  "summary_dont_list": [
+    "Menjual informasi pribadi Anda",
+    "Menggunakan cookie pelacakan",
+    "Berbagi catatan tanpa izin",
+    "Mengumpulkan data yang tidak perlu"
+  ]
+}

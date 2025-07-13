@@ -1,0 +1,53 @@
+{
+  "title": "Politik for Anmeldelse af Misbrug",
+  "subtitle": "Sådan rapporterer du upassende indhold og adfærd",
+  "header": "Politik for Anmeldelse af Misbrug – Notepadle",
+  "effective_date": "Ikrafttrædelsesdato: 29. december 2024",
+  "last_updated": "Sidst opdateret: 29. december 2024",
+  "commitment_heading": "Vores Forpligtelse til Brugersikkerhed",
+  "commitment_body": "Vi er forpligtet til at opretholde et sikkert og respektfuldt miljø. Hvis du finder indhold, der overtræder vores vilkår eller retningslinjer, bedes du rapportere det ved at følge nedenstående trin.",
+  "report_heading": "Sådan Anmelder du Misbrug",
+  "primary_method": "Primær rapporteringsmetode:",
+  "email_label": "Email:",
+  "subject_line": "Emne: \"Misbrugsrapport - [Kort Beskrivelse]\"",
+  "step_1_title": "1. Beskrivelse af Misbruget",
+  "step_1_desc": "Giv en klar og detaljeret beskrivelse af overtrædelsen",
+  "step_2_title": "2. Link eller Placering",
+  "step_2_desc": "Del link, brugernavn, note-ID eller andre oplysninger, der kan hjælpe os med at finde det",
+  "step_3_title": "3. Beviser (hvis tilgængelige)",
+  "step_3_desc": "Skærmbilleder, tidsstempler eller andet der understøtter din rapport",
+  "step_4_title": "4. Dine Kontaktoplysninger",
+  "step_4_desc": "Så vi kan følge op om nødvendigt (holdes fortroligt)",
+  "contact_heading": "Kontaktoplysninger",
+  "abuse_reports_heading": "Misbrugsrapporter:",
+  "general_support_heading": "Generel Support:",
+  "abuse_details": [
+    "Email: support@notepadle.com",
+    "Emne: \"Misbrugsrapport - [Beskrivelse]\"",
+    "Svartid: Inden for 48 timer"
+  ],
+  "support_details": [
+    "Email: support@notepadle.com",
+    "Emne: \"Generel Forespørgsel\"",
+    "Svartid: 24–48 timer"
+  ],
+  "summary_heading": "Hurtig Oversigt",
+  "how_to_report": [
+    "Send email til support@notepadle.com",
+    "Inkluder detaljeret beskrivelse",
+    "Vedlæg bevis, hvis tilgængeligt",
+    "Inkluder dine kontaktoplysninger"
+  ],
+  "response_times": [
+    "● Bekræftelse: 24 timer",
+    "● Undersøgelse: 48 timer",
+    "● Handling tages om nødvendigt",
+    "● Opfølgningsmeddelelse"
+  ],
+  "confidentiality": [
+    "• Alle rapporter behandles fortroligt",
+    "• Rapportørens identitet beskyttes",
+    "• Hævn er ikke tilladt",
+    "• Sikker undersøgelsesproces"
+  ]
+}

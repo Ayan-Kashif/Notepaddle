@@ -1,0 +1,46 @@
+{
+  "title": "Vilkår for bruk",
+  "subtitle": "Vilkår og betingelser for bruk av Notepadle",
+  "header": "Vilkår for bruk – Notepadle",
+  "effective": "Ikrafttredelsesdato",
+  "updated": "Sist oppdatert",
+  "effective_date": "29. desember 2024",
+  "last_updated": "29. desember 2024",
+  "accept_heading": "1. Aksept av vilkår",
+  "accept_text": "Ved å få tilgang til eller bruke Notepadle (\"Tjenesten\") godtar du å være bundet av disse vilkårene…",
+  "description_heading": "2. Beskrivelse av tjenesten",
+  "description_intro": "Notepadle er en digital notattjeneste som lar brukere:",
+  "description_list": [
+    "Opprette, redigere og organisere personlige notater",
+    "Lagre notater lokalt eller i skyen",
+    "Eksportere notater som tekst, markdown eller PDF",
+    "Samarbeide om notater med andre",
+    "Bruke merkelapper, kategorier og søk",
+    "Beskytte notater med passord",
+    "Motta e-postvarsler"
+  ],
+  "description_note": "Tjenesten er gratis og kan tilby valgfrie premiumfunksjoner.",
+  "contact_heading": "Kontaktinformasjon",
+  "contact_intro": "Hvis du har spørsmål om disse vilkårene, vennligst kontakt oss:",
+  "contact_email_label": "E-post:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Emnelinje:",
+  "contact_subject": "Forespørsel om vilkår for bruk",
+  "contact_time_label": "Responstid:",
+  "contact_time": "Vi forsøker å svare innen 48 timer",
+  "summary_heading": "Sammendrag av vilkår",
+  "summary_rights_heading": "✓ Dine rettigheter:",
+  "summary_rights_list": [
+    "Du eier innholdet ditt fullt ut",
+    "Eksporter data når som helst",
+    "Bruk tjenesten anonymt",
+    "Slett kontoen når som helst"
+  ],
+  "summary_resp_heading": "ℹ Dine ansvar:",
+  "summary_resp_list": [
+    "Følg innholdsretningslinjene",
+    "Hold kontoen din sikker",
+    "Respekter andres rettigheter",
+    "Ta sikkerhetskopi av viktig informasjon"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Personvernregler",
+  "subtitle": "Hvordan vi håndterer dine data og beskytter ditt personvern",
+  "header_title": "Personvernregler – Notepadle",
+  "effective_date": "Iverksettelsesdato: 29. desember 2024",
+  "last_updated": "Sist oppdatert: 29. desember 2024",
+  "introduction_heading": "Introduksjon",
+  "introduction_body": "Notepadle («vi») tilbyr en gratis nettbasert notatblokk for enkel skriving og lagring av notater. Denne personvernreglene forklarer hvordan vi behandler dine data og vårt engasjement for å beskytte ditt personvern.",
+  "data_collection_heading": "1. Hvilke data samler vi inn",
+  "anonymous_heading": "Anonyme brukere:",
+  "anonymous_list": [
+    "Vi samler ikke inn personopplysninger fra anonyme brukere",
+    "Notater lagres lokalt i nettleseren (localStorage)",
+    "Tema‑preferanser og innstillinger lagres lokalt",
+    "Ingen data sendes til serverne våre"
+  ],
+  "registered_heading": "Registrerte brukere (valgfritt):",
+  "registered_intro": "Vi kan samle inn:",
+  "registered_list": [
+    "E‑postadresse for konto og autentisering",
+    "Notater du velger å lagre i skyen",
+    "Språk‑ og temainnstillinger",
+    "Tidspunkt for kontoopprettelse og siste pålogging",
+    "Innstillinger for deling og samarbeid"
+  ],
+  "use_data_heading": "2. Hvordan vi bruker dine data",
+  "use_data_list": [
+    "Lagre og synkronisere notater mellom enheter",
+    "Gi tilgang til konto og lagret innhold",
+    "Forbedre brukeropplevelse og funksjonalitet",
+    "Aktivere funksjoner for samarbeid ved deling",
+    "Gi kundestøtte ved behov",
+    "Sende viktige e‑poster knyttet til konto (verifisering, tilbakestilling av passord)"
+  ],
+  "email_heading": "3. E‑postkommunikasjon",
+  "email_intro": "Vi sender e‑poster fra support@notepadle.com for:",
+  "email_list": [
+    "E‑postverifisering ved opprettelse av konto",
+    "Forespørsler om tilbakestilling av passord",
+    "Viktige sikkerhetsvarsler",
+    "Oppdateringer og endringer i kontoen",
+    "Svar fra kundestøtte"
+  ],
+  "email_note": "Vi sender ikke markedsføringsmeldinger med mindre du eksplisitt velger det.",
+  "cookies_heading": "4. Informasjonskapsler & LocalStorage",
+  "localstorage_heading": "Bruk av LocalStorage:",
+  "localstorage_list": [
+    "Notater av anonyme brukere lagres i localStorage",
+    "Tema‑preferanser (lys/mørk) lagres lokalt",
+    "Kategori‑ og notatorganisering lagres lokalt"
+  ],
+  "cookies_usage_heading": "Bruk av informasjonskapsler:",
+  "cookies_usage_list": [
+    "Øktkapsler for å opprettholde pålogging",
+    "Preferansekapsler for tema og språkinnstillinger",
+    "Vi bruker ingen sporings‑ eller annonsekapsler"
+  ],
+  "contact_heading": "Kontakt oss",
+  "contact_intro": "Hvis du har spørsmål om personvernreglene eller hvordan vi håndterer data, vennligst kontakt oss:",
+  "contact_email": "E‑post: support@notepadle.com",
+  "contact_response": "Svarfrist: vi svarer normalt innen 48 timer",
+  "summary_heading": "Personvernoppsummering",
+  "summary_do": "✓ Vi gjør:",
+  "summary_do_list": [
+    "Krypterer alle dine data",
+    "Respekterer dine personvernvalg",
+    "Tillater anonym bruk",
+    "Gir deg full kontroll over dine data"
+  ],
+  "summary_dont": "✗ Vi gjør ikke:",
+  "summary_dont_list": [
+    "Selger ikke dine personopplysninger",
+    "Bruker ikke sporingskapsler",
+    "Deler ikke notater uten tillatelse",
+    "Samler ikke unødvendige data"
+  ]
+}
