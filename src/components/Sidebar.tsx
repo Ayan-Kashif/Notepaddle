@@ -57,6 +57,20 @@ const categoriesWithCounts = categories.map((category) => ({
     { id: 'favorites', name: t('favorites'), icon: Star, count: favoriteCount },
   ];
 
+    const categoryKeyMap = {
+  "All Notes": "all_notes",
+  "Favorites": "favorites",
+  "Recents": "recents",
+  "Pinned": "pinned",
+  "Note Bin": "note_bin",
+  "Personal": "personal",
+  "Work": "work",
+  "Ideas": "ideas",
+  "To-Do": "todo",
+  "Categories": "categories"
+};
+
+
   return (
     <>
       <aside className="w-full h-full relative bottom-32 lg:bottom-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-lg border-r border-gray-200/20 dark:border-gray-700/20 lg:border-r-0 lg:border-none">
@@ -134,7 +148,7 @@ const categoriesWithCounts = categories.map((category) => ({
           className="w-3 h-3 rounded-full flex-shrink-0"
           style={{ backgroundColor: category.color }}
         />
-        <span className="font-medium truncate">{category.name}</span>
+       <span className="font-medium truncate">  {t(categoryKeyMap[category.name] || category.name)}</span>
       </div>
       <span className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full flex-shrink-0">
         {category.count}
@@ -147,7 +161,7 @@ const categoriesWithCounts = categories.map((category) => ({
             <Link to="/collaborations"
   className="flex items-center text-gray-700 dark:text-gray-300 dark:hover:bg-gray-800/50 gap-2 px-4 py-2  relative right-2 hover:bg-gray-100 rounded-md"
 >
-  <User size={18} /> <span className=''>Collaborations</span>
+  <User size={18} /> <span className=''>{t('collaborators_title').slice(0,13)}</span>
 </Link>
 
           </div>
