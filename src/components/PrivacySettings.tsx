@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Lock, Unlock, Eye, EyeOff, Key, Shield, AlertTriangle } from 'lucide-react';
-
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 interface PrivacySettingsProps {
   isPrivate: boolean;
   password?: string;
@@ -21,6 +22,7 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
+    const { t } = useTranslation()
 
   const handlePrivacyToggle = () => {
     if (!isPrivate) {
@@ -85,12 +87,12 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
           </div>
           <div>
             <h3 className="font-medium text-gray-900 dark:text-white">
-              {isPrivate ? 'Private Note' : 'Public Note'}
+               {isPrivate ? t('privacy_settings.private_note') : t('privacy_settings.public_note')}
             </h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {isPrivate 
-                ? 'Protected with password - only you can access'
-                : 'Accessible to anyone with the link'
+               {isPrivate
+                ? t('privacy_settings.private_note_desc')
+                : t('privacy_settings.public_note_desc')
               }
             </p>
           </div>
@@ -103,7 +105,7 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
               : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-amber-900/50'
           }`}
         >
-          {isPrivate ? 'Make Public' : 'Make Private'}
+          {isPrivate ? t('privacy_settings.make_public') : t('privacy_settings.make_private')}
         </button>
       </div>
 
@@ -113,14 +115,14 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
           <div className="flex items-center space-x-2">
             <Shield className="w-5 h-5 text-amber-600 dark:text-amber-400" />
             <h4 className="font-medium text-amber-800 dark:text-amber-200">
-              Set Password Protection
+              {t('privacy_settings.set_password_protection')}
             </h4>
           </div>
 
           <div className="space-y-3">
             <div>
               <label className="block text-sm font-medium text-amber-700 dark:text-amber-300 mb-1">
-                Password *
+               {t('privacy_settings.password')}
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-400 w-4 h-4" />
@@ -129,7 +131,7 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   className="w-full pl-10 pr-12 py-2 bg-white dark:bg-gray-800 border border-amber-200 dark:border-amber-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 text-sm"
-                  placeholder="Enter password (min. 4 characters)"
+                  placeholder={t('privacy_settings.password_placeholder')}
                 />
                 <button
                   type="button"
@@ -143,7 +145,7 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
 
             <div>
               <label className="block text-sm font-medium text-amber-700 dark:text-amber-300 mb-1">
-                Confirm Password *
+              {t('privacy_settings.confirm_password')}
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-400 w-4 h-4" />
@@ -152,7 +154,7 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="w-full pl-10 pr-12 py-2 bg-white dark:bg-gray-800 border border-amber-200 dark:border-amber-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 text-sm"
-                  placeholder="Confirm your password"
+                   placeholder={t('privacy_settings.confirm_password_placeholder')}
                 />
                 <button
                   type="button"
@@ -166,7 +168,7 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
 
             <div>
               <label className="block text-sm font-medium text-amber-700 dark:text-amber-300 mb-1">
-                Password Hint (Optional)
+                {t('privacy_settings.password_hint')}
               </label>
               <div className="relative">
                 <Key className="absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-400 w-4 h-4" />
@@ -175,7 +177,7 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
                   value={newPasswordHint}
                   onChange={(e) => setNewPasswordHint(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-amber-200 dark:border-amber-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 text-sm"
-                  placeholder="Hint to help you remember (optional)"
+                   placeholder={t('privacy_settings.hint_placeholder')}
                 />
               </div>
             </div>
@@ -195,13 +197,13 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
               onClick={handleCancel}
               className="px-4 py-2 text-amber-600 dark:text-amber-400 hover:bg-amber-100 dark:hover:bg-amber-900/30 rounded-lg transition-colors duration-200 text-sm"
             >
-              Cancel
+            {t('privacy_settings.cancel')}
             </button>
             <button
               onClick={handlePasswordSubmit}
               className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors duration-200 text-sm"
             >
-              Set Password
+             {t('privacy_settings.set_password')}
             </button>
           </div>
         </div>
@@ -214,19 +216,19 @@ const PrivacySettings: React.FC<PrivacySettingsProps> = ({
             <div className="flex items-center space-x-2">
               <Shield className="w-4 h-4 text-amber-600 dark:text-amber-400" />
               <span className="text-sm font-medium text-amber-700 dark:text-amber-300">
-                Password Protected
+               {t('privacy_settings.password_protected')}
               </span>
             </div>
             <button
               onClick={() => setShowPasswordForm(true)}
               className="text-sm text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300"
             >
-              Change Password
+              {t('privacy_settings.change_password')}
             </button>
           </div>
           {passwordHint && (
             <p className="text-sm text-amber-600 dark:text-amber-400 mt-1">
-              Hint: {passwordHint}
+                {t('privacy_settings.hint')}: {passwordHint}
             </p>
           )}
         </div>
