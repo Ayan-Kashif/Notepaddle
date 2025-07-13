@@ -223,7 +223,7 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                 </nav>
                 <div className={`flex flex-col items-center justify-center h-[80vh] ${bgColor}`}>
                     <StickyNote size={48} className="text-blue-400 mb-4" />
-                    <p className={`text-lg ${textColor} mb-2`}{t('collaborations.no_notes_title')}</p>
+                    <p className={`text-lg ${textColor} mb-2`}>{t('collaborations.no_notes_title')}</p>
                     <p className={`text-sm ${subTextColor}`}>
                         {t('collaborations.no_notes_message')}
                     </p>
