@@ -196,10 +196,13 @@ const Footer: React.FC = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:support@notepaddle.com"
+                  href="https://x.com/notepadle"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+                  title="Twitter"
                 >
-                  <Mail className="w-5 h-5" />
+                  <X   className="w-5 h-5" />
                 </a>
               </div>
             </div>
