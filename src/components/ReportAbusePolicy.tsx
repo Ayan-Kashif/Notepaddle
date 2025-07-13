@@ -1,5 +1,8 @@
 import React from 'react';
-import { X, AlertTriangle, Mail, Shield, Clock, Eye, FileText, Calendar, MessageCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import {
+  X, AlertTriangle, Mail, Shield, Calendar
+} from 'lucide-react';
 
 interface ReportAbusePolicyProps {
   isOpen: boolean;
@@ -7,10 +10,12 @@ interface ReportAbusePolicyProps {
 }
 
 const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation('reportAbuse');
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed mt-28 md:mt-2 inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 mt-28 md:mt-2 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
           <div className="flex items-center space-x-3">
@@ -19,10 +24,10 @@ const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }
             </div>
             <div>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Report Abuse Policy
+                {t('title')}
               </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                How to report inappropriate content and behavior
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -36,138 +41,99 @@ const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }
 
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
           <div className="prose prose-gray dark:prose-invert max-w-none">
+
             {/* Header */}
             <div className="mb-8 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
               <h1 className="text-2xl font-bold text-red-900 dark:text-red-100 mb-2">
-                Report Abuse Policy – Notepadle
+                {t('header')}
               </h1>
               <div className="flex items-center space-x-4 text-sm text-red-700 dark:text-red-300">
                 <div className="flex items-center space-x-1">
                   <Calendar className="w-4 h-4" />
-                  <span><strong>Effective Date:</strong> December 29, 2024</span>
+                  <span><strong>{t('effective')}:</strong> {t('effective_date')}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Calendar className="w-4 h-4" />
-                  <span><strong>Last Updated:</strong> December 29, 2024</span>
+                  <span><strong>{t('updated')}:</strong> {t('last_updated')}</span>
                 </div>
               </div>
             </div>
 
-            {/* Introduction */}
+            {/* Intro */}
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2 text-indigo-600" />
-                Our Commitment to User Safety
+                {t('commitment_heading')}
               </h2>
               <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  At Notepadle, we take user safety and content integrity seriously. We are committed to maintaining 
-                  a safe, respectful environment for all users. If you encounter content that violates our Terms of Service 
-                  or community guidelines, we encourage you to report it using the process outlined below.
+                  {t('commitment_body')}
                 </p>
               </div>
             </section>
 
-            {/* How to Report */}
+            {/* Report Process */}
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-blue-600" />
-                How to Report Abuse
+                {t('report_heading')}
               </h2>
-              
+
               <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
                 <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-4">
-                  Primary Reporting Method:
+                  {t('primary_method')}
                 </h3>
-                
+
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 mb-4 border border-blue-200 dark:border-blue-800">
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
-                    <strong>Email:</strong> <span className="text-blue-600 dark:text-blue-400">support@notepadle.com</span>
+                    <strong>{t('email_label')}</strong> <span className="text-blue-600 dark:text-blue-400">support@notepadle.com</span>
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
-                    <strong>Subject Line:</strong> "Abuse Report - [Brief Description]"
+                    <strong>{t('subject_line')}</strong>
                   </p>
                 </div>
 
                 <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-3">
-                  Please Include the Following Information:
+                  {t('please_include')}
                 </h3>
-                
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">1</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 dark:text-white">Description of the Abuse</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Provide a clear, detailed description of the content or behavior that violates our policies
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start space-x-3">
+                {['1', '2', '3', '4'].map(num => (
+                  <div className="flex items-start space-x-3" key={num}>
                     <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">2</span>
+                      <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">{num}</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900 dark:text-white">Link or Location</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Share link (if available), username, note ID, or any identifying information to help us locate the content
-                      </p>
+                      <h4 className="font-medium text-gray-900 dark:text-white">{t(`step_${num}_title`)}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{t(`step_${num}_desc`)}</p>
                     </div>
                   </div>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">3</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 dark:text-white">Evidence (If Available)</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Screenshots, timestamps, or other relevant evidence that supports your report
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">4</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 dark:text-white">Your Contact Information</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Your email address so we can follow up if needed (kept confidential)
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </section>
 
-            {/* Contact Information */}
+            {/* Contact Info */}
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-blue-600" />
-                Contact Information
+                {t('contact_heading')}
               </h2>
-              
+
               <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Abuse Reports:</h3>
+                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">{t('abuse_reports_heading')}</h3>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      <strong>Email:</strong> support@notepadle.com<br />
-                      <strong>Subject:</strong> "Abuse Report - [Description]"<br />
-                      <strong>Response Time:</strong> Within 48 hours
+                      {t('abuse_details.0')}<br />
+                      {t('abuse_details.1')}<br />
+                      {t('abuse_details.2')}
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">General Support:</h3>
+                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">{t('general_support_heading')}</h3>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      <strong>Email:</strong> support@notepadle.com<br />
-                      <strong>Subject:</strong> "General Inquiry"<br />
-                      <strong>Response Time:</strong> Within 24-48 hours
+                      {t('support_details.0')}<br />
+                      {t('support_details.1')}<br />
+                      {t('support_details.2')}
                     </p>
                   </div>
                 </div>
@@ -177,38 +143,36 @@ const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }
             {/* Summary */}
             <section className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-xl p-6 border border-red-200 dark:border-red-800">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Quick Reference
+                {t('summary_heading')}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <h3 className="font-medium text-red-700 dark:text-red-300">📧 How to Report:</h3>
+                  <h3 className="font-medium text-red-700 dark:text-red-300">📧 {t('how_to')}</h3>
                   <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>• Email: support@notepadle.com</li>
-                    <li>• Include detailed description</li>
-                    <li>• Provide evidence if available</li>
-                    <li>• Include your contact info</li>
+                    {t('how_to_report', { returnObjects: true }).map((item: string, idx: number) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-medium text-orange-700 dark:text-orange-300">⏱️ Response Times:</h3>
+                  <h3 className="font-medium text-orange-700 dark:text-orange-300">⏱️ {t('response_times_heading')}</h3>
                   <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>• Acknowledgment: 24 hours</li>
-                    <li>• Investigation: 48 hours</li>
-                    <li>• Action taken if needed</li>
-                    <li>• Follow-up notification</li>
+                    {t('response_times', { returnObjects: true }).map((item: string, idx: number) => (
+                      <li key={idx}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-medium text-yellow-700 dark:text-yellow-300">🔒 Confidentiality:</h3>
+                  <h3 className="font-medium text-yellow-700 dark:text-yellow-300">🔒 {t('confidentiality_heading')}</h3>
                   <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
-                    <li>• All reports are confidential</li>
-                    <li>• Reporter identity protected</li>
-                    <li>• No retaliation tolerated</li>
-                    <li>• Secure investigation process</li>
+                    {t('confidentiality', { returnObjects: true }).map((item: string, idx: number) => (
+                      <li key={idx}>{item}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </section>
+
           </div>
         </div>
       </div>
@@ -217,3 +181,4 @@ const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }
 };
 
 export default ReportAbusePolicy;
+
