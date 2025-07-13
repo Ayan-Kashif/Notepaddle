@@ -3,11 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { motion } from 'framer-motion';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
+import Footer from './Footer';
+
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+    const { t } = useTranslation()
 
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
@@ -63,16 +68,16 @@ export default function AdminLogin() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 mt-8"
         >
-          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Admin Login</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">{t('admin.login.title')}</h2>
           <input
             type="email"
-            placeholder="Email"
+             placeholder={t('admin.login.email_placeholder')}
             className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
-            placeholder="Password"
+             placeholder={t('admin.login.password_placeholder')}
             className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -80,10 +85,11 @@ export default function AdminLogin() {
             onClick={handleLogin}
             className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-300"
           >
-            Sign In
+            {t('admin.login.sign_in')}
           </button>
         </motion.div>
       </div>
+         <Footer />
     </>
   );
 }
