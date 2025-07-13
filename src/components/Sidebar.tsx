@@ -5,6 +5,7 @@ import CategoryManager from './CategoryManager';
 import { Link } from 'react-router-dom';
 import Portal from './Portal';
 import { User } from 'lucide-react';
+import { useTranslation } from "react-i18next";
 interface SidebarProps {
   notes:Notes[];
   categories: Category[];
@@ -39,6 +40,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   const [isCategoryManagerOpen, setIsCategoryManagerOpen] = useState(false);
 
   console.log(categories)
+    const { t } = useTranslation();
+
 
 const categoriesWithCounts = categories.map((category) => ({
   ...category,
@@ -48,10 +51,10 @@ const categoriesWithCounts = categories.map((category) => ({
 }));
 
   const menuItems = [
-    { id: 'all', name: 'All Notes', icon: Folder, count: notes.filter(note => !note.isDeleted).length},
-    { id: 'recent', name: 'Recent', icon: Clock, count: recentCount },
-    { id: 'pinned', name: 'Pinned', icon: Pin, count: pinnedCount },
-    { id: 'favorites', name: 'Favorites', icon: Star, count: favoriteCount },
+    { id: 'all', name: t('all_notes'), icon: Folder, count: notes.filter(note => !note.isDeleted).length},
+    { id: 'recent',name: t('recents'), icon: Clock, count: recentCount },
+    { id: 'pinned',name: t('pinned'), icon: Pin, count: pinnedCount },
+    { id: 'favorites', name: t('favorites'), icon: Star, count: favoriteCount },
   ];
 
   return (
@@ -92,7 +95,7 @@ const categoriesWithCounts = categories.map((category) => ({
             >
               <div className="flex items-center space-x-3">
                 <Trash2 className="w-4 h-4 flex-shrink-0" />
-                <span className="font-medium truncate">Note Bin</span>
+               <span className="font-medium truncate">{t('note_bin')}</span>
               </div>
               {deletedCount > 0 && (
                 <span className="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-1 rounded-full flex-shrink-0">
@@ -105,7 +108,7 @@ const categoriesWithCounts = categories.map((category) => ({
           <div className="mt-6">
             <div className="flex items-center justify-between px-3 mb-2">
               <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Categories
+                 {t('categories')}
               </h3>
               <button
                 onClick={() => setIsCategoryManagerOpen(true)}
