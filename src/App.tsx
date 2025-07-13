@@ -26,9 +26,12 @@ import AdminLogin from './components/AdminLogin';
 import ChangePassword from './components/ChangePassword';
 import ForgotPassword from './components/ForgotPassword'
 import ResetPassword from './components/ResetPassword'
+import './i18n';
+import { useTranslation } from "react-i18next";
 
 
 function App() {
+   const { t } = useTranslation();
   const {
 
     isLoading,
@@ -358,9 +361,9 @@ console.log(import.meta.env.VITE_BASE_URL)
           }
         );
         if (updatedPin)
-          toast.success('Note Pinned!')
+           toast.success(t('notePinned'))
         else
-          toast.success('Note Unpinned!')
+          toast.success(t('noteUnpinned'))
 
         // ✅ Update local state directly (skip loadNotes for instant UI)
         setNotes(prev =>
@@ -377,9 +380,9 @@ console.log(import.meta.env.VITE_BASE_URL)
     } else {
       // ✅ Guest logic
       if (updatedPin)
-        toast.success('Note Pinned!')
+        toast.success(t('notePinned'))
       else
-        toast.success('Note Unpinned!')
+       toast.success(t('noteUnpinned'))
       const updatedNotes = notes.map(note =>
         note.id === noteId ? { ...note, isPinned: updatedPin, updatedAt: new Date().toISOString() } : note
       );
@@ -416,9 +419,9 @@ console.log(import.meta.env.VITE_BASE_URL)
           }
         );
         if (updatedFavorite)
-          toast.success('Added to Favorites!')
+         toast.success(t('addedToFavorites'))
         else
-          toast.success('Removed from Favorites')
+         toast.success(t('removedFromFavorites'))
         // ✅ Update local state directly
 
         setNotes(prev =>
@@ -438,9 +441,9 @@ console.log(import.meta.env.VITE_BASE_URL)
       setNotes(updatedNotes);
       localStorage.setItem('guestNotes', JSON.stringify(updatedNotes));
       if (updatedFavorite)
-        toast.success('Added to Favorites!')
+        toast.success(t('addedToFavorites'))
       else
-        toast.success('Removed from Favorites')
+       toast.success(t('removedFromFavorites'))
     }
   };
 
@@ -690,7 +693,7 @@ console.log(import.meta.env.VITE_BASE_URL)
 
         // ⬇️ Update local state
         setNotes(prev => prev.filter(n => n._id !== id));
-        toast.success('Note moved to bin!')
+       toast.success(t('noteMovedToBin'))
         window.location.reload()
 
       } catch (error) {
@@ -704,7 +707,7 @@ console.log(import.meta.env.VITE_BASE_URL)
 
       console.log('Updated NOtes', updatedNotes)
       localStorage.setItem('guestNotes', JSON.stringify(updatedNotes));
-      toast.success('Note moved to bin!')
+    toast.success(t('noteMovedToBin'))
     }
   };
 
@@ -730,10 +733,10 @@ console.log(import.meta.env.VITE_BASE_URL)
   };
 
   const getCategoryDisplayName = () => {
-    if (selectedCategory === 'all') return 'All Notes';
-    if (selectedCategory === 'recent') return 'Recent Notes';
-    if (selectedCategory === 'pinned') return 'Pinned Notes';
-    if (selectedCategory === 'favorites') return 'Favorite Notes';
+    if (selectedCategory === 'all') return t('all_notes');
+    if (selectedCategory === 'recent') return t('recents');
+    if (selectedCategory === 'pinned') return t('pinned');
+    if (selectedCategory === 'favorites') return t('favorites');
 
     const category = categories.find(cat => cat.id === selectedCategory);
     return category?.name || 'Unknown Category';
@@ -789,7 +792,7 @@ console.log(import.meta.env.VITE_BASE_URL)
         );
 
         setNotes(prev => prev.map(n => n._id === noteId ? updatedNote : n));
-        toast.success('Note restored succesfully!')
+         toast.success(t('noteRestoredSuccessfully'))
       } catch (error) {
         console.error('Failed to restore note', error);
       }
@@ -798,7 +801,7 @@ console.log(import.meta.env.VITE_BASE_URL)
       setNotes(updatedNotes);
       console.log(updatedNotes)
       localStorage.setItem('guestNotes', JSON.stringify(updatedNotes));
-      toast.success('Note restored succesfully!')
+       toast.success(t('noteRestoredSuccessfully'))
     }
   };
 
@@ -974,17 +977,17 @@ console.log(import.meta.env.VITE_BASE_URL)
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-3 sm:space-y-0">
                       <div>
                         <h3 className="font-medium text-blue-900 dark:text-blue-100">
-                          You're using Notepadle as a guest
+                         {t('guest_usage')}
                         </h3>
                         <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
-                          Your notes are saved locally. Sign up to sync across devices and never lose your notes.
+                         {t("local_storage_info")}
                         </p>
                       </div>
                       <button
                         onClick={()=>handleOpenAuthModal(false)}
                         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium whitespace-nowrap"
                       >
-                        Sign Up Free
+                      {t('sign_up')}
                       </button>
                     </div>
                   </div>
@@ -1030,7 +1033,7 @@ console.log(import.meta.env.VITE_BASE_URL)
                         {getCategoryDisplayName()}
                       </h2>
                       <span className="text-sm text-gray-500 dark:text-gray-400">
-                        {filteredNotes.length} {filteredNotes.length === 1 ? 'note' : 'notes'}
+                         {filteredNotes.length} {filteredNotes.length === 1 ? t('notes') : t('notes')}
                       </span>
                     </div>
 
