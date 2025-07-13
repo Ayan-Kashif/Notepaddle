@@ -8,6 +8,10 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Lock, Megaphone, Download } from 'lucide-react';
 import { LogOut } from 'lucide-react';
+import Footer from './Footer';
+
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, PieChart, Pie, Cell, Legend
@@ -21,6 +25,7 @@ export default function AdminDashboard() {
   const [showBanned, setShowBanned] = useState(true);
   const [announcement, setAnnouncement] = useState('');
   const navigate = useNavigate();
+  const { t } = useTranslation()
 
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
@@ -143,7 +148,7 @@ export default function AdminDashboard() {
 
         {/* Announcements */}
         <div className="max-w-4xl mx-auto mb-6 bg-white p-6 rounded-xl shadow">
-          <h2 className="text-lg font-bold mb-3 text-gray-800">Send Announcement</h2>
+          <h2 className="text-lg font-bold mb-3 text-gray-800">{t('admin.dashboard.announcements.title')}</h2>
           <div className="flex gap-3">
             <input
               type="text"
@@ -157,7 +162,7 @@ export default function AdminDashboard() {
               className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition shadow"
             >
               <Megaphone size={18} className="inline-block mr-2" />
-              Send
+             {t('admin.dashboard.announcements.button')}
             </button>
           </div>
         </div>
@@ -175,9 +180,9 @@ export default function AdminDashboard() {
                 <PieChart>
                   <Pie
                     data={[
-                      { name: 'Active', value: stats.activeUsers },
-                      { name: 'Pending', value: stats.pendingUsers },
-                      { name: 'Banned', value: stats.bannedUsers },
+                      { name: t('admin.dashboard.stats.status.active'), value: stats.activeUsers },
+                      { name: t('admin.dashboard.stats.status.pending'), value: stats.pendingUsers },
+                      { name: t('admin.dashboard.stats.status.banned'), value: stats.bannedUsers },
                     ]}
                     cx="50%" cy="50%" outerRadius={70}
                     dataKey="value" label
@@ -198,11 +203,11 @@ export default function AdminDashboard() {
               <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
                   <Pie
-                    data={[
-                      { name: 'Private', value: stats.privateNotes },
-                      { name: 'Shared', value: stats.sharedNotes },
+                   data={[
+                      { name: t('admin.dashboard.stats.notes.private'), value: stats.privateNotes },
+                      { name: t('admin.dashboard.stats.notes.shared'), value: stats.sharedNotes },
                       {
-                        name: 'Public',
+                        name: t('admin.dashboard.stats.notes.public'),
                         value: stats.totalNotes - stats.privateNotes - stats.sharedNotes,
                       },
                     ]}
@@ -266,7 +271,7 @@ export default function AdminDashboard() {
                   onChange={() => setShowBanned(!showBanned)}
                   className="accent-indigo-600"
                 />
-                Show Banned
+               {t('admin.dashboard.users.show_banned')}
               </label>
 
               <button
@@ -274,7 +279,7 @@ export default function AdminDashboard() {
                 className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition"
               >
                 <Download size={16} className="inline-block mr-2" />
-                Export CSV
+              {t('admin.dashboard.users.export_csv')}
               </button>
             </div>
           </div>
@@ -284,11 +289,11 @@ export default function AdminDashboard() {
             <table className="w-full text-sm border-collapse">
               <thead className="bg-indigo-600 text-white">
                 <tr>
-                  <th className="px-4 py-3 text-left">Name</th>
-                  <th className="px-4 py-3 text-left">Email</th>
-                  <th className="px-4 py-3 text-left">Notes</th>
-                  <th className="px-4 py-3 text-left">Status</th>
-                  <th className="px-4 py-3 text-center">Action</th>
+                    <th className="px-4 py-3 text-left">{t('admin.dashboard.users.table_headers.name')}</th>
+                  <th className="px-4 py-3 text-left">{t('admin.dashboard.users.table_headers.email')}</th>
+                  <th className="px-4 py-3 text-left">{t('admin.dashboard.users.table_headers.notes')}</th>
+                  <th className="px-4 py-3 text-left">{t('admin.dashboard.users.table_headers.status')}</th>
+                  <th className="px-4 py-3 text-center">{t('admin.dashboard.users.table_headers.action')}</th>
                 </tr>
               </thead>
 
@@ -305,7 +310,7 @@ export default function AdminDashboard() {
                           : 'bg-green-100 text-green-700'
                           }`}
                       >
-                        {u.isBanned ? 'Banned' : 'Active'}
+                        {u.isBanned ? t('admin.dashboard.users.status.banned') : t('admin.dashboard.users.status.active')}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-center">
@@ -316,7 +321,7 @@ export default function AdminDashboard() {
                           : 'bg-red-500 hover:bg-red-600'
                           } text-white`}
                       >
-                        {u.isBanned ? 'Unban' : 'Ban'}
+                         {u.isBanned ? t('admin.dashboard.users.actions.unban') : t('admin.dashboard.users.actions.ban')}
                       </button>
                     </td>
                   </tr>
@@ -327,6 +332,7 @@ export default function AdminDashboard() {
         </motion.div>
 
       </div>
+        <Footer />
     </>
   );
 }
