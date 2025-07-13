@@ -748,7 +748,7 @@ console.log('Note id:',note?.id,note?._id)
                         {hasUnsavedChanges ? (
                           <div className="flex items-center space-x-1 text-amber-600 dark:text-amber-400">
                             <Clock className="w-3 h-3" />
-                           <span>{t('note_editor.saving')}</span>n>
+                           <span>{t('note_editor.saving')}</span>
                           </div>
                         ) : lastSaved ? (
                           <div className="flex items-center space-x-1 text-green-600 dark:text-green-400">
