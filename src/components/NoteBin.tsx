@@ -3,6 +3,8 @@ import { DeletedNote } from '../types';
 import { X, Trash2, RotateCcw, AlertTriangle, Calendar, Search } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 interface NoteBinProps {
   isOpen: boolean;
   onClose: () => void;
@@ -24,7 +26,7 @@ const NoteBin: React.FC<NoteBinProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [showEmptyConfirm, setShowEmptyConfirm] = useState(false);
-
+  const { t } = useTranslation()
   const filteredNotes = deletedNotes.filter(note =>
     note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     note.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -83,11 +85,11 @@ const NoteBin: React.FC<NoteBinProps> = ({
                 <Trash2 className="w-4 h-4 text-red-600 dark:text-red-400" />
               </div>
               <div>
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Note Bin
+                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {t("note_bin")}
                 </h2>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {deletedNotes.length} deleted {deletedNotes.length === 1 ? 'note' : 'notes'}
+                  {t(deletedNotes.length === 1 ? "note_bin_count" : "note_bin_count_plural", { count: deletedNotes.length })}
                 </p>
               </div>
             </div>
@@ -97,7 +99,7 @@ const NoteBin: React.FC<NoteBinProps> = ({
                   onClick={() => setShowEmptyConfirm(true)}
                   className="px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors duration-200 text-sm font-medium"
                 >
-                  Empty Bin
+                  {t("empty_bin")}
                 </button>
               )}
               <button
@@ -115,7 +117,7 @@ const NoteBin: React.FC<NoteBinProps> = ({
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <input
                   type="text"
-                  placeholder="Search deleted notes..."
+                placeholder={t("search_deleted_notes")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
@@ -131,10 +133,10 @@ const NoteBin: React.FC<NoteBinProps> = ({
                   <Trash2 className="w-8 h-8 text-gray-400" />
                 </div>
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                  Note Bin is Empty
+                  {t("note_bin_empty")}
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Deleted notes will appear here and be automatically removed after 30 days.
+                  {t("note_bin_empty_desc")}
                 </p>
               </div>
             ) : (
@@ -144,11 +146,11 @@ const NoteBin: React.FC<NoteBinProps> = ({
                   <div className="flex items-start space-x-3">
                     <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 mt-0.5" />
                     <div>
-                      <h4 className="font-medium text-amber-800 dark:text-amber-200">
-                        Automatic Cleanup
+                    <h4 className="font-medium text-amber-800 dark:text-amber-200">
+                        {t("auto_cleanup_title")}
                       </h4>
                       <p className="text-sm text-amber-700 dark:text-amber-300 mt-1">
-                        Notes in the bin are automatically deleted after 30 days. You can restore them or delete them permanently before then.
+                        {t("auto_cleanup_desc")}
                       </p>
                     </div>
                   </div>
@@ -165,16 +167,16 @@ const NoteBin: React.FC<NoteBinProps> = ({
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
                             <h3 className="font-semibold text-gray-900 dark:text-white text-lg mb-1">
-                              {note.title || 'Untitled'}
+                              {note.title === 'Untitled' ? t("untitled") : note.title}
                             </h3>
                             <div className="flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400">
                               <Calendar className="w-3 h-3" />
                               {console.log(note?.deletedAt)}
                               {console.log(note?._id)}
-                              <span>Deleted {formatDate(note?.deletedAt)}</span>
+                             <span>{t("deleted_on", { date: formatDate(note?.deletedAt) })}</span>  
                               <span>•</span>
                               <span className={`font-medium ${daysLeft <= 7 ? 'text-red-600 dark:text-red-400' : 'text-amber-600 dark:text-amber-400'}`}>
-                                {daysLeft === 0 ? 'Deletes today' : `${daysLeft} days left`}
+                                {daysLeft === 0 ? t("deletes_today") : t("deletes_in_days", { count: daysLeft })}
                               </span>
                             </div>
                           </div>
@@ -189,7 +191,7 @@ const NoteBin: React.FC<NoteBinProps> = ({
                             <button
                               onClick={() => handlePermanentDelete(note._id || note.id, note.title)}
                               className="p-2 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors duration-200"
-                              title="Delete permanently"
+                              title={t("delete_permanently")}
                             >
                               <Trash2 className="w-4 h-4" />
                             </button>
@@ -232,7 +234,7 @@ const NoteBin: React.FC<NoteBinProps> = ({
                             )}
                           </div>
                           <div className="text-xs text-gray-500 dark:text-gray-400">
-                            Created {formatDate(note?.createdAt)}
+                           {t("created_on", { date: formatDate(note?.createdAt) })}
                           </div>
                         </div>
                       </div>
@@ -252,24 +254,24 @@ const NoteBin: React.FC<NoteBinProps> = ({
                     <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Empty Note Bin
+                   {t("confirm_empty_bin_title")}
                   </h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  Are you sure you want to permanently delete all {deletedNotes.length} notes in the bin? This action cannot be undone.
+                    {t("confirm_empty_bin_desc", { count: deletedNotes.length })}
                 </p>
                 <div className="flex items-center justify-end space-x-3">
                   <button
                     onClick={() => setShowEmptyConfirm(false)}
                     className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
                   >
-                    Cancel
+                   {t("cancel")}
                   </button>
                   <button
                     onClick={handleEmptyBin}
                     className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
                   >
-                    Empty Bin
+                   {t("confirm")}
                   </button>
                 </div>
               </div>
