@@ -96,7 +96,7 @@ const NoteCard: React.FC<NoteCardProps> = ({
         <div className="flex-1 min-w-0">
           <div className="flex items-center space-x-2 mb-1">
             <h3 className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg line-clamp-1">
-              {note.title || 'Untitled'}
+             {note.title === 'Untitled' ? t('untitled') : note.title}
             </h3>
             {note.isPrivate && (
               <div className="flex items-center space-x-1 px-2 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-full text-xs flex-shrink-0">
