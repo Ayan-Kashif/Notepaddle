@@ -1,182 +1,226 @@
-import React, { useState } from 'react';
+
+
+import React, { useState, useEffect } from "react";
 import {
   Heart,
-  Github,
-  Twitter,
-  Facebook,
-  Newspaper,
-  Instagram,
-  FileText,
   X,
+  Facebook,
+  Instagram,
+  Newspaper,
   Mail,
+  FileText,
   Shield,
-
   AlertTriangle,
-  LayoutDashboard,
+} from "lucide-react";
+import { FaGlobe } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsOfService from "./TermsOfService";
+import ReportAbusePolicy from "./ReportAbusePolicy";
+import { useTranslation } from "react-i18next";
+import "../i18n.js";
 
-} from 'lucide-react';
-
-import PrivacyPolicy from './PrivacyPolicy';
-import TermsOfService from './TermsOfService';
-import ReportAbusePolicy from './ReportAbusePolicy';
-import { Link } from 'react-router-dom'
+const getFlagEmoji = (code: string) => {
+  const flags: Record<string, string> = {
+    en: "🇺🇸",
+    pt: "🇵🇹",
+    cs: "🇨🇿",
+    da: "🇩🇰",
+    de: "🇩🇪",
+    es: "🇪🇸",
+    fr: "🇫🇷",
+    it: "🇮🇹",
+    id: "🇮🇩",
+    ms: "🇲🇾",
+    nl: "🇳🇱",
+    no: "🇳🇴",
+    pl: "🇵🇱",
+    fi: "🇫🇮",
+    sv: "🇸🇪",
+    vi: "🇻🇳",
+    tr: "🇹🇷",
+    el: "🇬🇷",
+    ru: "🇷🇺",
+    uk: "🇺🇦",
+    he: "🇮🇱",
+    ar: "🇸🇦",
+    hi: "🇮🇳",
+    th: "🇹🇭",
+    ko: "🇰🇷",
+    zh: "🇨🇳",
+    "zh-Hant": "🇹🇼",
+    ja: "🇯🇵",
+  };
+  return flags[code] || "🌐";
+};
 
 const Footer: React.FC = () => {
+  const { i18n, t } = useTranslation();
+  const [showLangModal, setShowLangModal] = useState(false);
+
+  const handleChange = (code: string) => {
+    i18n.changeLanguage(code);
+    setShowLangModal(false);
+  };
+
+  useEffect(() => {
+    const rtlLangs = ["ur", "ar", "he"];
+    document.body.dir = rtlLangs.includes(i18n.language) ? "rtl" : "ltr";
+  }, [i18n.language]);
+
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
   const [isTermsOfServiceOpen, setIsTermsOfServiceOpen] = useState(false);
   const [isReportAbusePolicyOpen, setIsReportAbusePolicyOpen] = useState(false);
   const currentYear = new Date().getFullYear();
 
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "pt", name: "Português" },
+    { code: "cs", name: "Čeština" },
+    { code: "da", name: "Dansk" },
+    { code: "de", name: "Deutsch" },
+    { code: "es", name: "Español" },
+    { code: "fr", name: "Français" },
+    { code: "it", name: "Italiano" },
+    { code: "id", name: "Bahasa Indonesia" },
+    { code: "ms", name: "Bahasa Melayu" },
+    { code: "nl", name: "Nederlands" },
+    { code: "no", name: "Norsk" },
+    { code: "pl", name: "Polski" },
+    { code: "fi", name: "Suomi" },
+    { code: "sv", name: "Svenska" },
+    { code: "vi", name: "Tiếng Việt" },
+    { code: "tr", name: "Türkçe" },
+    { code: "el", name: "Ελληνικά" },
+    { code: "ru", name: "Русский" },
+    { code: "uk", name: "Українська" },
+    { code: "he", name: "עברית" },
+    // { code: "ar", name: "العربية" },
+    { code: "hi", name: "हिन्दी" },
+    { code: "th", name: "ภาษาไทย" },
+    { code: "ko", name: "한국어" },
+    { code: "zh", name: "中文(简体)" },
+    { code: "zh-Hant", name: "中文(繁體)" },
+    { code: "ja", name: "日本語" },
+  ];
+
   return (
     <>
-      <footer className="bg-white/80 dark:bg-gray-900/80  backdrop-blur-lg border-t border-gray-200/20 dark:border-gray-700/20 mt-12 sm:mt-24">
+      <footer className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-t border-gray-200/20 dark:border-gray-700/20 mt-12 sm:mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-6 sm:mb-8">
-            {/* Brand Section */}
-            <div className="col-span-1 sm:col-span-2 text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start space-x-3 mb-4">
-                <div className="flex items-center space-x-3">
-                  {/* Logo & Name */}
-                  <div className="flex items-center space-x-3">
-                    <img
-                      src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
-                      alt="Notepadle"
-                      className="w-8 h-8 object-contain"
-                    />
-                    <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                      Notepadle
-                    </h1>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center mb-4 space-x-2">
+                <img
+                  src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
+                  alt="Notepadle"
+                  className="w-8 h-8 object-contain"
+                />
+                <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  Notepadle
+                </h1>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed text-center sm:text-left">
-                Notepadle is a clean and secure online notepad, and it’s 100% free.
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                {t("site_tagline")}
               </p>
             </div>
 
-            {/* Quick Links */}
-            <div className="text-center sm:text-left">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li className="flex justify-center sm:justify-start">
-                  <button
-                    onClick={() => setIsPrivacyPolicyOpen(true)}
-                    className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm transition-colors duration-200 flex items-center"
-                  >
-                    <Shield className="w-3 h-3 mr-2" />
-                    Privacy Policy
-                  </button>
+            {/* Links */}
+            <div>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">{t("quick_links")}</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center space-x-2">
+                  <Shield className="w-4 h-4" />
+                  <button onClick={() => setIsPrivacyPolicyOpen(true)}>{t("privacy_policy")}</button>
                 </li>
-                <li className="flex justify-center sm:justify-start">
-                  <button
-                    onClick={() => setIsTermsOfServiceOpen(true)}
-                    className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm transition-colors duration-200 flex items-center"
-                  >
-                    <FileText className="w-3 h-3 mr-2" />
-                    Terms of Service
-                  </button>
+                <li className="flex items-center space-x-2">
+                  <FileText className="w-4 h-4" />
+                  <button onClick={() => setIsTermsOfServiceOpen(true)}>{t("terms_of_service")}</button>
                 </li>
-                <li className="flex justify-center sm:justify-start">
-                  <button
-                    onClick={() => setIsReportAbusePolicyOpen(true)}
-                    className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 text-sm transition-colors duration-200 flex items-center"
-                  >
-                    <AlertTriangle className="w-3 h-3 mr-2" />
-                    Report Abuse
-                  </button>
+                <li className="flex items-center space-x-2 ">
+                  <AlertTriangle className="w-4 h-4" />
+                  <button onClick={() => setIsReportAbusePolicyOpen(true)}>{t("report_abuse")}</button>
                 </li>
-                <li className="flex justify-center sm:justify-start">
-                  <Link
-                    to='blog.notepaddle.com'
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 text-sm transition-colors duration-200 flex items-center"
-                  >
-                    <Newspaper className="w-3 h-3 mr-2" />
-                    Blog
+                <li className="flex items-center space-x-2">
+                  <Newspaper className="w-4 h-4" />
+                  <Link to="https://blog.notepaddle.com" target="_blank" rel="noopener noreferrer">
+                    {t("blog")}
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Connect */}
-            <div className="text-center sm:text-left">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Connect</h4>
-              <div className="flex justify-center sm:justify-start space-x-3">
-                <a
-                  href="https://www.facebook.com/notepadle/ "
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200"
-                  title="Facebook"
-                >
+            {/* Social */}
+            <div>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">{t("connect")}</h4>
+              <div className="flex space-x-3">
+                <a href="https://www.facebook.com/notepadle/" target="_blank" rel="noopener noreferrer">
                   <Facebook className="w-4 h-4" />
                 </a>
-                <a
-                  href="https://www.instagram.com/notepadle/  "
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200"
-                  title="Instagram"
-                >
+                <a href="https://www.instagram.com/notepadle/" target="_blank" rel="noopener noreferrer">
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a
-                  href="https://x.com/notepadle"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-green-100 dark:hover:bg-green-900/30 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200"
-                  title="Twitter"
-                >
-                  <X className="w-4 h-4" />
-                </a>
-                <a
-                  href="mailto:support@notepaddle.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-green-100 dark:hover:bg-green-900/30 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200"
-                  title="Email"
-                >
+                <a href="mailto:support@notepaddle.com">
                   <Mail className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="pt-6 border-t border-gray-200/20 dark:border-gray-700/20">
-            <div className="flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0">
-              <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1 text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left">
-                <span>© {currentYear} Notepadle. Made with</span>
-                <div className="flex items-center space-x-1">
-                  <Heart className="w-4 h-4 text-red-500 fill-current" />
-                  <span>for productivity enthusiasts.</span>
-                </div>
-              </div>
-              <div className="text-xs text-gray-400 dark:text-gray-500 text-center sm:text-right">
-                Version 1.0.0
+            {/* Language */}
+            <div>
+              <div className="flex items-center space-x-2 cursor-pointer" onClick={() => setShowLangModal(true)}>
+                <FaGlobe className="text-blue-500 w-4 h-4" />
+                <span className="text-sm text-gray-700 dark:text-gray-200">
+                  {getFlagEmoji(i18n.language)}{" "}
+                  {languages.find((l) => l.code === i18n.language)?.name || "Language"}
+                </span>
               </div>
             </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="pt-4 border-t border-gray-200/20 dark:border-gray-700/20 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 dark:text-gray-400 mt-6">
+            <div className="flex items-center space-x-1">
+              <span>{t("footer_copyright", { year: currentYear })}</span>
+              <Heart className="w-4 h-4 text-red-500 fill-current" />
+              <span>{t("footer_purpose")}</span>
+            </div>
+            <div className="text-xs text-gray-400 dark:text-gray-500">{t("footer_version")}</div>
           </div>
         </div>
       </footer>
 
+      {/* Language Popup */}
+      {showLangModal && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex justify-center items-center">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full shadow-lg">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-bold">Select Language</h2>
+              <button onClick={() => setShowLangModal(false)}>
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-3 max-h-60 overflow-y-auto">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleChange(lang.code)}
+                  className="flex items-center space-x-2 px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-sm"
+                >
+                  <span className="text-lg">{getFlagEmoji(lang.code)}</span>
+                  <span>{lang.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Modals */}
-      <PrivacyPolicy
-        isOpen={isPrivacyPolicyOpen}
-        onClose={() => setIsPrivacyPolicyOpen(false)}
-      />
-      <TermsOfService
-        isOpen={isTermsOfServiceOpen}
-        onClose={() => setIsTermsOfServiceOpen(false)}
-      />
-      <ReportAbusePolicy
-        isOpen={isReportAbusePolicyOpen}
-        onClose={() => setIsReportAbusePolicyOpen(false)}
-      />
+      <PrivacyPolicy isOpen={isPrivacyPolicyOpen} onClose={() => setIsPrivacyPolicyOpen(false)} />
+      <TermsOfService isOpen={isTermsOfServiceOpen} onClose={() => setIsTermsOfServiceOpen(false)} />
+      <ReportAbusePolicy isOpen={isReportAbusePolicyOpen} onClose={() => setIsReportAbusePolicyOpen(false)} />
     </>
   );
 };
