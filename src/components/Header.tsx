@@ -4,6 +4,8 @@ import UserMenu from './UserMenu';
 import AuthModal from './AuthModal';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+import '../i18n.js';
 import { User } from 'lucide-react';
 interface HeaderProps {
   searchQuery: string;
@@ -49,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
   onCloseAuthModal,
 }) => {
   const navigate = useNavigate()
-
+ const { t } = useTranslation();
 
   return (
     <>
@@ -87,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <input
                   type="text"
-                  placeholder="Search notes..."
+                   placeholder={t('search_notes')}
                   value={searchQuery}
                   onChange={(e) => onSearchChange(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/20 transition-all duration-200"
@@ -114,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({
                 className="inline-flex items-center px-3 sm:px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <Plus className="w-4 h-4 sm:mr-2" />
-                <span className="hidden sm:inline">New Note</span>
+                <span className="hidden sm:inline">{t('new_note')}</span>
               </button>
 
               <button
@@ -132,7 +134,7 @@ const Header: React.FC<HeaderProps> = ({
                   className="inline-flex items-center px-3 sm:px-4 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200"
                 >
                   <LogIn className="w-4 h-4 sm:mr-2" />
-                  <span className="hidden sm:inline">Sign In</span>
+                  <span className="hidden sm:inline">{t('sign_in')}</span>
                 </button>
               )}
             </div>
