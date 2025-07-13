@@ -13,7 +13,7 @@ import remarkGfm from 'remark-gfm';
 
 import { motion } from 'framer-motion';
 import {
-    Tag, Users, Pin, Star, Lock, Share2, FileText, Calendar
+    Tag, Users, Pin, Star, Lock, Share2, FileText, Calendar,ChevronDown,ChevronUp
 } from 'lucide-react';
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -47,6 +47,7 @@ const SharedNote = () => {
     const [note, setNote] = useState<Note | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [isExpanded, setIsExpanded] = useState(false);
 
    useEffect(() => {
   const pathParts = window.location.pathname.split('/');
@@ -193,20 +194,40 @@ const SharedNote = () => {
                         )}
 
                         {/* Content */}
-                        <div className="prose max-w-none text-gray-800">
-                            {note.contentType === 'plain' ? (
-                        <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                                                              <HtmlRenderer htmlContent={note.content} />
-                                                          </div>
+                       <div className={`prose max-w-none text-gray-800 transition-all duration-300`}>
+  {note.contentType === 'plain' ? (
+    <>
+      <div
+        className={`${
+          isExpanded ? '' : 'line-clamp-5'
+        } overflow-hidden`}
+      >
+        <HtmlRenderer htmlContent={note.content} />
+      </div>
 
-                            ) : (
-                               <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                                                              <HtmlRenderer htmlContent={note.content} />
-                                                          </div>
+      {/* Show more / less toggle */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="mt-2 text-blue-600 hover:underline text-sm flex items-center gap-1"
+      >
+        {isExpanded ? (
+          <>
+            Show less <ChevronUp size={16} />
+          </>
+        ) : (
+          <>
+            Show more <ChevronDown size={16} />
+          </>
+        )}
+      </button>
+    </>
+  ) : (
+    <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+      <HtmlRenderer htmlContent={note.content} />
+    </div>
+  )}
+</div>
 
-
-                            )}
-                        </div>
                     </motion.div>
                 )}
             </div>
