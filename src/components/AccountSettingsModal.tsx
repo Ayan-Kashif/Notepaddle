@@ -1,6 +1,7 @@
 
 
 
+
 import React, { useState, useRef } from 'react';
 import {
   X, User, Mail, Lock, Camera, Save, Eye, EyeOff,
@@ -8,6 +9,7 @@ import {
   AlertTriangle, Check, Upload, Menu
 } from 'lucide-react';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 interface AccountSettingsModalProps {
   isOpen: boolean;
@@ -22,6 +24,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
   user,
   token,
 }) => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('profile');
   const [formData, setFormData] = useState({
     name: user?.name || '',
@@ -83,7 +86,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
     if (!file) return;
 
     if (file.size > 5 * 1024 * 1024) {
-      setMessage({ type: 'error', text: 'Image size must be less than 5MB' });
+      setMessage({ type: 'error', text: t('image_size_limit') });
       return;
     }
 
@@ -100,9 +103,9 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
       });
 
       setProfileImage(response.data.avatar);
-      setMessage({ type: 'success', text: 'Profile picture updated successfully!' });
+      setMessage({ type: 'success', text: t('upload_image_success') });
     } catch (error) {
-      setMessage({ type: 'error', text: 'Failed to upload image. Please try again.' });
+     setMessage({ type: 'error', text: t('upload_image_error') });
     } finally {
       setIsLoading(false);
     }
@@ -110,7 +113,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
   const handleSaveProfile = async () => {
     if (!formData.name || !formData.email) {
-      setMessage({ type: 'error', text: 'Name and email are required' });
+       setMessage({ type: 'error', text: t('required_fields') });
       return;
     }
 
@@ -124,9 +127,9 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
         bio: formData.bio
       });
 
-      setMessage({ type: 'success', text: 'Profile updated successfully!' });
+       setMessage({ type: 'success', text: t('save_profile_success') });
     } catch (error: any) {
-      const errorMessage = error.response?.data?.message || 'Failed to update profile. Please try again.';
+     const errorMessage = error.response?.data?.message || t('save_profile_error');
       setMessage({ type: 'error', text: errorMessage });
     } finally {
       setIsLoading(false);
@@ -137,17 +140,17 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
     const { currentPassword, newPassword, confirmPassword } = formData;
 
     if (!currentPassword || !newPassword || !confirmPassword) {
-      setMessage({ type: 'error', text: 'Please fill in all password fields' });
+      setMessage({ type: 'error', text: t('fill_all_password_fields') });
       return;
     }
 
     if (newPassword !== confirmPassword) {
-      setMessage({ type: 'error', text: 'New passwords do not match' });
+       setMessage({ type: 'error', text: t('password_mismatch') });
       return;
     }
 
     if (newPassword.length < 6) {
-      setMessage({ type: 'error', text: 'Password must be at least 6 characters long' });
+     setMessage({ type: 'error', text: t('password_length_error') });
       return;
     }
 
@@ -158,7 +161,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
         newPassword
       });
 
-      setMessage({ type: 'success', text: response.data.message || 'Password changed successfully!' });
+     setMessage({ type: 'success', text: response.data.message || t('password_change_success') });
       setFormData(prev => ({
         ...prev,
         currentPassword: '',
@@ -166,7 +169,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
         confirmPassword: ''
       }));
     } catch (error: any) {
-      const errorMessage = error.response?.data?.message || 'Failed to change password. Please try again.';
+      const errorMessage = error.response?.data?.message || t('password_change_error');
       setMessage({ type: 'error', text: errorMessage });
     } finally {
       setIsLoading(false);
@@ -174,17 +177,17 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
   };
 
   const handleDeleteAccount = async () => {
-    if (window.confirm('Are you sure you want to delete your account? This action cannot be undone and all your notes will be permanently deleted.')) {
+     if (window.confirm(t('delete_account_confirm'))) {
       setIsLoading(true);
       try {
         await api.delete('/');
         localStorage.removeItem('token')
-        setMessage({ type: 'success', text: 'Account deleted successfully. Redirecting...' });
+         setMessage({ type: 'success', text: t('delete_account_success') });
         setTimeout(() => {
           window.location.href = '/';
         }, 2000);
       } catch (error) {
-        setMessage({ type: 'error', text: 'Failed to delete account. Please try again.' });
+              setMessage({ type: 'error', text: t('delete_account_error') });
       } finally {
         setIsLoading(false);
       }
@@ -250,10 +253,10 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
   if (!isOpen || !user) return null;
 
   const tabs = [
-    { id: 'profile', name: 'My Profile', icon: User },
-    { id: 'account', name: 'Account', icon: Shield },
-    { id: 'preferences', name: 'Preferences', icon: Palette },
-    { id: 'data', name: 'Account Data', icon: Download },
+    { id: 'profile', name: t('profile_tab'), icon: User },
+    { id: 'account', name: t('account_tab'), icon: Shield },
+    { id: 'preferences', name: t('preferences_tab'), icon: Palette },
+    { id: 'data', name: t('data_tab'), icon: Download },
   ];
 
   return (
@@ -277,11 +280,11 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
               <User className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
-              <h2 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
-                Account Settings
+             <h2 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+                {t('account_settings_title')}
               </h2>
               <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
-                Manage your account and preferences
+                {t('account_settings_subtitle')}
               </p>
             </div>
           </div>
@@ -289,14 +292,14 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
               className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 md:hidden"
-              title="Menu"
+              title={t('menu_button')}
             >
               <Menu className="w-5 h-5" />
             </button>
             <button
               onClick={handleClose}
               className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-              title="Close"
+               title={t('close_button')}
             >
               <X className="w-5 h-5" />
             </button>
@@ -371,7 +374,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                 <div className="space-y-4 md:space-y-6">
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
-                      Profile Information
+                      {t('profile_information')}
                     </h3>
 
                     {/* Profile Picture */}
@@ -406,17 +409,17 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                       </div>
                       <div className="text-center sm:text-left">
                         <h4 className="font-medium text-gray-900 dark:text-white">
-                          Profile Picture
+                          {t('profile_picture')}
                         </h4>
                         <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-2">
-                          Upload a new profile picture. Max size: 5MB
+                         {t('upload_image')}. {t('image_size_limit')}
                         </p>
                         <button
                           onClick={() => fileInputRef.current?.click()}
                           className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 text-xs sm:text-sm"
                         >
                           <Upload className="w-3 h-3 mr-1 sm:mr-2" />
-                          Upload Image
+                        {t('upload_image')}
                         </button>
                       </div>
                     </div>
@@ -425,7 +428,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                     <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2">
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
-                          Full Name *
+                        {t('full_name')} *
                         </label>
                         <input
                           type="text"
@@ -439,7 +442,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
-                          Email Address *
+                          {t('email_address')} *
                         </label>
                         <input
                           type="email"
@@ -462,7 +465,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         onChange={handleInputChange}
                         rows={3}
                         className="w-full px-3 py-2 text-xs sm:text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
-                        placeholder="Tell us a bit about yourself..."
+                      placeholder={t('bio_placeholder')}
                       />
                     </div>
 
@@ -472,7 +475,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                       className="inline-flex mt-3 sm:mt-4 items-center px-4 py-2 sm:px-6 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                     >
                       <Save className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                      {isLoading ? 'Saving...' : 'Save Changes'}
+                      {isLoading ? t('saving') : t('save_changes')}
                     </button>
                   </div>
                 </div>
@@ -483,7 +486,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                 <div className="space-y-4 md:space-y-6">
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
-                      Change Password
+                      {t('change_password')}
                     </h3>
 
                     <form onSubmit={(e) => {
@@ -494,7 +497,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         {/* Current Password Field */}
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
-                            Current Password
+                            {t('current_password')}
                           </label>
                           <div className="relative">
                             <input
@@ -522,7 +525,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         {/* New Password Field */}
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
-                            New Password
+                             {t('new_password')}
                           </label>
                           <div className="relative">
                             <input
@@ -551,7 +554,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         {/* Confirm Password Field */}
                         <div>
                           <label className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 sm:mb-2">
-                            Confirm New Password
+                           {t('confirm_password')}
                           </label>
                           <div className="relative">
                             <input
@@ -583,7 +586,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                           className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                         >
                           <Lock className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                          {isLoading ? 'Changing...' : 'Change Password'}
+                          {isLoading ? t('changing') : t('change_password')}
                         </button>
                       </div>
                     </form>
@@ -592,7 +595,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                   {/* Account Info */}
                   <div className="border-t border-gray-200 dark:border-gray-700 pt-4 md:pt-6">
                     <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
-                      Account Information
+                    {t('account_information')}
                     </h3>
                     <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3 md:p-4 space-y-2 md:space-y-3">
                       <div className="flex justify-between">
@@ -623,7 +626,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                 <div className="space-y-4 md:space-y-6">
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
-                      App Preferences
+                      {t('app_preferences')}
                     </h3>
 
                     <div className="space-y-4 md:space-y-6">
@@ -632,10 +635,10 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                           <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400" />
                           <div>
                             <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
-                              Email Notifications
+                              {t('email_notifications')}
                             </h4>
                             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                              Receive email updates about your notes
+                              {t('email_notifications_desc')}
                             </p>
                           </div>
                         </div>
@@ -649,11 +652,11 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         <div className="flex items-center space-x-2 md:space-x-3">
                           <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400" />
                           <div>
-                            <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
-                              Auto-save Notes
+                          <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
+                              {t('auto_save_notes')}
                             </h4>
                             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                              Automatically save changes as you type
+                              {t('auto_save_notes_desc')}
                             </p>
                           </div>
                         </div>
@@ -667,17 +670,17 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         <div className="flex items-center space-x-2 md:space-x-3 mb-2 md:mb-3">
                           <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400" />
                           <div>
-                            <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
-                              Default Note Visibility
+                           <h4 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">
+                              {t('default_note_visibility')}
                             </h4>
                             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                              Choose the default privacy setting for new notes
+                              {t('default_note_visibility_desc')}
                             </p>
                           </div>
                         </div>
                         <select className="w-full px-3 py-2 text-xs sm:text-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
-                          <option value="private">Private (only you can see)</option>
-                          <option value="public">Public (anyone with link can view)</option>
+                          <option value="private">{t('private_visibility_option')}</option>
+                          <option value="public">{t('public_visibility_option')}</option>
                         </select>
                       </div>
                     </div>
@@ -690,7 +693,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                 <div className="space-y-4 md:space-y-6">
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
-                      Account Data
+                      {t('account_data')}
                     </h3>
 
                     <div className="space-y-3 md:space-y-4">
@@ -699,17 +702,17 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                           <Download className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400 mt-0.5" />
                           <div className="flex-1">
                             <h4 className="text-sm sm:text-base font-medium text-blue-900 dark:text-blue-100 mb-1 md:mb-2">
-                              Export Your Data
+                              {t('export_data')}
                             </h4>
                             <p className="text-xs sm:text-sm text-blue-700 dark:text-blue-300 mb-2 md:mb-3">
-                              Download a copy of all your notes and account data. This includes all your notes, categories, and settings.
+                              {t('export_data_desc')}
                             </p>
                             <button
                               onClick={handleExportData}
                               className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-xs sm:text-sm"
                             >
                               <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                              Export Data
+                             {t('export_data_button')}
                             </button>
                           </div>
                         </div>
@@ -719,18 +722,18 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
                         <div className="flex items-start space-x-2 md:space-x-3">
                           <Trash2 className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 dark:text-red-400 mt-0.5" />
                           <div className="flex-1">
-                            <h4 className="text-sm sm:text-base font-medium text-red-900 dark:text-red-100 mb-1 md:mb-2">
-                              Delete Account
+                             <h4 className="text-sm sm:text-base font-medium text-red-900 dark:text-red-100 mb-1 md:mb-2">
+                              {t('delete_account')}
                             </h4>
                             <p className="text-xs sm:text-sm text-red-700 dark:text-red-300 mb-2 md:mb-3">
-                              Permanently delete your account and all associated data. This action cannot be undone.
+                              {t('delete_account_desc')}
                             </p>
                             <button
                               onClick={handleDeleteAccount}
                               className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200 text-xs sm:text-sm"
                             >
                               <Trash2 className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                              Delete Account
+                             {t('delete_account_button')}
                             </button>
                           </div>
                         </div>
