@@ -4,6 +4,8 @@ import { Pin, Star, MoreVertical, Trash2, Edit3, Download, Lock, Shield } from '
 import ExportMenu from './ExportMenu';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 import MDEditor from '@uiw/react-md-editor';
 
 interface NoteCardProps {
@@ -24,6 +26,7 @@ const NoteCard: React.FC<NoteCardProps> = ({
 }) => {
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
   const exportButtonRef = useRef<HTMLButtonElement>(null);
+   const { t } = useTranslation()
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
