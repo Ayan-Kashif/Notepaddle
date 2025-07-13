@@ -5,12 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-
+import '../i18n';
+import { useTranslation } from 'react-i18next';
+import Footer from './Footer';
 export default function ChangePassword() {
   const [current, setCurrent] = useState('');
   const [newPass, setNewPass] = useState('');
   const navigate = useNavigate();
-
+const { t } = useTranslation()
   const handleChange = async () => {
     const token = localStorage.getItem('adminToken');
     if (!token) return toast.error('Unauthorized access. Please log in.');
@@ -89,12 +91,12 @@ export default function ChangePassword() {
           className="max-w-md w-full mx-auto bg-white rounded-2xl shadow-2xl p-8"
         >
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-            Change Admin Password
+              {t('admin.change_password.title')}
           </h2>
 
           <input
             type="password"
-            placeholder="Current Password"
+         placeholder={t('admin.change_password.current_placeholder')}
             className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={current}
             onChange={(e) => setCurrent(e.target.value)}
@@ -102,7 +104,7 @@ export default function ChangePassword() {
 
           <input
             type="password"
-            placeholder="New Password"
+           placeholder={t('admin.change_password.new_placeholder')}
             className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={newPass}
             onChange={(e) => setNewPass(e.target.value)}
@@ -114,7 +116,7 @@ export default function ChangePassword() {
             onClick={handleChange}
             className="w-full py-3 bg-pink-600 text-white font-semibold rounded-lg hover:bg-pink-700 transition duration-300"
           >
-            Change Password
+            {t('admin.change_password.button')}
           </motion.button>
         </motion.div>
       </div>
