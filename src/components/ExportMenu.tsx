@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Note } from '../types';
 import { Download, FileText, File, FileImage, FileCode } from 'lucide-react';
  import html2pdf from 'html2pdf.js';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 interface ExportMenuProps {
   note: Note;
   isOpen: boolean;
@@ -10,7 +12,7 @@ interface ExportMenuProps {
 
 const ExportMenu: React.FC<ExportMenuProps> = ({ note, isOpen, onClose }) => {
   const [isExporting, setIsExporting] = useState(false);
-
+ const { t } = useTranslation()
   const exportAsText = () => {
     const content = `${note.title}\n\n${note.content}`;
     
@@ -132,7 +134,7 @@ const exportAsPDF = async () => {
           className="w-full flex items-center px-3 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
         >
           <FileText className="w-4 h-4 mr-3" />
-          Export as Text
+           {t('exportAsText')}
         </button>
         {note.contentType === 'markdown' && (
           <button
@@ -148,7 +150,7 @@ const exportAsPDF = async () => {
           className="w-full flex items-center px-3 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
         >
           <File className="w-4 h-4 mr-3" />
-          Export as Doc
+         {t('exportAsDoc')}
         </button>
         <button
           onClick={exportAsPDF}
@@ -156,7 +158,7 @@ const exportAsPDF = async () => {
           className="w-full flex items-center px-3 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200 disabled:opacity-50"
         >
           <FileImage className="w-4 h-4 mr-3" />
-          {isExporting ? 'Exporting...' : 'Export as PDF'}
+         {isExporting ? 'Exporting...' : t('exportAsPDF')}
         </button>
       </div>
     </div>
