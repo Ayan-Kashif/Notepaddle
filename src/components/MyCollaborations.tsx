@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 
 import {
     FileText,
@@ -52,7 +54,7 @@ const SharedByMe = () => {
     const [selectedTag, setSelectedTag] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [mode, setMode] = useState<'dark' | 'light'>('light');
-
+ const { t } = useTranslation()
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -234,7 +236,7 @@ const SharedByMe = () => {
                             className="flex items-center gap-1 px-3 py-1.5 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition"
                         >
                             <PlusCircle className="w-4 h-4" />
-                            <span>Notes Shared With Me</span>
+                             <span>{t('shared_with_me')}</span>
                         </button>
                     </div>
                 </div>
@@ -243,7 +245,7 @@ const SharedByMe = () => {
             <div className="max-w-7xl mx-auto p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                     <h2 className={`text-3xl font-semibold ${textColor}`}>
-                        Notes Shared By You
+                      {t('shared_by_you')}
                     </h2>
 
                     <div className="flex gap-3 flex-col md:flex-row">
@@ -254,7 +256,7 @@ const SharedByMe = () => {
                                 type="text"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
-                                placeholder="Search notes..."
+                                 placeholder={t('search_placeholder')}
                                 className={`pl-10 pr-4 py-2 rounded-lg border ${borderColor} focus:ring-2 focus:ring-blue-500 focus:outline-none ${cardBg} ${textColor} shadow-sm`}
                             />
                         </div>
@@ -266,7 +268,7 @@ const SharedByMe = () => {
                                 onChange={(e) => setSelectedTag(e.target.value)}
                                 className={`px-4 py-2 rounded-lg border ${borderColor} focus:ring-2 focus:ring-blue-500 focus:outline-none ${cardBg} ${textColor} shadow-sm`}
                             >
-                                <option value="">All Tags</option>
+                                  <option value="">{t('all_tags')}</option>
                                 {allTags.map((tag) => (
                                     <option key={tag} value={tag}>
                                         {tag}
@@ -282,7 +284,7 @@ const SharedByMe = () => {
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                                 className={`px-4 py-2 rounded-lg border ${borderColor} focus:ring-2 focus:ring-blue-500 focus:outline-none ${cardBg} ${textColor} shadow-sm`}
                             >
-                                <option value="">All Types</option>
+                                 <option value="">{t('all_types')}</option>
                                 {allCategories.map((cat) => (
                                     <option key={cat} value={cat}>
                                         {cat}
@@ -331,13 +333,13 @@ const SharedByMe = () => {
 
                             <div className="mb-2">
                                 <span className="text-xs font-medium text-gray-500">
-                                    Type: {note.category}
+                                    {t('type_label')} {note.category}
                                 </span>
                             </div>
 
                             <div>
                                 <h4 className={`text-sm font-medium mb-2 ${textColor}`}>
-                                    Collaborators:
+                                    {t('collaborators_title')}
                                 </h4>
                                 {note.collaborators.length > 0 ? (
                                     <ul className="space-y-1">
@@ -359,15 +361,15 @@ const SharedByMe = () => {
                                                         }`}
                                                 >
                                                     {col.permission === 'edit'
-                                                        ? 'Can Edit'
-                                                        : 'View Only'}
+                                                        ? t('can_edit')
+                                                        : t('view_only')}
                                                 </span>
                                             </li>
                                         ))}
                                     </ul>
                                 ) : (
                                     <p className="text-xs text-gray-500">
-                                        No collaborators.
+                                        {t('no_collaborators')}
                                     </p>
                                 )}
                             </div>
