@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CollaborationNoteCard from './CollaborationNoteCard';
 import { NoteType } from '../types';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 
 type CollaborationsProps = {
     onEditNote: (note: NoteType) => void;
@@ -27,6 +29,7 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
     const [mode, setMode] = useState<'light' | 'dark'>('light'); // ✅ Mode state
 
     const navigate = useNavigate();
+    const { t } = useTranslation()
 
     useEffect(() => {
         const savedMode = localStorage.getItem('mode');
@@ -160,7 +163,7 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
             <div className={`flex justify-center items-center h-[70vh] ${bgColor}`}>
                 <div className="flex flex-col items-center text-red-500">
                     <AlertTriangle size={32} />
-                    <p className="mt-2">Please login to access</p>
+                  <p className="mt-2">{t('collaborations.login_required')}</p>
                 </div>
             </div>)
 
@@ -213,16 +216,16 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                                 className="flex items-center gap-1 px-3 py-1.5 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition"
                             >
                                 <PlusCircle className="w-4 h-4" />
-                                <span>Notes Shared By Me</span>
+                                <span>{t('collaborations.shared_by_me')}</span>
                             </button>
                         </div>
                     </div>
                 </nav>
                 <div className={`flex flex-col items-center justify-center h-[80vh] ${bgColor}`}>
                     <StickyNote size={48} className="text-blue-400 mb-4" />
-                    <p className={`text-lg ${textColor} mb-2`}>No Collaboration Notes Found</p>
+                    <p className={`text-lg ${textColor} mb-2`}{t('collaborations.no_notes_title')}</p>
                     <p className={`text-sm ${subTextColor}`}>
-                        Notes that others share with you will appear here.
+                        {t('collaborations.no_notes_message')}
                     </p>
                 </div>
             </>
@@ -255,7 +258,7 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                             className="flex items-center gap-1 px-3 py-1.5 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition"
                         >
                             <PlusCircle className="w-4 h-4" />
-                            <span>Notes Shared By Me</span>
+                              <span>{t('collaborations.shared_by_me')}</span>
                         </button>
                     </div>
                 </div>
@@ -268,7 +271,7 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                             <Search className={`absolute left-3 top-2.5 ${iconColor} w-4 h-4`} />
                             <input
                                 type="text"
-                                placeholder="Search by title or content..."
+                                placeholder={t('collaborations.search_placeholder')}
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 className={`w-full pl-10 pr-4 py-2 ${borderColor} ${inputBg} border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500`}
@@ -280,7 +283,7 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                                 onChange={(e) => setSelectedTag(e.target.value)}
                                 className={`px-3 py-2 ${borderColor} ${inputBg} border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500`}
                             >
-                                <option value="">All Tags</option>
+                               <option value="">{t('collaborations.all_tags')}</option>
                                 {allTags.map((tag) => (
                                     <option key={tag} value={tag}>
                                         {tag}
@@ -294,7 +297,7 @@ const Collaborations: React.FC<CollaborationsProps> = ({ onEditNote, onDelete, o
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                                 className={`px-3 py-2 ${borderColor} ${inputBg} border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500`}
                             >
-                                <option value="">All Types</option>
+                                 <option value="">{t('collaborations.all_types')}</option>
                                 {allCategories.map((cat) => (
                                     <option key={cat} value={cat}>
                                         {cat.charAt(0).toUpperCase() + cat.slice(1)}
