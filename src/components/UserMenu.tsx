@@ -3,6 +3,8 @@ import { User, LogOut, Settings, UserCircle } from 'lucide-react';
 import AccountSettingsModal from './AccountSettingsModal';
 import { toast } from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 interface UserMenuProps {
   user: any;
   onLogout: () => void;
@@ -13,6 +15,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ user, onLogout }) => {
   const [isAccountSettingsOpen, setIsAccountSettingsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const [token, setToken] = useState(null)
+    const { t } = useTranslation()
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -142,7 +145,7 @@ console.log(`url: https://notepadle.com/${user?.avatar}`)
                   <div className="flex items-center mt-1">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                     <span className="text-xs text-green-600 dark:text-green-400 font-medium">
-                      Online
+                      {t('online_status')}
                     </span>
                   </div>
                 </div>
@@ -159,9 +162,9 @@ console.log(`url: https://notepadle.com/${user?.avatar}`)
                   <Settings className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
-                  <p className="font-medium">Account Settings</p>
+                <p className="font-medium">{t('account_settings')}</p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Manage your profile and preferences
+                   {t('account_settings_description')}
                   </p>
                 </div>
               </button>
@@ -174,9 +177,9 @@ console.log(`url: https://notepadle.com/${user?.avatar}`)
                   <LogOut className="w-4 h-4 text-red-600 dark:text-red-400" />
                 </div>
                 <div>
-                  <p className="font-medium">Sign Out</p>
+                   <p className="font-medium">{t('sign_out')}</p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Sign out of your account
+                    {t('sign_out_description')}
                   </p>
                 </div>
               </button>
@@ -202,7 +205,7 @@ console.log(`url: https://notepadle.com/${user?.avatar}`)
                     })}
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Member Since
+                    {t('member_since')}
                   </p>
                 </div>
               </div>
