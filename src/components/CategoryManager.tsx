@@ -8,6 +8,8 @@ import { X, Plus, Edit3, Trash2, Check, Loader2 } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
+import { useTranslation } from "react-i18next";
+
 interface Category {
   id: string;
   name: string;
@@ -24,6 +26,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editingName, setEditingName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+    const { t } = useTranslation();
 
   const predefinedColors = [
     '#6366F1', '#8B5CF6', '#10B981', '#F59E0B',
@@ -32,10 +35,10 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
   ];
 
   const DEFAULT_CATEGORIES = [
-    { id: 'personal', name: 'Personal', color: '#6366F1', isDefault: true },
-    { id: 'work', name: 'Work', color: '#8B5CF6', isDefault: true },
-    { id: 'ideas', name: 'Ideas', color: '#10B981', isDefault: true },
-    { id: 'todo', name: 'To-Do', color: '#F59E0B', isDefault: true },
+  { id: 'personal', name: t('personal'), color: '#6366F1', isDefault: true },
+    { id: 'work', name: t('work'), color: '#8B5CF6', isDefault: true },
+    { id: 'ideas', name: t('ideas'), color: '#10B981', isDefault: true },
+    { id: 'todo', name: t('todo'), color: '#F59E0B', isDefault: true },
   ];
 
   useEffect(() => {
@@ -60,7 +63,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           const customCategories = saved ? JSON.parse(saved) : [];
           setCategories([...DEFAULT_CATEGORIES, ...customCategories]);
         }
-        toast.success('Categories loaded');
+        toast.success(t('categoriesLoaded'));
       } catch (err) {
         toast.error('Failed to load categories');
         console.error(err);
@@ -92,7 +95,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
       
       // Always include defaults when setting state
       setCategories([...DEFAULT_CATEGORIES, ...customCategories]);
-      toast.success('Categories saved');
+      toast.success(t('categoriesSaved'));
       return true;
     } catch (err) {
       toast.error(user ? 'Failed to save to server' : 'Failed to save locally');
@@ -169,7 +172,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Manage Categories
+            {t('manage_categories')}
           </h2>
           <button
             onClick={onClose}
@@ -184,12 +187,12 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           {/* Add New Category */}
           <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Add New Category
+              {t('add_new_category')}
             </h3>
             <div className="space-y-4">
               <input
                 type="text"
-                placeholder="Category name..."
+               placeholder={t("category_name_placeholder")}
                 value={newCategoryName}
                 onChange={(e) => setNewCategoryName(e.target.value)}
                 className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-lg"
@@ -197,7 +200,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
               />
               <div className="space-y-3">
                 <label className="text-md font-medium text-gray-700 dark:text-gray-300">
-                  Choose Color
+                 {t('choose_color')}
                 </label>
                 <div className="grid grid-cols-6 gap-3">
                   {predefinedColors.map((color) => (
@@ -223,7 +226,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
                 {isLoading ? (
                   <Loader2 className="w-5 h-5 mx-auto animate-spin" />
                 ) : (
-                  'Add Category'
+                  t('add_category')
                 )}
               </button>
             </div>
@@ -232,7 +235,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           {/* Existing Categories */}
           <div>
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Your Categories
+               {t('your_categories')}
             </h3>
             {isLoading && categories.length === 0 ? (
               <div className="flex justify-center py-8">
@@ -267,7 +270,7 @@ const CategoryManager = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
                       </span>
                       {category.isDefault && (
                         <span className="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
-                          Default
+                         {t('default')}
                         </span>
                       )}
                     </div>
