@@ -160,13 +160,13 @@ const NoteCard: React.FC<NoteCardProps> = ({
         }`}>
         {getPreview(note.content)}
       </p> */}
-    <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+    <div className="prose prose-sm dark:prose-invert  prose-light-fix max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
         <MDEditor.Markdown
             source={getPreview(note.content)}
             style={{
               background: 'transparent',
               padding: 0,
-              color: 'black'
+              
             }}/>
 </div>
 
