@@ -241,7 +241,7 @@ const Header: React.FC<HeaderProps> = ({
           <div className="bg-white dark:bg-gray-800 rounded-lg p-6 w-full max-w-md max-h-[80vh] shadow-xl">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100">
-                {t("select_language")}
+               Select Language
               </h2>
               <button
                 onClick={() => setShowLangModal(false)}
