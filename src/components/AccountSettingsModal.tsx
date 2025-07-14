@@ -129,7 +129,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
        setMessage({ type: 'success', text: 'Profile saved successfully' });
     } catch (error: any) {
-     const errorMessage = error.response?.data?.message || 'Error saving profile');
+     const errorMessage = error.response?.data?.message || 'Error saving profile';
       setMessage({ type: 'error', text: errorMessage });
     } finally {
       setIsLoading(false);
