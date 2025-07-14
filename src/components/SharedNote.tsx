@@ -100,7 +100,7 @@ const SharedNote = () => {
             {/* ✅ Navbar */}
             <nav className="w-full bg-white shadow-md px-6 py-4 flex items-center">
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 ml-[70px]">
                     <img
                         src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
                         alt="Notepadle"
