@@ -9,11 +9,19 @@ interface TermsOfServiceProps {
 }
 
 const TermsOfService: React.FC<TermsOfServiceProps> = ({ isOpen, onClose }) => {
- const { t, i18n } = useTranslation('terms');
+ const [ready, setReady] = useState(false);
 
-  console.log('Current lang:', i18n.language);
-  console.log('Title:', t('title'));
-  if (!isOpen) return null;
+  useEffect(() => {
+    if (isOpen) {
+      i18n.loadNamespaces('terms').then(() => {
+        setReady(true);
+      });
+    }
+  }, [isOpen]);
+
+  const { t } = useTranslation('terms');
+
+  if (!isOpen || !ready) return null;
 
   return (
     <div className="fixed inset-0 mt-28 md:mt-2 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
