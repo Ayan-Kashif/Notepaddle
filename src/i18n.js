@@ -372,7 +372,6 @@
 //   })
 
 // export default i18n
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
@@ -381,16 +380,19 @@ i18n
   .use(HttpBackend)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
-    lng: 'en',
-    defaultNS: 'translation', // keep default
+    lng: 'en', // default language
+    fallbackLng: 'en', // fallback if translation not available
+    defaultNS: 'translation', // default namespace
+
+    ns: ['translation'], // only load the default by default
     interpolation: {
       escapeValue: false,
     },
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json', // lazy-load from public folder
     },
   });
 
 export default i18n;
+
 
