@@ -94,13 +94,19 @@ const SharedNote = () => {
   fetchNote();
 }, []);
 
+        const handleNavigate = (path: string) => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navigate(path);
+        // window.location.reload();
+    };
+
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col">
             {/* ✅ Navbar */}
             <nav className="w-full bg-white shadow-md px-6 py-4 flex items-center">
 
-                <div className="flex items-center space-x-3 ml-[40px] md:ml-[70px]">
+                <div  onClick={() => handleNavigate('/')} className="flex items-center space-x-3 ml-[40px] md:ml-[70px] cursor-pointer">
                     <img
                         src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
                         alt="Notepadle"
