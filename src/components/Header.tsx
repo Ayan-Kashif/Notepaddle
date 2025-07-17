@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect,Suspense,lazy} from 'react';
 import { Search, Moon, Sun, Plus, LogIn, Menu, X } from 'lucide-react';
-import UserMenu from './UserMenu';
-import AuthModal from './AuthModal';
+// import UserMenu from './UserMenu';
+// import AuthModal from './AuthModal';
+const AuthModal = lazy(() => import('./AuthModal'));
+const UserMenu = lazy(() => import('./UserMenu'));
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import '../i18n.js';
 import { User } from 'lucide-react';
+import { FaGlobe } from "react-icons/fa";
+import { Check, ChevronDown } from "lucide-react";
 interface HeaderProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
@@ -51,7 +55,62 @@ const Header: React.FC<HeaderProps> = ({
   onCloseAuthModal,
 }) => {
   const navigate = useNavigate()
- const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+
+  const [showLangModal, setShowLangModal] = useState(false);
+
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "pt", name: "Português" },
+    { code: "cs", name: "Čeština" },
+    { code: "da", name: "Dansk" },
+    { code: "de", name: "Deutsch" },
+    { code: "es", name: "Español" },
+    { code: "fr", name: "Français" },
+    { code: "it", name: "Italiano" },
+    { code: "id", name: "Bahasa Indonesia" },
+    { code: "ms", name: "Bahasa Melayu" },
+    { code: "nl", name: "Nederlands" },
+    { code: "no", name: "Norsk" },
+    { code: "pl", name: "Polski" },
+    { code: "fi", name: "Suomi" },
+    { code: "sv", name: "Svenska" },
+    { code: "vi", name: "Tiếng Việt" },
+    { code: "tr", name: "Türkçe" },
+    { code: "el", name: "Ελληνικά" },
+    { code: "ru", name: "Русский" },
+    { code: "uk", name: "Українська" },
+    // { code: "he", name: "עברית" },
+    // { code: "ar", name: "العربية" },
+    { code: "hi", name: "हिन्दी" },
+    { code: "th", name: "ภาษาไทย" },
+    { code: "ko", name: "한국어" },
+    { code: "zh", name: "中文(简体)" },
+    { code: "zh-Hant", name: "中文(繁體)" },
+    { code: "ja", name: "日本語" },
+  ];
+
+  const getFlagEmoji = (code: string) => {
+    const flags: Record<string, string> = {
+      en: "🇺🇸", pt: "🇵🇹", cs: "🇨🇿", da: "🇩🇰", de: "🇩🇪", es: "🇪🇸",
+      fr: "🇫🇷", it: "🇮🇹", id: "🇮🇩", ms: "🇲🇾", nl: "🇳🇱", no: "🇳🇴",
+      pl: "🇵🇱", fi: "🇫🇮", sv: "🇸🇪", vi: "🇻🇳", tr: "🇹🇷", el: "🇬🇷",
+      ru: "🇷🇺", uk: "🇺🇦", he: "🇮🇱", ar: "🇸🇦", hi: "🇮🇳", th: "🇹🇭",
+      ko: "🇰🇷", zh: "🇨🇳", "zh-Hant": "🇹🇼", ja: "🇯🇵",
+    };
+    return flags[code] || "🌐";
+  };
+
+  const handleChange = (code: string) => {
+    i18n.changeLanguage(code);
+    setShowLangModal(false);
+  };
+
+  useEffect(() => {
+    const rtlLangs = ["ur", "ar", "he"];
+    document.body.dir = rtlLangs.includes(i18n.language) ? "rtl" : "ltr";
+  }, [i18n.language]);
+
 
   return (
     <>
@@ -69,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({
 
               <div className="flex items-center space-x-3">
                 {/* Logo & Name */}
-                  <div className="flex items-center space-x-3">
+                  <div onClick={()=>window.location.reload()} className="flex items-center space-x-3">
                 <img 
                   src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png" 
                   alt="Notepadle" 
@@ -127,7 +186,9 @@ const Header: React.FC<HeaderProps> = ({
               </button>
 
               {isAuthenticated ? (
+       <Suspense fallback={<div>Loading...</div>}>
                 <UserMenu user={user} onLogout={onLogout} />
+               </Suspense>
               ) : (
                 <button
                  onClick={() => onOpenAuthModal(true)}
@@ -137,6 +198,17 @@ const Header: React.FC<HeaderProps> = ({
                   <span className="hidden sm:inline">{t('sign_in')}</span>
                 </button>
               )}
+
+               <div
+                className="flex items-center space-x-1 cursor-pointer group"
+                onClick={() => setShowLangModal(true)}
+              >
+                <FaGlobe className="text-blue-500 w-4 h-4 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
+                <span className="hidden sm:inline text-sm text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-gray-100">
+                  {getFlagEmoji(i18n.language)} {languages.find((l) => l.code === i18n.language)?.name}
+                </span>
+              </div>
+              
             </div>
           </div>
 
@@ -156,6 +228,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
       </header>
+        <Suspense fallback={<div>Loading...</div>}>
 
       <AuthModal
         isOpen={isAuthModalOpen}
@@ -167,6 +240,47 @@ const Header: React.FC<HeaderProps> = ({
         onVerifyEmail={onVerifyEmail}
         onResetPassword={onResetPassword}
       />
+            </Suspense>
+
+          {showLangModal && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex justify-center items-center p-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 w-full max-w-md max-h-[80vh] shadow-xl">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+               Select Language
+              </h2>
+              <button
+                onClick={() => setShowLangModal(false)}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="overflow-y-auto max-h-[60vh] pr-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleChange(lang.code)}
+                    className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors ${i18n.language === lang.code
+                      ? "bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
+                      : "hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+                      }`}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-xl">{getFlagEmoji(lang.code)}</span>
+                      <span>{lang.name}</span>
+                    </div>
+                    {i18n.language === lang.code && (
+                      <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

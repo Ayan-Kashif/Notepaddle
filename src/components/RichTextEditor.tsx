@@ -290,7 +290,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
           )}
 
           {/* Main toolbar */}
-          <div className="flex flex-wrap items-center gap-1 p-2 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+          <div className="flex flex-wrap items-center dark:text-white gap-1 p-2 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
             {/* Text formatting */}
             <div className="flex items-center border-r border-gray-200 dark:border-gray-700 pr-2 mr-2">
               <button
@@ -497,7 +497,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
       )}
 
       {/* Editor content */}
-      <div className="bg-white dark:bg-gray-900 min-h-[300px]">
+      <div className="bg-white dark:bg-gray-900 dark:text-white min-h-[300px]">
         <EditorContent
           editor={editor}
           placeholder={placeholder}

@@ -4,6 +4,8 @@ import { Pin, Star, MoreVertical, Trash2, Edit3, Download, Lock, Shield } from '
 import ExportMenu from './ExportMenu';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 import MDEditor from '@uiw/react-md-editor';
 
 interface NoteCardProps {
@@ -24,6 +26,7 @@ const NoteCard: React.FC<NoteCardProps> = ({
 }) => {
   const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
   const exportButtonRef = useRef<HTMLButtonElement>(null);
+   const { t } = useTranslation()
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -96,7 +99,7 @@ const NoteCard: React.FC<NoteCardProps> = ({
         <div className="flex-1 min-w-0">
           <div className="flex items-center space-x-2 mb-1">
             <h3 className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg line-clamp-1">
-              {note.title || 'Untitled'}
+             {note.title === 'Untitled' ? t('untitled') : note.title}
             </h3>
             {note.isPrivate && (
               <div className="flex items-center space-x-1 px-2 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-full text-xs flex-shrink-0">
@@ -157,13 +160,13 @@ const NoteCard: React.FC<NoteCardProps> = ({
         }`}>
         {getPreview(note.content)}
       </p> */}
-    <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+    <div className="prose prose-sm dark:prose-invert  prose-light-fix max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
         <MDEditor.Markdown
             source={getPreview(note.content)}
             style={{
               background: 'transparent',
               padding: 0,
-              color: 'black'
+              
             }}/>
 </div>
 

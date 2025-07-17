@@ -2,14 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
 
-    <link rel="icon" type="image/png" href="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notepadle - Your Digital Notepad</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Defer script to prevent blocking -->
+    <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>

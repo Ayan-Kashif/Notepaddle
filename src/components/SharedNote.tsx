@@ -13,7 +13,7 @@ import remarkGfm from 'remark-gfm';
 
 import { motion } from 'framer-motion';
 import {
-    Tag, Users, Pin, Star, Lock, Share2, FileText, Calendar
+    Tag, Users, Pin, Star, Lock, Share2, FileText, Calendar,ChevronDown,ChevronUp
 } from 'lucide-react';
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -47,6 +47,7 @@ const SharedNote = () => {
     const [note, setNote] = useState<Note | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [isExpanded, setIsExpanded] = useState(false);
 
    useEffect(() => {
   const pathParts = window.location.pathname.split('/');
@@ -93,13 +94,19 @@ const SharedNote = () => {
   fetchNote();
 }, []);
 
+        const handleNavigate = (path: string) => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navigate(path);
+        // window.location.reload();
+    };
+
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col">
             {/* ✅ Navbar */}
             <nav className="w-full bg-white shadow-md px-6 py-4 flex items-center">
 
-                <div className="flex items-center space-x-3">
+                <div  onClick={() => handleNavigate('/')} className="flex items-center space-x-3 ml-[40px] md:ml-[70px] cursor-pointer">
                     <img
                         src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png"
                         alt="Notepadle"
@@ -193,20 +200,40 @@ const SharedNote = () => {
                         )}
 
                         {/* Content */}
-                        <div className="prose max-w-none text-gray-800">
-                            {note.contentType === 'plain' ? (
-                        <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                                                              <HtmlRenderer htmlContent={note.content} />
-                                                          </div>
+                       <div className={`prose max-w-none text-gray-800 transition-all duration-300`}>
+  {note.contentType === 'plain' ? (
+    <>
+      <div
+        className={`${
+          isExpanded ? '' : 'line-clamp-5'
+        } overflow-hidden`}
+      >
+        <HtmlRenderer htmlContent={note.content} />
+      </div>
 
-                            ) : (
-                               <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                                                              <HtmlRenderer htmlContent={note.content} />
-                                                          </div>
+      {/* Show more / less toggle */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="mt-2 text-blue-600 hover:underline text-sm flex items-center gap-1"
+      >
+        {isExpanded ? (
+          <>
+            Show less <ChevronUp size={16} />
+          </>
+        ) : (
+          <>
+            Show more <ChevronDown size={16} />
+          </>
+        )}
+      </button>
+    </>
+  ) : (
+    <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+      <HtmlRenderer htmlContent={note.content} />
+    </div>
+  )}
+</div>
 
-
-                            )}
-                        </div>
                     </motion.div>
                 )}
             </div>

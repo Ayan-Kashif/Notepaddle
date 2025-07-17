@@ -2,10 +2,12 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useNotes } from './hooks/useNotes';
 import { useAuth } from './hooks/useAuth';
 import { Note } from './types';
+import { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import NoteCard from './components/NoteCard';
-import NoteEditor from './components/NoteEditor';
+const NoteEditor = lazy(() => import('./components/NoteEditor'));
+// import NoteEditor from './components/NoteEditor';
 import EmptyState from './components/EmptyState';
 import NoteBin from './components/NoteBin';
 import Footer from './components/Footer';
@@ -15,13 +17,17 @@ import VerifyEmail from './components/VerifyEmail';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 import SharedNote from './components/SharedNote';
-import Collaborations from './components/Collaborations';
-import SharedByMe from './components/MyCollaborations';
+import './index.css';
+
+
 import { useNavigate } from 'react-router-dom';
 import { useCallback } from 'react';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
-import AdminDashboard from './components/AdminDashboard';
+
+// const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
+const Collaborations = React.lazy(() => import('./components/Collaborations'));
+const SharedByMe = React.lazy(() => import('./components/MyCollaborations'));
 import AdminLogin from './components/AdminLogin';
 import ChangePassword from './components/ChangePassword';
 import ForgotPassword from './components/ForgotPassword'
@@ -504,15 +510,26 @@ console.log(import.meta.env.VITE_BASE_URL)
   if (isAdminLogin) {
     return <AdminLogin />;
   }
-  if (isAdminDashboard)
-    return <AdminDashboard />
+if (isAdminDashboard) {
+  return (
+    <Suspense fallback={<Loading />}>
+      <div>Hello</div>
+    </Suspense>
+  );
+}
+
+     
   if (isAdminPassword)
     return <ChangePassword />
   if (isVerifyRoute) {
     return <VerifyEmail />;
   }
   if (isMyCollabRoute) {
-    return <SharedByMe />;
+     return (
+        <Suspense fallback={<Loading />}>
+     <SharedByMe />;
+        </Suspense>
+           )
   }
 
   if (isResetRoute) {
@@ -1062,6 +1079,7 @@ console.log(import.meta.env.VITE_BASE_URL)
         )}
 
         {isEditorOpen && (
+         <Suspense fallback={<div>Loading Editor...</div>}>
           <NoteEditor
             note={editingNote}
             isOpen={isEditorOpen}
@@ -1071,6 +1089,7 @@ console.log(import.meta.env.VITE_BASE_URL)
             categories={categories}
             currentUser={user}
           />
+   </Suspense>
         )}
         <NoteBin
           isOpen={isNoteBinOpen}

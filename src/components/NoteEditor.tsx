@@ -2,12 +2,14 @@
 
 
 // components/NoteEditor.tsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef,lazy, Suspense} from 'react';
 import { Note } from '../types';
 import { X, Save, Tag, Folder, Clock, Check, Download, Share2, Users, Shield, Link as LinkIcon } from 'lucide-react';
 import { useAutoSave } from '../hooks/useAutoSave';
 import ExportMenu from './ExportMenu';
-import RichTextEditor from './RichTextEditor';
+// import RichTextEditor from './RichTextEditor';
+
+const RichTextEditor = lazy(() => import('./RichTextEditor'));
 import ShareModal from './ShareModal';
 import CollaborationPanel from './CollaborationPanel';
 import PrivacySettings from './PrivacySettings';
@@ -748,7 +750,7 @@ console.log('Note id:',note?.id,note?._id)
                         {hasUnsavedChanges ? (
                           <div className="flex items-center space-x-1 text-amber-600 dark:text-amber-400">
                             <Clock className="w-3 h-3" />
-                           <span>{t('note_editor.saving')}</span>n>
+                           <span>{t('note_editor.saving')}</span>
                           </div>
                         ) : lastSaved ? (
                           <div className="flex items-center space-x-1 text-green-600 dark:text-green-400">
@@ -926,7 +928,7 @@ console.log('Note id:',note?.id,note?._id)
                   </p>
                 </div>
               )}
-
+              <Suspense fallback={<div>Loading editor...</div>}>
               <RichTextEditor
                 content={content}
                 contentType={contentType}
@@ -936,7 +938,9 @@ console.log('Note id:',note?.id,note?._id)
                 }}
                   placeholder={t('note_editor.note_content_placeholder')}
               />
+                  </Suspense>
             </div>
+            
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 space-y-3 sm:space-y-0">
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">

@@ -103,9 +103,9 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
       });
 
       setProfileImage(response.data.avatar);
-      setMessage({ type: 'success', text: t('upload_image_success') });
+      setMessage({ type: 'success', text: 'Image uploaded successfully!' });
     } catch (error) {
-     setMessage({ type: 'error', text: t('upload_image_error') });
+     setMessage({ type: 'error', text: 'Error uploading image!' });
     } finally {
       setIsLoading(false);
     }
@@ -113,7 +113,7 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
 
   const handleSaveProfile = async () => {
     if (!formData.name || !formData.email) {
-       setMessage({ type: 'error', text: t('required_fields') });
+       setMessage({ type: 'error', text: 'Fill Required Fields' });
       return;
     }
 
@@ -127,9 +127,9 @@ const AccountSettingsModal: React.FC<AccountSettingsModalProps> = ({
         bio: formData.bio
       });
 
-       setMessage({ type: 'success', text: t('save_profile_success') });
+       setMessage({ type: 'success', text: 'Profile saved successfully' });
     } catch (error: any) {
-     const errorMessage = error.response?.data?.message || t('save_profile_error');
+     const errorMessage = error.response?.data?.message || 'Error saving profile';
       setMessage({ type: 'error', text: errorMessage });
     } finally {
       setIsLoading(false);

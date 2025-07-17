@@ -124,7 +124,7 @@ export default function AdminDashboard() {
                 onClick={() => navigate('/admin/change-password')}
                 className="px-4 py-2 rounded-lg text-sm font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-md transition"
               >
-                <Lock className="inline-block mr-2" size={16} /> Change Password
+                <Lock className="inline-block mr-2" size={16} /> {t('admin.dashboard.change_password')}
               </motion.button>
             </div>
             <div className="flex items-center gap-4">
@@ -136,7 +136,7 @@ export default function AdminDashboard() {
                 }}
                 className="px-2 py-2 rounded-lg text-sm font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-md transition"
               >
-                <LogOut className="inline-block mr-2" size={16} /> Logout
+               <LogOut className="inline-block mr-2" size={16} /> {t('admin.dashboard.logout')}
               </motion.button>
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function AdminDashboard() {
             className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 max-w-6xl mx-auto"
           >
             <div className="bg-white p-6 rounded-xl shadow-md">
-              <h2 className="text-lg font-bold mb-4 text-gray-800">User Distribution</h2>
+                <h2 className="text-lg font-bold mb-4 text-gray-800">{t('admin.dashboard.stats.user_distribution')}</h2>
               <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
                   <Pie
@@ -195,11 +195,11 @@ export default function AdminDashboard() {
                   <Legend />
                 </PieChart>
               </ResponsiveContainer>
-              <p className="mt-4 text-sm text-gray-600 font-semibold">Total Users: {stats.totalUsers}</p>
+                 <p className="mt-4 text-sm text-gray-600 font-semibold">{t('admin.dashboard.stats.total_users')}: {stats.totalUsers}</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-md">
-              <h2 className="text-lg font-bold mb-4 text-gray-800">Notes Distribution</h2>
+               <h2 className="text-lg font-bold mb-4 text-gray-800">{t('admin.dashboard.stats.notes_distribution')}</h2>
               <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
                   <Pie
@@ -225,7 +225,7 @@ export default function AdminDashboard() {
             </div>
 
             <div className="md:col-span-2 bg-white p-6 rounded-xl shadow-md">
-              <h2 className="text-lg font-bold mb-4 text-gray-800">Notes Created Per Month</h2>
+             <h2 className="text-lg font-bold mb-4 text-gray-800">{t('admin.dashboard.stats.notes_per_month')}</h2>
               <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={stats.notesPerMonth}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -261,7 +261,7 @@ export default function AdminDashboard() {
         >
           {/* Header section with title and controls */}
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-800">All Users</h1>
+          <h1 className="text-2xl font-bold text-gray-800">{t('admin.dashboard.users.title')}</h1>
 
             <div className="flex gap-4 items-center">
               <label className="flex items-center gap-2 text-sm text-gray-700">

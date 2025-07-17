@@ -256,3 +256,13 @@
 .dark .markdown-editor .w-md-editor-text-textarea::selection {
   background-color: rgba(99, 102, 241, 0.4);
 }
+
+/* styles.css */
+.prose-light-fix :where(p, li, h1, h2, h3, h4, h5, h6, strong, em, blockquote) {
+  color: black;
+}
+
+.dark .prose-light-fix :where(p, li, h1, h2, h3, h4, h5, h6, strong, em, blockquote) {
+  color: #d1d5db;
+  /* Tailwind's gray-300 */
+}
