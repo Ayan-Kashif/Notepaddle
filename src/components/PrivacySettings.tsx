@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import { Lock, Unlock, Eye, EyeOff, Key, Shield, AlertTriangle } from 'lucide-react';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
