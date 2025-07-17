@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Note } from '../types';
 import { Download, FileText, File, FileImage, FileCode } from 'lucide-react';
-import { jsPDF } from 'jspdf';
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 interface ExportMenuProps {
@@ -92,34 +92,32 @@ const ExportMenu: React.FC<ExportMenuProps> = ({ note, isOpen, onClose }) => {
   
  
 
-const exportAsPDF = () => {
-  setIsExporting(true);
+const exportAsPDF = async (title: string, content: string) => {
+  const pdfDoc = await PDFDocument.create();
+  const page = pdfDoc.addPage();
 
-  const doc = new jsPDF({
-    unit: 'pt',
-    format: 'letter',
-    orientation: 'portrait',
+  const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+  const { width, height } = page.getSize();
+
+  const fontSize = 12;
+  const wrappedContent = content.match(/.{1,90}/g)?.join('\n') || content;
+
+  page.drawText(`${title}\n\n${wrappedContent}`, {
+    x: 50,
+    y: height - 50,
+    size: fontSize,
+    font: timesRomanFont,
+    color: rgb(0, 0, 0),
+    lineHeight: 14,
   });
 
-  // Title
-  doc.setFont('Times', 'bold');
-  doc.setFontSize(20);
-  doc.text(note.title || 'Untitled', 40, 60);
-
-  // Content
-  doc.setFont('Times', 'normal');
-  doc.setFontSize(12);
-
-  // Split content into lines and render
-  const contentLines = doc.splitTextToSize(note.content || '', 500);
-  doc.text(contentLines, 40, 100);
-
-  doc.save(`${note.title || 'note'}.pdf`);
-
-  setIsExporting(false);
-  onClose();
+  const pdfBytes = await pdfDoc.save();
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `${title || 'note'}.pdf`;
+  link.click();
 };
-
 
   if (!isOpen) return null;
 
