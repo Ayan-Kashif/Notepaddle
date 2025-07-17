@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Note } from '../types';
 import { Download, FileText, File, FileImage, FileCode } from 'lucide-react';
-
+import { jsPDF } from 'jspdf';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 interface ExportMenuProps {
@@ -92,33 +92,29 @@ const ExportMenu: React.FC<ExportMenuProps> = ({ note, isOpen, onClose }) => {
   
  
 
-const exportAsPDF = async () => {
+const exportAsPDF = () => {
   setIsExporting(true);
 
-  const html2pdf = (await import('html2pdf.js')).default;
-  const element = document.createElement('div');
-  element.innerHTML = `
-    <div style="font-family: 'Times New Roman', serif; padding: 1in; color: #333; line-height: 1.8;">
-      <h1 style="color: #000; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 30px; font-size: 24px; font-weight: bold;">
-        ${note.title || 'Untitled'}
-      </h1>
-      <div style="white-space: pre-wrap; text-align: justify; font-size: 12px; line-height: 1.8;">
-        ${note.content}
-      </div>
-    </div>
-  `;
+  const doc = new jsPDF({
+    unit: 'pt',
+    format: 'letter',
+    orientation: 'portrait',
+  });
 
-  // Convert to PDF and download directly
-  await html2pdf()
-    .set({
-      margin:       0,
-      filename:     `${note.title || 'note'}.pdf`,
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    })
-    .from(element)
-    .save();
+  // Title
+  doc.setFont('Times', 'bold');
+  doc.setFontSize(20);
+  doc.text(note.title || 'Untitled', 40, 60);
+
+  // Content
+  doc.setFont('Times', 'normal');
+  doc.setFontSize(12);
+
+  // Split content into lines and render
+  const contentLines = doc.splitTextToSize(note.content || '', 500);
+  doc.text(contentLines, 40, 100);
+
+  doc.save(`${note.title || 'note'}.pdf`);
 
   setIsExporting(false);
   onClose();
