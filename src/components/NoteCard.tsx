@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
-import MDEditor from '@uiw/react-md-editor';
+// import MDEditor from '@uiw/react-md-editor';
 
 interface NoteCardProps {
   note: Note;
@@ -161,13 +161,10 @@ const NoteCard: React.FC<NoteCardProps> = ({
         {getPreview(note.content)}
       </p> */}
     <div className="prose prose-sm dark:prose-invert  prose-light-fix max-w-none text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-        <MDEditor.Markdown
-            source={getPreview(note.content)}
-            style={{
-              background: 'transparent',
-              padding: 0,
-              
-            }}/>
+         <div
+          className="prose dark:prose-invert max-w-none text-sm"
+          dangerouslySetInnerHTML={{ __html: note.content }}
+        />
 </div>
 
       <div className="flex items-center justify-between">
