@@ -10,9 +10,19 @@ interface ReportAbusePolicyProps {
 }
 
 const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }) => {
+ const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      i18n.loadNamespaces('reportAbuse').then(() => {
+        setReady(true);
+      });
+    }
+  }, [isOpen]);
+
   const { t } = useTranslation('reportAbuse');
 
-  if (!isOpen) return null;
+  if (!isOpen || !ready) return null;
 
   return (
     <div className="fixed inset-0 mt-28 md:mt-2 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
