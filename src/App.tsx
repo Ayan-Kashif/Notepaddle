@@ -17,13 +17,16 @@ import VerifyEmail from './components/VerifyEmail';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 import SharedNote from './components/SharedNote';
-import Collaborations from './components/Collaborations';
-import SharedByMe from './components/MyCollaborations';
+
+
 import { useNavigate } from 'react-router-dom';
 import { useCallback } from 'react';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
-import AdminDashboard from './components/AdminDashboard';
+
+const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
+const Collaborations = React.lazy(() => import('./components/Collaborations'));
+const SharedByMe = React.lazy(() => import('./components/MyCollaborations'));
 import AdminLogin from './components/AdminLogin';
 import ChangePassword from './components/ChangePassword';
 import ForgotPassword from './components/ForgotPassword'
@@ -506,15 +509,20 @@ console.log(import.meta.env.VITE_BASE_URL)
   if (isAdminLogin) {
     return <AdminLogin />;
   }
-  if (isAdminDashboard)
+  if (isAdminDashboard){
+     <Suspense fallback={<Loading />}>
     return <AdminDashboard />
+        }
+     
   if (isAdminPassword)
     return <ChangePassword />
   if (isVerifyRoute) {
     return <VerifyEmail />;
   }
   if (isMyCollabRoute) {
+     <Suspense fallback={<Loading />}>
     return <SharedByMe />;
+        </Suspense>
   }
 
   if (isResetRoute) {
