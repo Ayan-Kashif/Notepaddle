@@ -1,0 +1,77 @@
+{
+  "title": "Tietosuojakäytäntö",
+  "subtitle": "Kuinka käsittelemme tietojasi ja suojaamme yksityisyyttäsi",
+  "header_title": "Tietosuojakäytäntö – Notepadle",
+  "effective_date": "Voimassa alkaen: 29. joulukuuta 2024",
+  "last_updated": "Viimeksi päivitetty: 29. joulukuuta 2024",
+  "introduction_heading": "Johdanto",
+  "introduction_body": "Notepadle (“me”) tarjoaa ilmaisen online-muistikirjasovelluksen, jonka avulla käyttäjät voivat helposti kirjoittaa ja tallentaa muistiinpanoja. Tämä tietosuojakäytäntö selittää, kuinka käsittelemme tietojasi ja sitoutumisemme yksityisyyden suojaan.",
+  "data_collection_heading": "1. Mitä tietoja keräämme",
+  "anonymous_heading": "Anonyymit käyttäjät:",
+  "anonymous_list": [
+    "Emme kerää henkilökohtaisia tietoja anonyymilta käyttäjältä",
+    "Muistiinpanot tallennetaan paikallisesti selaimen LocalStorageen",
+    "Teema-asetukset ja mieltymykset tallennetaan paikallisesti",
+    "Tietoja ei lähetetä palvelimillemme"
+  ],
+  "registered_heading": "Rekisteröityneet käyttäjät (vapaaehtoinen):",
+  "registered_intro": "Saatamme kerätä seuraavaa:",
+  "registered_list": [
+    "Sähköpostiosoite tilin luonti- ja todennusprosessiin",
+    "Muistiinpanot, jotka tallennetaan pilveen",
+    "Kieli‑ ja teema-asetukset",
+    "Tilin luonti- ja viimeisin kirjautumisaikaleima",
+    "Muistiinpanojen jako- ja yhteistyöasetukset"
+  ],
+  "use_data_heading": "2. Kuinka käytämme tietojasi",
+  "use_data_list": [
+    "Tallennamme ja synkronisoimme muistiinpanot laitteiden välillä",
+    "Tarjoamme pääsyn tilillesi ja tallennettuun sisältöön",
+    "Parannamme käyttäjäkokemusta ja sovelluksen toiminnallisuutta",
+    "Ota yhteistyöominaisuudet käyttöön, kun jaat muistiinpanoja",
+    "Tarjoamme asiakastukea tarvittaessa",
+    "Lähetämme tiliin liittyviä tärkeitä sähköposteja (vahvistus, salasanan palautus)"
+  ],
+  "email_heading": "3. Sähköpostiviestintä",
+  "email_intro": "Lähetämme sähköposteja osoitteesta support@notepadle.com seuraaviin tarkoituksiin:",
+  "email_list": [
+    "Sähköpostivahvistus tilin luonnin yhteydessä",
+    "Salasanan palautuspyynnöt",
+    "Tärkeät turvallisuusilmoitukset",
+    "Tilin päivitykset ja muutokset",
+    "Vastaukset asiakastuesta"
+  ],
+  "email_note": "Emme lähetä markkinointi- tai mainossähköposteja, ellei siihen ole erikseen annettu suostumusta.",
+  "cookies_heading": "4. Evästeet & LocalStorage",
+  "localstorage_heading": "LocalStoragen käyttö:",
+  "localstorage_list": [
+    "Anonyymien käyttäjien muistiinpanot tallennetaan LocalStorageen",
+    "Teemavalinnat (vaalea/tumma) tallennetaan paikallisesti",
+    "Kategoria- ja muistiinpanon hallinta-asetukset tallennetaan paikallisesti"
+  ],
+  "cookies_usage_heading": "Evästeiden käyttö:",
+  "cookies_usage_list": [
+    "Istuntokohtaiset evästeet pitävät kirjautumisen aktiivisena",
+    "Asetusevästeet tallentavat teema- ja kieliasetukset",
+    "Emme käytä seurantakomponentteja tai mainosevästeitä"
+  ],
+  "contact_heading": "Ota yhteyttä",
+  "contact_intro": "Jos sinulla on kysymyksiä tästä tietosuojakäytännöstä tai tietokäytännöistämme, ota yhteyttä:",
+  "contact_email": "Sähköposti: support@notepadle.com",
+  "contact_response": "Vastausaika: Pyrimme vastaamaan 48 tunnin kuluessa",
+  "summary_heading": "Yksityisyyden yhteenveto",
+  "summary_do": "✓ Me teemme:",
+  "summary_do_list": [
+    "Salaamme kaikki tietosi",
+    "Kunnioitamme yksityisyysvalintojasi",
+    "Sallimme anonyymin käytön",
+    "Annamme täydellisen hallinnan tietoihisi"
+  ],
+  "summary_dont": "✗ Me emme:",
+  "summary_dont_list": [
+    "Myy henkilötietojasi",
+    "Käytä seurantakomponentteja",
+    "Jaa muistiinpanoja ilman lupaa",
+    "Kerää tarpeettomia tietoja"
+  ]
+}

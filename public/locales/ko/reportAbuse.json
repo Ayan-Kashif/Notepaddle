@@ -1,0 +1,53 @@
+{
+  "title": "악용 신고 정책",
+  "subtitle": "부적절한 콘텐츠 및 행위를 신고하는 방법",
+  "header": "악용 신고 정책 – Notepadle",
+  "effective_date": "시행일: 2024년 12월 29일",
+  "last_updated": "최종 업데이트: 2024년 12월 29일",
+  "commitment_heading": "사용자 안전에 대한 우리의 약속",
+  "commitment_body": "우리는 안전하고 존중하는 환경을 유지하기 위해 최선을 다하고 있습니다. 서비스 약관 또는 가이드라인을 위반하는 콘텐츠를 발견한 경우 아래 단계를 따라 신고해 주세요.",
+  "report_heading": "악용 신고 방법",
+  "primary_method": "기본 신고 방법:",
+  "email_label": "이메일:",
+  "subject_line": "제목: \"악용 신고 - [간단한 설명]\"",
+  "step_1_title": "1. 악용 설명",
+  "step_1_desc": "위반 사항에 대해 명확하고 구체적으로 설명해 주세요",
+  "step_2_title": "2. 링크 또는 위치",
+  "step_2_desc": "링크, 사용자 이름, 노트 ID 또는 관련 정보 제공",
+  "step_3_title": "3. 증거 자료 (가능한 경우)",
+  "step_3_desc": "스크린샷, 시간 표시 등 신고를 뒷받침할 수 있는 자료",
+  "step_4_title": "4. 연락처 정보",
+  "step_4_desc": "필요한 경우 후속 조치를 위해 (기밀 유지)",
+  "contact_heading": "연락처 정보",
+  "abuse_reports_heading": "악용 신고:",
+  "general_support_heading": "일반 지원:",
+  "abuse_details": [
+    "이메일: support@notepadle.com",
+    "제목: \"악용 신고 - [설명]\"",
+    "응답 시간: 48시간 이내"
+  ],
+  "support_details": [
+    "이메일: support@notepadle.com",
+    "제목: \"일반 문의\"",
+    "응답 시간: 24~48시간 이내"
+  ],
+  "summary_heading": "간단 요약",
+  "how_to_report": [
+    "support@notepadle.com 으로 이메일 보내기",
+    "자세한 설명 포함",
+    "증거 자료 제공 (가능한 경우)",
+    "연락처 정보 포함"
+  ],
+  "response_times": [
+    "● 접수 확인: 24시간",
+    "● 조사 진행: 48시간",
+    "● 필요시 조치",
+    "● 후속 알림 제공"
+  ],
+  "confidentiality": [
+    "• 모든 신고는 기밀로 처리됨",
+    "• 신고자의 신원은 보호됨",
+    "• 보복 행위는 허용되지 않음",
+    "• 안전한 조사 절차 보장"
+  ]
+}

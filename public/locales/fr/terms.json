@@ -1,0 +1,46 @@
+{
+  "title": "Conditions d’utilisation",
+  "subtitle": "Conditions pour l’utilisation de Notepadle",
+  "header": "Conditions d’utilisation – Notepadle",
+  "effective": "Date d’entrée en vigueur",
+  "updated": "Dernière mise à jour",
+  "effective_date": "29 décembre 2024",
+  "last_updated": "29 décembre 2024",
+  "accept_heading": "1. Acceptation des conditions",
+  "accept_text": "En accédant ou en utilisant Notepadle (« le Service »), vous acceptez d’être lié par ces Conditions...",
+  "description_heading": "2. Description du Service",
+  "description_intro": "Notepadle est une application de prise de notes numérique permettant aux utilisateurs de :", 
+  "description_list": [
+    "Créer, modifier et organiser des notes personnelles",
+    "Enregistrer des notes localement ou dans le cloud",
+    "Exporter des notes en texte, markdown ou PDF",
+    "Partager et collaborer sur des notes avec d’autres",
+    "Utiliser des tags, catégories et recherche",
+    "Protéger les notes par mot de passe",
+    "Recevoir des notifications par e‑mail pour les activités de compte"
+  ],
+  "description_note": "Le service est gratuit et peut proposer des fonctionnalités premium optionnelles.",
+  "contact_heading": "Informations de contact",
+  "contact_intro": "Si vous avez des questions concernant ces Conditions, veuillez nous contacter :",
+  "contact_email_label": "E‑mail :",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Objet :",
+  "contact_subject": "Demande - Conditions d’utilisation",
+  "contact_time_label": "Délai de réponse :",
+  "contact_time": "Nous visons à répondre sous 48 heures",
+  "summary_heading": "Résumé des Conditions",
+  "summary_rights_heading": "✓ Vos droits :",
+  "summary_rights_list": [
+    "Posséder entièrement votre contenu",
+    "Exporter vos données à tout moment",
+    "Utiliser le service de manière anonyme",
+    "Supprimer votre compte à tout moment"
+  ],
+  "summary_resp_heading": "ℹ Vos responsabilités :",
+  "summary_resp_list": [
+    "Respecter les directives de contenu",
+    "Maintenir la sécurité de votre compte",
+    "Respecter les droits des autres",
+    "Sauvegarder les données importantes"
+  ]
+}

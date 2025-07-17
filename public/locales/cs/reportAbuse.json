@@ -1,0 +1,53 @@
+{
+  "title": "Zásady hlášení zneužití",
+  "subtitle": "Jak nahlásit nevhodný obsah a chování",
+  "header": "Zásady hlášení zneužití – Notepadle",
+  "effective_date": "Datum účinnosti: 29. prosince 2024",
+  "last_updated": "Poslední aktualizace: 29. prosince 2024",
+  "commitment_heading": "Naše závazky k bezpečnosti uživatelů",
+  "commitment_body": "Zavazujeme se udržovat bezpečné a respektující prostředí. Pokud najdete obsah, který porušuje naše podmínky nebo zásady, nahlaste jej podle následujících kroků.",
+  "report_heading": "Jak nahlásit zneužití",
+  "primary_method": "Hlavní způsob nahlášení:",
+  "email_label": "E-mail:",
+  "subject_line": "Předmět: \"Hlášení zneužití – [Stručný popis]\"",
+  "step_1_title": "1. Popis zneužití",
+  "step_1_desc": "Uveďte jasný a podrobný popis porušení",
+  "step_2_title": "2. Odkaz nebo umístění",
+  "step_2_desc": "Sdílejte odkaz, uživatelské jméno, ID poznámky nebo jiné relevantní údaje",
+  "step_3_title": "3. Důkazy (pokud jsou dostupné)",
+  "step_3_desc": "Snímky obrazovky, časová razítka nebo jiné podpůrné důkazy",
+  "step_4_title": "4. Vaše kontaktní údaje",
+  "step_4_desc": "Abychom vás mohli kontaktovat, pokud to bude nutné (zůstávají důvěrné)",
+  "contact_heading": "Kontaktní informace",
+  "abuse_reports_heading": "Hlášení zneužití:",
+  "general_support_heading": "Obecná podpora:",
+  "abuse_details": [
+    "E-mail: support@notepadle.com",
+    "Předmět: \"Hlášení zneužití – [Popis]\"",
+    "Doba odpovědi: do 48 hodin"
+  ],
+  "support_details": [
+    "E-mail: support@notepadle.com",
+    "Předmět: \"Obecný dotaz\"",
+    "Doba odpovědi: 24–48 hodin"
+  ],
+  "summary_heading": "Rychlý přehled",
+  "how_to_report": [
+    "Pošlete e-mail na support@notepadle.com",
+    "Uveďte podrobný popis",
+    "Přiložte důkazy, pokud jsou dostupné",
+    "Uveďte své kontaktní údaje"
+  ],
+  "response_times": [
+    "● Potvrzení: do 24 hodin",
+    "● Prošetření: do 48 hodin",
+    "● Provedení potřebných kroků",
+    "● Oznámení o výsledku"
+  ],
+  "confidentiality": [
+    "• Všechna hlášení jsou důvěrná",
+    "• Identita oznamovatele je chráněna",
+    "• Jakákoli odveta je zakázána",
+    "• Vyšetřování probíhá bezpečně"
+  ]
+}

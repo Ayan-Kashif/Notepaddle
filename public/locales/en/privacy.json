@@ -1,0 +1,77 @@
+{
+  "title": "Privacy Policy",
+  "subtitle": "How we handle your data and protect your privacy",
+  "header_title": "Privacy Policy – Notepadle",
+  "effective_date": "Effective Date: December 29, 2024",
+  "last_updated": "Last Updated: December 29, 2024",
+  "introduction_heading": "Introduction",
+  "introduction_body": "Notepadle (\"we\", \"our\", or \"us\") provides a free online notepad service to help users write and save notes easily. This privacy policy explains how we handle your data and our commitment to protecting your privacy.",
+  "data_collection_heading": "1. What Data We Collect",
+  "anonymous_heading": "Anonymous Users:",
+  "anonymous_list": [
+    "No personal data is collected from anonymous users",
+    "Notes are saved locally in your browser using localStorage",
+    "Theme preferences and settings are stored locally",
+    "No data is transmitted to our servers"
+  ],
+  "registered_heading": "Registered Users (Optional):",
+  "registered_intro": "We may collect:",
+  "registered_list": [
+    "Email address for account creation and authentication",
+    "Notes you choose to save to our cloud storage",
+    "Language and theme preferences",
+    "Account creation and last login timestamps",
+    "Note sharing and collaboration settings"
+  ],
+  "use_data_heading": "2. How We Use Your Data",
+  "use_data_list": [
+    "To store and sync your notes across devices",
+    "To provide access to your account and saved content",
+    "To improve the user experience and app functionality",
+    "To enable collaboration features when you choose to share notes",
+    "To provide customer support when requested",
+    "To send important account-related emails (verification, password reset)"
+  ],
+  "email_heading": "3. Email Communications",
+  "email_intro": "We send emails from support@notepadle.com for:",
+  "email_list": [
+    "Email verification when you create an account",
+    "Password reset requests",
+    "Important security notifications",
+    "Account-related updates and changes",
+    "Customer support responses"
+  ],
+  "email_note": "We do not send promotional or marketing emails unless you explicitly opt-in.",
+  "cookies_heading": "4. Cookies & LocalStorage",
+  "localstorage_heading": "LocalStorage Usage:",
+  "localstorage_list": [
+    "We use localStorage to save notes for anonymous users",
+    "Theme preferences (dark/light mode) are stored locally",
+    "Category settings and note organization preferences"
+  ],
+  "cookies_usage_heading": "Cookies Usage:",
+  "cookies_usage_list": [
+    "Session cookies to maintain your login state",
+    "Preference cookies for theme and language settings",
+    "No tracking or advertising cookies are used"
+  ],
+  "contact_heading": "Contact Us",
+  "contact_intro": "If you have any questions about this Privacy Policy or our data practices, please contact us:",
+  "contact_email": "Email: support@notepadle.com",
+  "contact_response": "Response Time: We aim to respond within 48 hours",
+  "summary_heading": "Privacy Summary",
+  "summary_do": "✓ We Do:",
+  "summary_do_list": [
+    "Encrypt all your data",
+    "Respect your privacy choices",
+    "Allow anonymous usage",
+    "Give you full control over your data"
+  ],
+  "summary_dont": "✗ We Don't:",
+  "summary_dont_list": [
+    "Sell your personal information",
+    "Use tracking cookies",
+    "Share notes without permission",
+    "Collect unnecessary data"
+  ]
+}

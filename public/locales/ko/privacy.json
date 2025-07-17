@@ -1,0 +1,77 @@
+{
+  "title": "개인정보 처리방침",
+  "subtitle": "귀하의 데이터를 어떻게 처리하고 개인정보를 보호하는지",
+  "header_title": "개인정보 처리방침 – Notepadle",
+  "effective_date": "시행일: 2024년 12월 29일",
+  "last_updated": "최종 업데이트: 2024년 12월 29일",
+  "introduction_heading": "소개",
+  "introduction_body": "Notepadle(“당사”)은 사용자가 메모를 쉽게 작성하고 저장할 수 있는 무료 온라인 메모장을 제공합니다. 본 개인정보 처리방침은 귀하의 데이터를 어떻게 처리하며 개인정보 보호를 위해 어떠한 노력을 하는지 설명합니다.",
+  "data_collection_heading": "1. 수집하는 정보",
+  "anonymous_heading": "익명 사용자:",
+  "anonymous_list": [
+    "익명 사용자로부터 개인 식별 정보를 수집하지 않습니다",
+    "메모는 브라우저의 LocalStorage에 로컬 저장됩니다",
+    "테마 설정 및 선호도는 로컬에 저장됩니다",
+    "서버로 전송되는 데이터는 없습니다"
+  ],
+  "registered_heading": "등록 사용자 (선택적):",
+  "registered_intro": "다음 정보를 수집할 수 있습니다:",
+  "registered_list": [
+    "계정 생성 및 인증을 위한 이메일 주소",
+    "클라우드에 저장하는 선택한 메모",
+    "언어 및 테마 선호도",
+    "계정 생성 및 마지막 로그인 타임스탬프",
+    "메모 공유 및 협업 설정"
+  ],
+  "use_data_heading": "2. 데이터 사용 방법",
+  "use_data_list": [
+    "메모를 기기 간 저장 및 동기화",
+    "계정 및 저장된 콘텐츠에 대한 접근 제공",
+    "사용자 경험 및 앱 기능 개선",
+    "메모 공유 시 협업 기능 제공",
+    "고객 지원 제공",
+    "계정 관련 중요한 이메일 발송(인증, 비밀번호 재설정)"
+  ],
+  "email_heading": "3. 이메일 통신",
+  "email_intro": "다음 목적으로 support@notepadle.com에서 이메일을 발송합니다:",
+  "email_list": [
+    "계정 생성 시 이메일 인증",
+    "비밀번호 재설정 요청",
+    "중요 보안 알림",
+    "계정 업데이트 및 변경 사항",
+    "고객 지원 응답"
+  ],
+  "email_note": "사용자의 명시적 동의 없이는 광고 또는 마케팅 이메일을 발송하지 않습니다.",
+  "cookies_heading": "4. 쿠키 & LocalStorage",
+  "localstorage_heading": "LocalStorage 사용:",
+  "localstorage_list": [
+    "익명 사용자 메모는 LocalStorage에 저장됩니다",
+    "테마 선호도(라이트/다크)는 로컬에 저장됩니다",
+    "카테고리 및 메모 구성 설정은 로컬에 저장됩니다"
+  ],
+  "cookies_usage_heading": "쿠키 사용:",
+  "cookies_usage_list": [
+    "세션 쿠키는 로그인 상태를 유지합니다",
+    "환경설정 쿠키는 테마 및 언어 설정을 저장합니다",
+    "추적 또는 광고용 쿠키는 사용하지 않습니다"
+  ],
+  "contact_heading": "문의하기",
+  "contact_intro": "본 개인정보 처리방침이나 데이터 처리 방식에 대해 질문이 있으시면 문의해 주세요:",
+  "contact_email": "이메일: support@notepadle.com",
+  "contact_response": "응답 시간: 48시간 이내로 답변드릴 예정입니다",
+  "summary_heading": "개인정보 요약",
+  "summary_do": "✓ 저희는 다음을 수행합니다:",
+  "summary_do_list": [
+    "데이터 암호화",
+    "개인정보 선택 존중",
+    "익명 사용 허용",
+    "데이터에 대한 완전한 제어 제공"
+  ],
+  "summary_dont": "✗ 저희는 하지 않습니다:",
+  "summary_dont_list": [
+    "개인정보 판매하지 않음",
+    "추적 쿠키 사용하지 않음",
+    "허가 없이 메모 공유하지 않음",
+    "불필요한 데이터 수집하지 않음"
+  ]
+}

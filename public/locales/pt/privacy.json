@@ -1,0 +1,77 @@
+{
+  "title": "Política de Privacidade",
+  "subtitle": "Como tratamos seus dados e protegemos sua privacidade",
+  "header_title": "Política de Privacidade – Notepadle",
+  "effective_date": "Data de Vigência: 29 de dezembro de 2024",
+  "last_updated": "Última Atualização: 29 de dezembro de 2024",
+  "introduction_heading": "Introdução",
+  "introduction_body": "O Notepadle (\"nós\") oferece um serviço gratuito de bloco de notas online para ajudar usuários a escrever e salvar notas com facilidade. Esta política de privacidade explica como tratamos seus dados e nosso compromisso em proteger sua privacidade.",
+  "data_collection_heading": "1. Quais dados coletamos",
+  "anonymous_heading": "Usuários Anônimos:",
+  "anonymous_list": [
+    "Nenhum dado pessoal é coletado",
+    "Notas são armazenadas localmente no seu navegador via localStorage",
+    "Preferências de tema e configurações são salvas localmente",
+    "Nenhum dado é enviado para nossos servidores"
+  ],
+  "registered_heading": "Usuários Registrados (Opcional):",
+  "registered_intro": "Podemos coletar:",
+  "registered_list": [
+    "Endereço de e-mail para criar e autenticar a conta",
+    "Notas salvas na nuvem",
+    "Preferências de idioma e tema",
+    "Datas de criação e último login",
+    "Configurações de compartilhamento e colaboração"
+  ],
+  "use_data_heading": "2. Como usamos seus dados",
+  "use_data_list": [
+    "Para sincronizar e armazenar suas notas",
+    "Para acesso à sua conta e conteúdo salvo",
+    "Para melhorar a experiência e funcionalidades",
+    "Para ativar recursos de colaboração",
+    "Para suporte ao cliente, quando solicitado",
+    "Para enviar e-mails importantes (verificação, redefinir senha)"
+  ],
+  "email_heading": "3. Comunicações por E-mail",
+  "email_intro": "Enviamos e-mails via support@notepadle.com para:",
+  "email_list": [
+    "Verificação de e-mail ao criar conta",
+    "Solicitações de redefinição de senha",
+    "Notificações importantes de segurança",
+    "Atualizações e mudanças na conta",
+    "Respostas do suporte"
+  ],
+  "email_note": "Não enviamos e-mails promocionais sem seu consentimento.",
+  "cookies_heading": "4. Cookies e Armazenamento Local",
+  "localstorage_heading": "Uso do localStorage:",
+  "localstorage_list": [
+    "Usado para salvar notas de usuários anônimos",
+    "Preferências de tema (claro/escuro) são salvas localmente",
+    "Configurações de categoria e organização de notas"
+  ],
+  "cookies_usage_heading": "Uso de Cookies:",
+  "cookies_usage_list": [
+    "Cookies de sessão para manter login",
+    "Cookies de preferência para tema e idioma",
+    "Não usamos cookies de rastreamento ou publicidade"
+  ],
+  "contact_heading": "Entre em Contato",
+  "contact_intro": "Se tiver dúvidas sobre esta política, entre em contato:",
+  "contact_email": "E-mail: support@notepadle.com",
+  "contact_response": "Tempo de resposta: dentro de 48 horas",
+  "summary_heading": "Resumo de Privacidade",
+  "summary_do": "✓ Fazemos:",
+  "summary_do_list": [
+    "Criptografamos seus dados",
+    "Respeitamos sua privacidade",
+    "Permitimos uso anônimo",
+    "Você tem controle total sobre seus dados"
+  ],
+  "summary_dont": "✗ Não fazemos:",
+  "summary_dont_list": [
+    "Não vendemos suas informações",
+    "Não usamos cookies de rastreamento",
+    "Não compartilhamos notas sem permissão",
+    "Não coletamos dados desnecessários"
+  ]
+}

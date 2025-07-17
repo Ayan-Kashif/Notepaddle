@@ -1,0 +1,77 @@
+{
+  "title": "Zásady ochrany osobních údajů",
+  "subtitle": "Jak nakládáme s vašimi údaji a chráníme vaše soukromí",
+  "header_title": "Zásady ochrany osobních údajů – Notepadle",
+  "effective_date": "Platné od: 29. prosince 2024",
+  "last_updated": "Poslední aktualizace: 29. prosince 2024",
+  "introduction_heading": "Úvod",
+  "introduction_body": "Notepadle („my“, „nás“ nebo „naše“) poskytuje bezplatnou online službu pro psaní a ukládání poznámek. Tyto zásady ochrany osobních údajů vysvětlují, jak nakládáme s vašimi údaji a jak chráníme vaše soukromí.",
+  "data_collection_heading": "1. Jaké údaje shromažďujeme",
+  "anonymous_heading": "Anonymní uživatelé:",
+  "anonymous_list": [
+    "Od anonymních uživatelů neshromažďujeme osobní údaje",
+    "Poznámky jsou ukládány lokálně v prohlížeči pomocí localStorage",
+    "Preference vzhledu a nastavení se ukládají lokálně",
+    "Žádná data nejsou odesílána na naše servery"
+  ],
+  "registered_heading": "Registrovaní uživatelé (nepovinně):",
+  "registered_intro": "Můžeme shromažďovat následující údaje:",
+  "registered_list": [
+    "E‑mailová adresa pro vytvoření účtu a ověření identity",
+    "Poznámky, které se rozhodnete uložit do cloudového úložiště",
+    "Preference jazyka a vzhledu",
+    "Údaje o vytvoření účtu a posledním přihlášení",
+    "Nastavení sdílení a spolupráce na poznámkách"
+  ],
+  "use_data_heading": "2. Jak používáme vaše údaje",
+  "use_data_list": [
+    "Pro ukládání a synchronizaci poznámek na různých zařízeních",
+    "Pro přístup k vašemu účtu a uloženému obsahu",
+    "Pro zlepšení uživatelského zážitku a funkčnosti aplikace",
+    "Pro aktivaci funkcí spolupráce, pokud sdílíte poznámky",
+    "Pro poskytování zákaznické podpory na vyžádání",
+    "Pro zasílání důležitých e‑mailů týkajících se účtu (ověření, reset hesla)"
+  ],
+  "email_heading": "3. E‑mailová komunikace",
+  "email_intro": "Odesíláme e‑maily z adresy support@notepadle.com pro:",
+  "email_list": [
+    "Ověření e‑mailu při vytvoření účtu",
+    "Žádosti o obnovení hesla",
+    "Důležitá bezpečnostní upozornění",
+    "Aktualizace a změny účtu",
+    "Odpovědi zákaznické podpory"
+  ],
+  "email_note": "Neposíláme propagační nebo marketingové e‑maily, pokud výslovně nesouhlasíte.",
+  "cookies_heading": "4. Cookies & LocalStorage",
+  "localstorage_heading": "Používání localStorage:",
+  "localstorage_list": [
+    "Používáme localStorage pro ukládání poznámek anonymních uživatelů",
+    "Preference vzhledu (tmavý/světlý režim) se ukládají lokálně",
+    "Nastavení kategorií a organizace poznámek"
+  ],
+  "cookies_usage_heading": "Používání cookies:",
+  "cookies_usage_list": [
+    "Session cookies pro udržení přihlášení",
+    "Preference cookies pro jazyk a vzhled aplikace",
+    "Nepoužíváme sledovací ani reklamní cookies"
+  ],
+  "contact_heading": "Kontaktujte nás",
+  "contact_intro": "Máte-li dotazy k této Zásadě ochrany osobních údajů nebo našim postupům, kontaktujte nás:",
+  "contact_email": "E‑mail: support@notepadle.com",
+  "contact_response": "Odezva: Snažíme se odpovědět do 48 hodin",
+  "summary_heading": "Shrnutí ochrany osobních údajů",
+  "summary_do": "✓ My děláme:",
+  "summary_do_list": [
+    "Šifrujeme všechna vaše data",
+    "Respektujeme vaše rozhodnutí o soukromí",
+    "Umožňujeme anonymní používání",
+    "Dejte vám plnou kontrolu nad vašimi údaji"
+  ],
+  "summary_dont": "✗ My neděláme:",
+  "summary_dont_list": [
+    "Neprodáváme vaše osobní údaje",
+    "Nepoužíváme sledovací cookies",
+    "Neshromáždíme zbytečné údaje",
+    "Nevymazáváme poznámky bez vašeho svolení"
+  ]
+}

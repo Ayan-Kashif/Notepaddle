@@ -1,0 +1,46 @@
+{
+  "title": "Términos del servicio",
+  "subtitle": "Términos y condiciones para usar Notepadle",
+  "header": "Términos del servicio – Notepadle",
+  "effective": "Fecha de vigencia",
+  "updated": "Última actualización",
+  "effective_date": "29 de diciembre de 2024",
+  "last_updated": "29 de diciembre de 2024",
+  "accept_heading": "1. Aceptación de los términos",
+  "accept_text": "Al acceder o usar Notepadle (“el Servicio”), aceptas estar sujeto a estos Términos...",
+  "description_heading": "2. Descripción del servicio",
+  "description_intro": "Notepadle es una aplicación digital de toma de notas que permite a los usuarios:", 
+  "description_list": [
+    "Crear, editar y organizar notas personales",
+    "Guardar notas localmente o en la nube",
+    "Exportar notas en texto, markdown o PDF",
+    "Colaborar en notas con otros",
+    "Usar etiquetas, categorías y búsqueda",
+    "Proteger notas con contraseña",
+    "Recibir notificaciones por correo electrónico"
+  ],
+  "description_note": "El servicio es gratuito y puede ofrecer funciones premium opcionales.",
+  "contact_heading": "Información de contacto",
+  "contact_intro": "Si tienes preguntas sobre estos Términos del servicio, contáctanos:",
+  "contact_email_label": "Correo electrónico:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Asunto:",
+  "contact_subject": "Consulta sobre Términos del servicio",
+  "contact_time_label": "Tiempo de respuesta:",
+  "contact_time": "Respondemos en un plazo de 48 horas",
+  "summary_heading": "Resumen de los términos",
+  "summary_rights_heading": "✓ Tus derechos:",
+  "summary_rights_list": [
+    "Ser dueño completo de tu contenido",
+    "Exportar tus datos en cualquier momento",
+    "Usar el servicio de forma anónima",
+    "Eliminar tu cuenta en cualquier momento"
+  ],
+  "summary_resp_heading": "ℹ Tus responsabilidades:",
+  "summary_resp_list": [
+    "Seguir las pautas de contenido",
+    "Mantener la seguridad de tu cuenta",
+    "Respetar los derechos de otros",
+    "Respaldar los datos importantes"
+  ]
+}

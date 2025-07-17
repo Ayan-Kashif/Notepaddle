@@ -1,0 +1,53 @@
+{
+  "title": "Política de Denúncia de Abuso",
+  "subtitle": "Como reportar conteúdo e comportamento inapropriado",
+  "header": "Política de Denúncia de Abuso – Notepadle",
+  "effective_date": "29 de dezembro de 2024",
+  "last_updated": "29 de dezembro de 2024",
+  "commitment_heading": "Nosso Compromisso com a Segurança do Usuário",
+  "commitment_body": "Comprometemo-nos a manter um ambiente seguro e respeitoso para todos. Se encontrar conteúdo que viole nossos Termos ou diretrizes, por favor reporte conforme abaixo.",
+  "report_heading": "Como Reportar Abuso",
+  "primary_method": "Método Principal de Denúncia:",
+  "email_label": "E-mail:",
+  "subject_line": "Assunto: \"Abuse Report - [Breve Descrição]\"",
+  "step_1_title": "Descrição do Abuso",
+  "step_1_desc": "Forneça uma descrição clara e detalhada da violação",
+  "step_2_title": "Link ou Localização",
+  "step_2_desc": "Compartilhe link, nome de usuário, ID da nota, etc.",
+  "step_3_title": "Provas (Se Houver)",
+  "step_3_desc": "Capturas de tela, timestamps ou outras evidências",
+  "step_4_title": "Suas Informações de Contato",
+  "step_4_desc": "Seu e-mail para podermos retornar (mantido confidencial)",
+  "contact_heading": "Informações de Contato",
+  "abuse_reports_heading": "Relatórios de Abuso:",
+  "general_support_heading": "Suporte Geral:",
+  "abuse_details": [
+    "E-mail: support@notepadle.com",
+    "Assunto: \"Abuse Report - [Descrição]\"",
+    "Tempo de resposta: 48 horas"
+  ],
+  "support_details": [
+    "E-mail: support@notepadle.com",
+    "Assunto: \"General Inquiry\"",
+    "Tempo de resposta: 24‑48 horas"
+  ],
+  "summary_heading": "Referência Rápida",
+  "how_to_report": [
+    "Email para support@notepadle.com",
+    "Inclua descrição detalhada",
+    "Forneça evidências, se houver",
+    "Inclua suas informações de contato"
+  ],
+  "response_times": [
+    "● Confirmação: 24 horas",
+    "● Investigação: 48 horas",
+    "● Ação se necessário",
+    "● Notificação subsequente"
+  ],
+  "confidentiality": [
+    "• Todos os relatórios são confidenciais",
+    "• Identidade do denunciante protegida",
+    "• Sem retaliação",
+    "• Processo de investigação seguro"
+  ]
+}

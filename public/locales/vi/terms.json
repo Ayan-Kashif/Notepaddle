@@ -1,0 +1,46 @@
+{
+  "title": "Điều Khoản Dịch Vụ",
+  "subtitle": "Các điều khoản và điều kiện khi sử dụng Notepadle",
+  "header": "Điều Khoản Dịch Vụ – Notepadle",
+  "effective": "Ngày Có Hiệu Lực",
+  "updated": "Cập Nhật Lần Cuối",
+  "effective_date": "29 tháng 12, 2024",
+  "last_updated": "29 tháng 12, 2024",
+  "accept_heading": "1. Chấp Nhận Điều Khoản",
+  "accept_text": "Bằng việc truy cập hoặc sử dụng Notepadle (\"Dịch Vụ\"), bạn đồng ý bị ràng buộc bởi các Điều Khoản này…",
+  "description_heading": "2. Mô Tả Dịch Vụ",
+  "description_intro": "Notepadle là ứng dụng ghi chú kỹ thuật số cho phép người dùng:",
+  "description_list": [
+    "Tạo, chỉnh sửa và sắp xếp ghi chú cá nhân",
+    "Lưu ghi chú trên thiết bị hoặc trên đám mây",
+    "Xuất ghi chú dưới dạng văn bản, markdown hoặc PDF",
+    "Hợp tác với người khác trên cùng ghi chú",
+    "Sử dụng thẻ, danh mục và tìm kiếm",
+    "Bảo vệ ghi chú bằng mật khẩu",
+    "Nhận thông báo qua email"
+  ],
+  "description_note": "Dịch vụ miễn phí và có thể cung cấp tùy chọn tính năng cao cấp.",
+  "contact_heading": "Thông Tin Liên Hệ",
+  "contact_intro": "Nếu bạn có thắc mắc về Điều Khoản Dịch Vụ này, vui lòng liên hệ:",
+  "contact_email_label": "Email:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Tiêu đề:",
+  "contact_subject": "Hỏi về Điều Khoản Dịch Vụ",
+  "contact_time_label": "Thời gian phản hồi:",
+  "contact_time": "Chúng tôi sẽ phản hồi trong 48 giờ",
+  "summary_heading": "Tóm Tắt Điều Khoản",
+  "summary_rights_heading": "✓ Quyền của bạn:",
+  "summary_rights_list": [
+    "Bạn hoàn toàn sở hữu nội dung của mình",
+    "Xuất dữ liệu bất cứ lúc nào",
+    "Sử dụng dịch vụ một cách ẩn danh",
+    "Xóa tài khoản bất cứ lúc nào"
+  ],
+  "summary_resp_heading": "ℹ Trách nhiệm của bạn:",
+  "summary_resp_list": [
+    "Tuân thủ hướng dẫn nội dung",
+    "Giữ an toàn cho tài khoản",
+    "Tôn trọng quyền của người khác",
+    "Sao lưu dữ liệu quan trọng"
+  ]
+}

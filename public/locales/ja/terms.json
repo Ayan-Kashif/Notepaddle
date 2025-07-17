@@ -1,0 +1,46 @@
+{
+  "title": "利用規約",
+  "subtitle": "Notepadleをご利用いただくための利用規約",
+  "header": "利用規約 – Notepadle",
+  "effective": "施行日",
+  "updated": "最終更新日",
+  "effective_date": "2024年12月29日",
+  "last_updated": "2024年12月29日",
+  "accept_heading": "1. 規約への同意",
+  "accept_text": "Notepadle（「サービス」）にアクセスまたは使用することで、本規約に同意したものとみなされます...",
+  "description_heading": "2. サービス内容",
+  "description_intro": "Notepadleは、ユーザーが以下を行えるデジタルノートアプリです：",
+  "description_list": [
+    "パーソナルノートの作成、編集、整理",
+    "ノートのローカルまたはクラウドへの保存",
+    "ノートをテキスト、Markdown、PDFでエクスポート",
+    "他のユーザーとのノートの共同編集",
+    "タグ、カテゴリ、検索の使用",
+    "ノートをパスワードで保護",
+    "メール通知の受信"
+  ],
+  "description_note": "本サービスは無料であり、オプションのプレミアム機能を提供する場合があります。",
+  "contact_heading": "お問い合わせ",
+  "contact_intro": "本利用規約についてご質問がある場合は、以下までご連絡ください：",
+  "contact_email_label": "メール：",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "件名：",
+  "contact_subject": "利用規約に関するお問い合わせ",
+  "contact_time_label": "返信時間：",
+  "contact_time": "48時間以内に返信いたします",
+  "summary_heading": "規約の概要",
+  "summary_rights_heading": "✓ お客様の権利：",
+  "summary_rights_list": [
+    "ご自身のコンテンツを完全に所有",
+    "いつでもデータをエクスポート",
+    "匿名でサービスを使用",
+    "いつでもアカウントを削除"
+  ],
+  "summary_resp_heading": "ℹ お客様の責任：",
+  "summary_resp_list": [
+    "コンテンツガイドラインを遵守",
+    "アカウントのセキュリティを維持",
+    "他者の権利を尊重",
+    "重要なデータをバックアップ"
+  ]
+}

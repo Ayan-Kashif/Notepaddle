@@ -1,0 +1,77 @@
+{
+  "title": "Fortrolighedspolitik",
+  "subtitle": "Hvordan vi håndterer dine data og beskytter dit privatliv",
+  "header_title": "Fortrolighedspolitik – Notepadle",
+  "effective_date": "Gældende fra: 29. december 2024",
+  "last_updated": "Sidst opdateret: 29. december 2024",
+  "introduction_heading": "Introduktion",
+  "introduction_body": "Notepadle (\"vi\", \"vores\" eller \"os\") tilbyder en gratis online notetjeneste, som hjælper brugere med nemt at skrive og gemme noter. Denne fortrolighedspolitik forklarer, hvordan vi håndterer dine data, og vores engagement i at beskytte dit privatliv.",
+  "data_collection_heading": "1. Hvilke data indsamler vi",
+  "anonymous_heading": "Anonyme brugere:",
+  "anonymous_list": [
+    "Der indsamles ingen personlige oplysninger fra anonyme brugere",
+    "Noter gemmes lokalt i din browser ved hjælp af localStorage",
+    "Temaindstillinger og præferencer gemmes lokalt",
+    "Ingen data sendes til vores servere"
+  ],
+  "registered_heading": "Registrerede brugere (valgfrit):",
+  "registered_intro": "Vi kan indsamle:",
+  "registered_list": [
+    "E-mailadresse til oprettelse af konto og godkendelse",
+    "Noter du vælger at gemme i vores cloud-lager",
+    "Sprog- og temaindstillinger",
+    "Tidsstempler for kontooprettelse og sidste login",
+    "Indstillinger for deling og samarbejde om noter"
+  ],
+  "use_data_heading": "2. Hvordan vi bruger dine data",
+  "use_data_list": [
+    "At gemme og synkronisere dine noter på tværs af enheder",
+    "At give adgang til din konto og dit gemte indhold",
+    "At forbedre brugeroplevelsen og app‑funktionaliteten",
+    "At aktivere samarbejdsfunktioner, når du vælger at dele noter",
+    "At yde kundesupport efter behov",
+    "At sende vigtige kontorelaterede e‑mails (verifikation, nulstilling af adgangskode)"
+  ],
+  "email_heading": "3. E-mailkommunikation",
+  "email_intro": "Vi sender e-mails fra support@notepadle.com til:",
+  "email_list": [
+    "E-mailverifikation ved kontooprettelse",
+    "Anmodninger om nulstilling af adgangskode",
+    "Vigtige sikkerhedsadvarsler",
+    "Opdateringer og ændringer vedrørende din konto",
+    "Svar fra kundesupport"
+  ],
+  "email_note": "Vi sender ikke reklame- eller marketingmails, medmindre du udtrykkeligt giver samtykke.",
+  "cookies_heading": "4. Cookies & localStorage",
+  "localstorage_heading": "Brug af localStorage:",
+  "localstorage_list": [
+    "Vi bruger localStorage til at gemme noter for anonyme brugere",
+    "Temaindstillinger (mørk/lys tilstand) gemmes lokalt",
+    "Kategoriindstillinger og noterorganisationspræferencer"
+  ],
+  "cookies_usage_heading": "Brug af cookies:",
+  "cookies_usage_list": [
+    "Sessions‑cookies til at opretholde din login‑status",
+    "Præferencecookies til tema- og sprogindstillinger",
+    "Der bruges ingen sporings‑ eller reklamecookies"
+  ],
+  "contact_heading": "Kontakt os",
+  "contact_intro": "Hvis du har spørgsmål til denne fortrolighedspolitik eller vores databehandling, er du velkommen til at kontakte os:",
+  "contact_email": "E-mail: support@notepadle.com",
+  "contact_response": "Respons‑tid: Vi bestræber os på at svare inden for 48 timer",
+  "summary_heading": "Fortsættelsessammenfatning",
+  "summary_do": "✓ Vi gør:",
+  "summary_do_list": [
+    "Krypterer alle dine data",
+    "Respekterer dine valg om privatliv",
+    "Tillader anonym brug",
+    "Giver dig fuld kontrol over dine data"
+  ],
+  "summary_dont": "✗ Vi gør ikke:",
+  "summary_dont_list": [
+    "Sælger dine personlige oplysninger",
+    "Bruger sporingscookies",
+    "Deler noter uden tilladelse",
+    "Indsamler unødvendige data"
+  ]
+}

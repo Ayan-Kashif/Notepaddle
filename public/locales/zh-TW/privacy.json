@@ -1,0 +1,77 @@
+{
+  "title": "隱私權政策",
+  "subtitle": "我們如何處理您的資料並保護您的隱私",
+  "header_title": "隱私權政策 – Notepadle",
+  "effective_date": "生效日期：2024年12月29日",
+  "last_updated": "最後更新：2024年12月29日",
+  "introduction_heading": "介紹",
+  "introduction_body": "Notepadle（「我們」）提供免費的線上筆記服務，協助使用者輕鬆撰寫與儲存筆記。本隱私權政策說明我們如何處理您的資料，以及對保護您隱私的承諾。",
+  "data_collection_heading": "1. 我們收集的資料",
+  "anonymous_heading": "匿名使用者：",
+  "anonymous_list": [
+    "不收集匿名使用者的個人資料",
+    "筆記儲存在您的瀏覽器 localStorage 中",
+    "主題偏好和設定也儲存在本地",
+    "不會將任何資料傳送至伺服器"
+  ],
+  "registered_heading": "註冊使用者（可選）：",
+  "registered_intro": "我們可能會收集：",
+  "registered_list": [
+    "用於帳戶建立和驗證的電子信箱",
+    "您選擇同步至雲端的筆記",
+    "語言與主題使用偏好",
+    "帳戶建立與最近登入時間戳記",
+    "筆記共用與協作設定"
+  ],
+  "use_data_heading": "2. 我們如何使用您的資料",
+  "use_data_list": [
+    "儲存並同步您的筆記至不同裝置",
+    "提供帳戶與儲存內容的存取權",
+    "改善使用者體驗與應用功能",
+    "當您選擇共用筆記時啟用協作功能",
+    "在需求時提供客服支援",
+    "傳送重要帳戶相關郵件（驗證、重設密碼等）"
+  ],
+  "email_heading": "3. 電子郵件通知",
+  "email_intro": "我們會透過 support@notepadle.com 傳送以下郵件：",
+  "email_list": [
+    "註冊帳戶時的電子郵件驗證",
+    "密碼重設請求通知",
+    "重要安全性通知",
+    "帳戶相關更新與變更",
+    "客服支援回覆"
+  ],
+  "email_note": "除非您明確選擇加入，否則我們不會傳送促銷或行銷郵件。",
+  "cookies_heading": "4. Cookies 與 LocalStorage",
+  "localstorage_heading": "LocalStorage 用途：",
+  "localstorage_list": [
+    "匿名使用者的筆記儲存在 localStorage",
+    "主題偏好（深色/淺色）儲存在本地",
+    "類別設定和筆記組織偏好也儲存在本地"
+  ],
+  "cookies_usage_heading": "Cookies 用途：",
+  "cookies_usage_list": [
+    "用於維持登入狀態的 session cookies",
+    "儲存主題與語言偏好的偏好 Cookies",
+    "不使用任何追蹤或廣告 Cookies"
+  ],
+  "contact_heading": "聯絡我們",
+  "contact_intro": "如您對此隱私權政策或我們的資料處理方式有任何疑問，請聯絡我們：",
+  "contact_email": "電子郵件：support@notepadle.com",
+  "contact_response": "回覆時間：我們會在 48 小時內回覆",
+  "summary_heading": "隱私權摘要",
+  "summary_do": "✓ 我們會：",
+  "summary_do_list": [
+    "加密您的所有資料",
+    "尊重您的隱私選擇",
+    "允許匿名使用",
+    "讓您完全掌控您的資料"
+  ],
+  "summary_dont": "✗ 我們不會：",
+  "summary_dont_list": [
+    "販售您的個人資訊",
+    "使用追蹤 Cookies",
+    "未經許可共用筆記",
+    "收集不必要的資料"
+  ]
+}

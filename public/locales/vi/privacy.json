@@ -1,0 +1,77 @@
+{
+  "title": "Chính sách quyền riêng tư",
+  "subtitle": "Chúng tôi xử lý dữ liệu như thế nào và bảo vệ quyền riêng tư của bạn",
+  "header_title": "Chính sách quyền riêng tư – Notepadle",
+  "effective_date": "Ngày có hiệu lực: 29 tháng 12, 2024",
+  "last_updated": "Cập nhật lần cuối: 29 tháng 12, 2024",
+  "introduction_heading": "Giới thiệu",
+  "introduction_body": "Notepadle (“chúng tôi”) cung cấp ứng dụng ghi chú trực tuyến miễn phí giúp người dùng dễ dàng viết và lưu ghi chú. Chính sách quyền riêng tư này giải thích cách chúng tôi xử lý dữ liệu và cam kết bảo vệ quyền riêng tư của bạn.",
+  "data_collection_heading": "1. Chúng tôi thu thập dữ liệu gì",
+  "anonymous_heading": "Người dùng ẩn danh:",
+  "anonymous_list": [
+    "Không thu thập dữ liệu cá nhân đối với người dùng ẩn danh",
+    "Ghi chú được lưu trực tiếp trên trình duyệt của bạn (localStorage)",
+    "Cài đặt giao diện và chủ đề được lưu cục bộ",
+    "Không truyền bất kỳ dữ liệu nào lên máy chủ"
+  ],
+  "registered_heading": "Người dùng đã đăng ký (tuỳ chọn):",
+  "registered_intro": "Chúng tôi có thể thu thập:",
+  "registered_list": [
+    "Địa chỉ email để tạo và xác thực tài khoản",
+    "Ghi chú bạn lưu lên đám mây",
+    "Ngôn ngữ và chủ đề giao diện",
+    "Thời gian tạo tài khoản và lần đăng nhập cuối",
+    "Cài đặt chia sẻ và cộng tác cho ghi chú"
+  ],
+  "use_data_heading": "2. Chúng tôi sử dụng dữ liệu của bạn như thế nào",
+  "use_data_list": [
+    "Lưu trữ và đồng bộ ghi chú trên nhiều thiết bị",
+    "Cung cấp quyền truy cập vào tài khoản và nội dung đã lưu",
+    "Cải thiện trải nghiệm và chức năng ứng dụng",
+    "Cho phép cộng tác khi bạn chọn chia sẻ ghi chú",
+    "Cung cấp hỗ trợ khách hàng khi cần",
+    "Gửi email quan trọng liên quan đến tài khoản (xác thực, đặt lại mật khẩu)"
+  ],
+  "email_heading": "3. Thư điện tử",
+  "email_intro": "Chúng tôi gửi thư từ support@notepadle.com khi:",
+  "email_list": [
+    "Xác minh email khi tạo tài khoản",
+    "Yêu cầu đặt lại mật khẩu",
+    "Thông báo bảo mật quan trọng",
+    "Cập nhật hoặc thay đổi tài khoản",
+    "Phản hồi từ bộ phận hỗ trợ"
+  ],
+  "email_note": "Chúng tôi không gửi thư quảng cáo trừ khi bạn đồng ý rõ ràng.",
+  "cookies_heading": "4. Cookies & LocalStorage",
+  "localstorage_heading": "Sử dụng LocalStorage:",
+  "localstorage_list": [
+    "Ghi chú cho người dùng ẩn danh được lưu trong localStorage",
+    "Thiết lập giao diện (sáng/tối) được lưu cục bộ",
+    "Cài đặt danh mục và tổ chức ghi chú được lưu cục bộ"
+  ],
+  "cookies_usage_heading": "Sử dụng Cookies:",
+  "cookies_usage_list": [
+    "Cookie phiên để duy trì trạng thái đăng nhập",
+    "Cookie để lưu tùy chọn giao diện và ngôn ngữ",
+    "Không sử dụng cookie theo dõi hoặc quảng cáo"
+  ],
+  "contact_heading": "Liên hệ với chúng tôi",
+  "contact_intro": "Nếu bạn có bất kỳ câu hỏi nào về chính sách quyền riêng tư này hoặc cách chúng tôi xử lý dữ liệu, vui lòng liên hệ:",
+  "contact_email": "Email: support@notepadle.com",
+  "contact_response": "Thời gian phản hồi: Chúng tôi cố gắng trả lời trong vòng 48 giờ",
+  "summary_heading": "Tóm tắt quyền riêng tư",
+  "summary_do": "✓ Chúng tôi làm:",
+  "summary_do_list": [
+    "Mã hóa toàn bộ dữ liệu của bạn",
+    "Tôn trọng lựa chọn quyền riêng tư của bạn",
+    "Cho phép sử dụng ẩn danh",
+    "Cho bạn toàn quyền kiểm soát dữ liệu"
+  ],
+  "summary_dont": "✗ Chúng tôi không:",
+  "summary_dont_list": [
+    "Không bán thông tin cá nhân của bạn",
+    "Không sử dụng cookie theo dõi",
+    "Không chia sẻ ghi chú mà không có sự cho phép",
+    "Không thu thập dữ liệu không cần thiết"
+  ]
+}

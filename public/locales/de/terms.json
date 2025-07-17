@@ -1,0 +1,46 @@
+{
+  "title": "Nutzungsbedingungen",
+  "subtitle": "Nutzungsbedingungen für Notepadle",
+  "header": "Nutzungsbedingungen – Notepadle",
+  "effective": "Gültig ab",
+  "updated": "Zuletzt aktualisiert",
+  "effective_date": "29. Dezember 2024",
+  "last_updated": "29. Dezember 2024",
+  "accept_heading": "1. Annahme der Bedingungen",
+  "accept_text": "Durch den Zugriff auf oder die Nutzung von Notepadle („Dienst“) stimmen Sie diesen Bedingungen zu…",
+  "description_heading": "2. Beschreibung des Dienstes",
+  "description_intro": "Notepadle ist eine digitale Notizenanwendung, mit der Nutzer:",
+  "description_list": [
+    "Persönliche Notizen erstellen, bearbeiten und organisieren",
+    "Notizen lokal oder in der Cloud speichern",
+    "Notizen als Text, Markdown oder PDF exportieren",
+    "Mit anderen an Notizen zusammenarbeiten",
+    "Tags, Kategorien und Suche verwenden",
+    "Notizen mit Passwort schützen",
+    "E-Mail-Benachrichtigungen erhalten"
+  ],
+  "description_note": "Der Dienst ist kostenlos und kann optionale Premiumfunktionen bieten.",
+  "contact_heading": "Kontaktinformation",
+  "contact_intro": "Wenn Sie Fragen zu diesen Nutzungsbedingungen haben, kontaktieren Sie uns bitte:",
+  "contact_email_label": "E-Mail:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Betreff:",
+  "contact_subject": "Frage zu den Nutzungsbedingungen",
+  "contact_time_label": "Antwortzeit:",
+  "contact_time": "Wir bemühen uns, innerhalb von 48 Stunden zu antworten",
+  "summary_heading": "Zusammenfassung der Bedingungen",
+  "summary_rights_heading": "✓ Ihre Rechte:",
+  "summary_rights_list": [
+    "Volles Eigentum an Ihren Inhalten",
+    "Jederzeit Daten exportieren",
+    "Anonyme Nutzung möglich",
+    "Konto jederzeit löschen"
+  ],
+  "summary_resp_heading": "ℹ Ihre Pflichten:",
+  "summary_resp_list": [
+    "Richtlinien für Inhalte einhalten",
+    "Konto sicher halten",
+    "Rechte anderer respektieren",
+    "Wichtige Daten sichern"
+  ]
+}

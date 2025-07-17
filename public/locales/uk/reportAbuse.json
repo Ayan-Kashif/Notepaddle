@@ -1,0 +1,53 @@
+{
+  "title": "Chính Sách Báo Cáo Lạm Dụng",
+  "subtitle": "Cách báo cáo nội dung và hành vi không phù hợp",
+  "header": "Chính Sách Báo Cáo Lạm Dụng – Notepadle",
+  "effective_date": "Ngày hiệu lực: 29 tháng 12, 2024",
+  "last_updated": "Cập nhật lần cuối: 29 tháng 12, 2024",
+  "commitment_heading": "Cam Kết Về An Toàn Người Dùng",
+  "commitment_body": "Chúng tôi cam kết duy trì một môi trường an toàn và tôn trọng. Nếu bạn thấy nội dung vi phạm điều khoản hoặc hướng dẫn, hãy báo cáo theo các bước dưới đây.",
+  "report_heading": "Cách Báo Cáo Lạm Dụng",
+  "primary_method": "Phương thức báo cáo chính:",
+  "email_label": "Email:",
+  "subject_line": "Chủ đề: \"Báo Cáo Lạm Dụng - [Mô tả ngắn gọn]\"",
+  "step_1_title": "1. Mô Tả Lạm Dụng",
+  "step_1_desc": "Cung cấp mô tả rõ ràng và chi tiết về vi phạm",
+  "step_2_title": "2. Liên Kết Hoặc Vị Trí",
+  "step_2_desc": "Chia sẻ liên kết, tên người dùng, ID ghi chú hoặc thông tin khác giúp xác định",
+  "step_3_title": "3. Bằng Chứng (Nếu Có)",
+  "step_3_desc": "Ảnh chụp màn hình, dấu thời gian hoặc bất kỳ thông tin hỗ trợ nào",
+  "step_4_title": "4. Thông Tin Liên Hệ Của Bạn",
+  "step_4_desc": "Để chúng tôi có thể liên hệ lại nếu cần (giữ bảo mật)",
+  "contact_heading": "Thông Tin Liên Hệ",
+  "abuse_reports_heading": "Báo Cáo Lạm Dụng:",
+  "general_support_heading": "Hỗ Trợ Chung:",
+  "abuse_details": [
+    "Email: support@notepadle.com",
+    "Chủ đề: \"Báo Cáo Lạm Dụng - [Mô tả]\"",
+    "Thời gian phản hồi: Trong vòng 48 giờ"
+  ],
+  "support_details": [
+    "Email: support@notepadle.com",
+    "Chủ đề: \"Yêu cầu chung\"",
+    "Thời gian phản hồi: 24–48 giờ"
+  ],
+  "summary_heading": "Tóm Tắt Nhanh",
+  "how_to_report": [
+    "Gửi email đến support@notepadle.com",
+    "Bao gồm mô tả chi tiết",
+    "Cung cấp bằng chứng nếu có",
+    "Đính kèm thông tin liên hệ"
+  ],
+  "response_times": [
+    "● Xác nhận: trong vòng 24 giờ",
+    "● Điều tra: trong vòng 48 giờ",
+    "● Hành động nếu cần thiết",
+    "● Thông báo phản hồi"
+  ],
+  "confidentiality": [
+    "• Tất cả báo cáo được giữ bí mật",
+    "• Bảo vệ danh tính người báo cáo",
+    "• Cấm trả đũa",
+    "• Quy trình điều tra an toàn"
+  ]
+}

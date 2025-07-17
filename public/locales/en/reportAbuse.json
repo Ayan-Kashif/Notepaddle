@@ -1,0 +1,53 @@
+{
+  "title": "Report Abuse Policy",
+  "subtitle": "How to report inappropriate content and behavior",
+  "header": "Report Abuse Policy – Notepadle",
+  "effective_date": "December 29, 2024",
+  "last_updated": "December 29, 2024",
+  "commitment_heading": "Our Commitment to User Safety",
+  "commitment_body": "We are committed to maintaining a safe and respectful environment. If you find content that violates our Terms or guidelines, please report it using the steps below.",
+  "report_heading": "How to Report Abuse",
+  "primary_method": "Primary Reporting Method:",
+  "email_label": "Email:",
+  "subject_line": "Subject: \"Abuse Report - [Brief Description]\"",
+  "step_1_title": "Description of the Abuse",
+  "step_1_desc": "Provide a clear and detailed description of the violation",
+  "step_2_title": "Link or Location",
+  "step_2_desc": "Share link, username, note ID, or other info to help us locate it",
+  "step_3_title": "Evidence (If Available)",
+  "step_3_desc": "Screenshots, timestamps, or anything that supports your report",
+  "step_4_title": "Your Contact Information",
+  "step_4_desc": "So we can follow up if needed (kept confidential)",
+  "contact_heading": "Contact Information",
+  "abuse_reports_heading": "Abuse Reports:",
+  "general_support_heading": "General Support:",
+  "abuse_details": [
+    "Email: support@notepadle.com",
+    "Subject: \"Abuse Report - [Description]\"",
+    "Response Time: Within 48 hours"
+  ],
+  "support_details": [
+    "Email: support@notepadle.com",
+    "Subject: \"General Inquiry\"",
+    "Response Time: 24–48 hours"
+  ],
+  "summary_heading": "Quick Reference",
+  "how_to_report": [
+    "Email support@notepadle.com",
+    "Include detailed description",
+    "Provide evidence if available",
+    "Include your contact information"
+  ],
+  "response_times": [
+    "● Acknowledgment: 24 hours",
+    "● Investigation: 48 hours",
+    "● Action taken if needed",
+    "● Follow-up notification"
+  ],
+  "confidentiality": [
+    "• All reports are confidential",
+    "• Reporter identity protected",
+    "• No retaliation allowed",
+    "• Secure investigation process"
+  ]
+}

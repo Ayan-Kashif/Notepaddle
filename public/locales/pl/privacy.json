@@ -1,0 +1,77 @@
+{
+  "title": "Polityka prywatności",
+  "subtitle": "Jak przetwarzamy Twoje dane i chronimy Twoją prywatność",
+  "header_title": "Polityka prywatności – Notepadle",
+  "effective_date": "Data wejścia w życie: 29 grudnia 2024",
+  "last_updated": "Ostatnia aktualizacja: 29 grudnia 2024",
+  "introduction_heading": "Wprowadzenie",
+  "introduction_body": "Notepadle („my”) oferuje bezpłatny notatnik online, który umożliwia łatwe tworzenie i zapisywanie notatek. Niniejsza polityka prywatności wyjaśnia, w jaki sposób przetwarzamy Twoje dane i zobowiązujemy się chronić Twoją prywatność.",
+  "data_collection_heading": "1. Jakie dane zbieramy",
+  "anonymous_heading": "Użytkownicy anonimowi:",
+  "anonymous_list": [
+    "Nie zbieramy danych osobowych od anonimowych użytkowników",
+    "Notatki są zapisywane lokalnie w przeglądarce (localStorage)",
+    "Preferencje motywu i ustawienia są przechowywane lokalnie",
+    "Żadne dane nie są przesyłane na nasze serwery"
+  ],
+  "registered_heading": "Użytkownicy zarejestrowani (opcjonalnie):",
+  "registered_intro": "Możemy zbierać:",
+  "registered_list": [
+    "Adres e-mail do tworzenia konta i uwierzytelniania",
+    "Notatki zapisane w chmurze",
+    "Preferencje języka i motywu",
+    "Daty utworzenia konta i ostatniego logowania",
+    "Ustawienia udostępniania i współpracy"
+  ],
+  "use_data_heading": "2. Jak wykorzystujemy Twoje dane",
+  "use_data_list": [
+    "Przechowywanie i synchronizacja notatek na różnych urządzeniach",
+    "Zapewnienie dostępu do konta i zapisanych treści",
+    "Poprawa funkcjonalności i doświadczenia użytkownika",
+    "Aktywacja funkcji współpracy przy udostępnianiu notatek",
+    "Zapewnienie wsparcia klienta w razie potrzeby",
+    "Wysyłanie ważnych wiadomości e-mail związanych z kontem (weryfikacja, reset hasła)"
+  ],
+  "email_heading": "3. Komunikacja e-mailowa",
+  "email_intro": "Wysyłamy e-maile z support@notepadle.com w przypadku:",
+  "email_list": [
+    "Weryfikacja e-mail podczas rejestracji",
+    "Prośba o reset hasła",
+    "Ważne powiadomienia o bezpieczeństwie",
+    "Aktualizacje konta i zmiany",
+    "Odpowiedzi z obsługi klienta"
+  ],
+  "email_note": "Nie wysyłamy wiadomości marketingowych, chyba że wyraźnie sobie tego życzysz.",
+  "cookies_heading": "4. Cookies & LocalStorage",
+  "localstorage_heading": "Wykorzystanie LocalStorage:",
+  "localstorage_list": [
+    "Notatki anonimowych użytkowników są przechowywane w localStorage",
+    "Preferencje tematu (ciemny/jasny) są przechowywane lokalnie",
+    "Ustawienia kategorii i organizacji notatek są przechowywane lokalnie"
+  ],
+  "cookies_usage_heading": "Wykorzystanie cookies:",
+  "cookies_usage_list": [
+    "Ciastka sesyjne do utrzymywania sesji zalogowania",
+    "Ciastka preferencji dla motywu i języka",
+    "Nie używamy ciastek śledzących ani reklamowych"
+  ],
+  "contact_heading": "Kontakt",
+  "contact_intro": "Jeśli masz pytania dotyczące polityki prywatności lub przetwarzania danych, skontaktuj się z nami:",
+  "contact_email": "E-mail: support@notepadle.com",
+  "contact_response": "Czas odpowiedzi: staramy się odpowiedzieć w ciągu 48 godzin",
+  "summary_heading": "Podsumowanie prywatności",
+  "summary_do": "✓ My robimy:",
+  "summary_do_list": [
+    "Szyfrujemy wszystkie Twoje dane",
+    "Szanujemy Twoje wybory dotyczące prywatności",
+    "Pozwalamy na anonimowe korzystanie",
+    "Dajemy Ci pełną kontrolę nad Twoimi danymi"
+  ],
+  "summary_dont": "✗ My nie robimy:",
+  "summary_dont_list": [
+    "Nie sprzedajemy Twoich danych osobowych",
+    "Nie używamy ciastek śledzących",
+    "Nie udostępniamy notatek bez zgody",
+    "Nie zbieramy zbędnych danych"
+  ]
+}

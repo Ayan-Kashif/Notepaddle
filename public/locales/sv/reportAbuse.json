@@ -1,0 +1,53 @@
+{
+  "title": "Policy för rapportering av missbruk",
+  "subtitle": "Hur du rapporterar olämpligt innehåll och beteende",
+  "header": "Policy för rapportering av missbruk – Notepadle",
+  "effective_date": "Ikraftträdandedatum: 29 december 2024",
+  "last_updated": "Senast uppdaterad: 29 december 2024",
+  "commitment_heading": "Vårt engagemang för användarsäkerhet",
+  "commitment_body": "Vi är engagerade i att upprätthålla en säker och respektfull miljö. Om du hittar innehåll som bryter mot våra användarvillkor eller riktlinjer, vänligen rapportera det genom att följa stegen nedan.",
+  "report_heading": "Hur du rapporterar missbruk",
+  "primary_method": "Primär rapporteringsmetod:",
+  "email_label": "E-post:",
+  "subject_line": "Ämne: \"Missbruksrapport – [Kort beskrivning]\"",
+  "step_1_title": "1. Beskrivning av missbruket",
+  "step_1_desc": "Ge en tydlig och detaljerad beskrivning av överträdelsen",
+  "step_2_title": "2. Länk eller plats",
+  "step_2_desc": "Dela länk, användarnamn, antecknings-ID eller annan information som hjälper oss att hitta det",
+  "step_3_title": "3. Bevis (om tillgängligt)",
+  "step_3_desc": "Skärmdumpar, tidsstämplar eller annat som stöder din rapport",
+  "step_4_title": "4. Din kontaktinformation",
+  "step_4_desc": "Så att vi kan följa upp vid behov (hålls konfidentiellt)",
+  "contact_heading": "Kontaktinformation",
+  "abuse_reports_heading": "Rapportering av missbruk:",
+  "general_support_heading": "Allmänt stöd:",
+  "abuse_details": [
+    "E-post: support@notepadle.com",
+    "Ämne: \"Missbruksrapport – [Beskrivning]\"",
+    "Svarstid: Inom 48 timmar"
+  ],
+  "support_details": [
+    "E-post: support@notepadle.com",
+    "Ämne: \"Allmän förfrågan\"",
+    "Svarstid: 24–48 timmar"
+  ],
+  "summary_heading": "Snabböversikt",
+  "how_to_report": [
+    "E-posta till support@notepadle.com",
+    "Inkludera en detaljerad beskrivning",
+    "Bifoga bevis om möjligt",
+    "Inkludera din kontaktinformation"
+  ],
+  "response_times": [
+    "● Bekräftelse: inom 24 timmar",
+    "● Utredning: inom 48 timmar",
+    "● Åtgärder vid behov",
+    "● Uppföljningsmeddelande"
+  ],
+  "confidentiality": [
+    "• Alla rapporter behandlas konfidentiellt",
+    "• Rapportörens identitet skyddas",
+    "• Inget tillåtet repressalieåtgärd",
+    "• Säker granskningsprocess"
+  ]
+}

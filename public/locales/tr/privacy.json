@@ -1,0 +1,77 @@
+{
+  "title": "Gizlilik Politikası",
+  "subtitle": "Verilerinizi nasıl işleriz ve gizliliğinizi nasıl koruruz",
+  "header_title": "Gizlilik Politikası – Notepadle",
+  "effective_date": "Yürürlük tarihi: 29 Aralık 2024",
+  "last_updated": "Son güncelleme: 29 Aralık 2024",
+  "introduction_heading": "Giriş",
+  "introduction_body": "Notepadle (“biz”), kullanıcıların kolayca not yazıp kaydedebileceği ücretsiz çevrimiçi bir not defteri sunar. Bu gizlilik politikası, verilerinizi nasıl işlediğimizi ve gizliliğinizi koruma taahhüdümüzü açıklar.",
+  "data_collection_heading": "1. Hangi Verileri Topluyoruz",
+  "anonymous_heading": "Anonim Kullanıcılar:",
+  "anonymous_list": [
+    "Anonim kullanıcılardan kişisel veri toplamıyoruz",
+    "Notlar tarayıcınızda localStorage'da yerelde saklanır",
+    "Tema tercihleri ve ayarlar yerelde saklanır",
+    "Veri sunucularımıza gönderilmez"
+  ],
+  "registered_heading": "Kayıtlı Kullanıcılar (isteğe bağlı):",
+  "registered_intro": "Şu verileri toplayabiliriz:",
+  "registered_list": [
+    "Hesap oluşturma ve kimlik doğrulama için e-posta adresi",
+    "Buluta kaydetmeyi seçtiğiniz notlar",
+    "Dil ve tema tercihleriniz",
+    "Hesap oluşturma ve son giriş zaman damgaları",
+    "Not paylaşım ve işbirliği ayarları"
+  ],
+  "use_data_heading": "2. Verilerinizi Nasıl Kullanıyoruz",
+  "use_data_list": [
+    "Notlarınızı cihazlar arasında saklamak ve senkronize etmek",
+    "Hesabınıza ve kaydedilen içeriğe erişim sağlamak",
+    "Kullanıcı deneyimini ve uygulama işlevselliğini geliştirmek",
+    "Notları paylaştığınızda işbirliği özelliklerini etkinleştirmek",
+    "Gerekirse müşteri desteği sağlamak",
+    "Hesapla ilgili önemli e-postalar göndermek (doğrulama, şifre sıfırlama)"
+  ],
+  "email_heading": "3. E-posta İletişimi",
+  "email_intro": "Aşağıdaki durumlarda support@notepadle.com adresinden e-posta gönderiyoruz:",
+  "email_list": [
+    "Hesap oluştururken e-posta doğrulama",
+    "Şifre sıfırlama istekleri",
+    "Önemli güvenlik bildirimleri",
+    "Hesap güncellemeleri ve değişiklikleri",
+    "Müşteri desteğinden cevaplar"
+  ],
+  "email_note": "Açıkça onay vermedikçe tanıtım veya pazarlama e-postaları gönderilmez.",
+  "cookies_heading": "4. Çerezler & LocalStorage",
+  "localstorage_heading": "LocalStorage Kullanımı:",
+  "localstorage_list": [
+    "Anonim kullanıcı notları localStorage'da saklanır",
+    "Tema tercihleri (açık/karanlık) yerelde saklanır",
+    "Kategori ve not düzeni ayarları yerelde saklanır"
+  ],
+  "cookies_usage_heading": "Çerez Kullanımı:",
+  "cookies_usage_list": [
+    "Oturum çerezleri giriş durumunu korur",
+    "Tema ve dil tercihleri için çerezler",
+    "Takip veya reklam çerezleri kullanılmaz"
+  ],
+  "contact_heading": "Bize Ulaşın",
+  "contact_intro": "Bu gizlilik politikası veya veri uygulamalarımızla ilgili sorularınız varsa lütfen bizimle iletişime geçin:",
+  "contact_email": "E-posta: support@notepadle.com",
+  "contact_response": "Yanıt süresi: 48 saat içinde yanıt vermeyi amaçlıyoruz",
+  "summary_heading": "Gizlilik Özeti",
+  "summary_do": "✓ Biz şunları yaparız:",
+  "summary_do_list": [
+    "Tüm verilerinizi şifreleriz",
+    "Gizlilik tercihlerinize saygı gösteririz",
+    "Anonim kullanıma izin veririz",
+    "Verileriniz üzerinde tam kontrol size aittir"
+  ],
+  "summary_dont": "✗ Asla yapmayız:",
+  "summary_dont_list": [
+    "Kişisel bilgilerinizi satmayız",
+    "Takip çerezleri kullanmayız",
+    "İzin olmadan notları paylaşmayız",
+    "Gereksiz veri toplamayız"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "title": "Syarat Layanan",
+  "subtitle": "Syarat dan ketentuan penggunaan Notepadle",
+  "header": "Syarat Layanan – Notepadle",
+  "effective": "Tanggal Berlaku",
+  "updated": "Terakhir Diperbarui",
+  "effective_date": "29 Desember 2024",
+  "last_updated": "29 Desember 2024",
+
+  "accept_heading": "1. Penerimaan Syarat",
+  "accept_text": "Dengan mengakses atau menggunakan Notepadle (\"Layanan\"), Anda menyetujui untuk terikat dengan Syarat ini...",
+
+  "description_heading": "2. Deskripsi Layanan",
+  "description_intro": "Notepadle adalah aplikasi pencatat digital yang memungkinkan pengguna untuk:",
+  "description_list": [
+    "Membuat, mengedit, dan mengatur catatan pribadi",
+    "Menyimpan catatan secara lokal atau di cloud",
+    "Mengekspor catatan dalam format teks, markdown, atau PDF",
+    "Berbagi dan berkolaborasi dengan pengguna lain",
+    "Menggunakan tag, kategori, dan fitur pencarian",
+    "Melindungi catatan dengan kata sandi",
+    "Menerima notifikasi email"
+  ],
+  "description_note": "Layanan ini gratis dan mungkin menawarkan fitur premium opsional.",
+
+  "contact_heading": "Informasi Kontak",
+  "contact_intro": "Jika Anda memiliki pertanyaan tentang Syarat Layanan ini, silakan hubungi kami:",
+  "contact_email_label": "Email:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Subjek:",
+  "contact_subject": "Pertanyaan tentang Syarat Layanan",
+  "contact_time_label": "Waktu Respon:",
+  "contact_time": "Kami berusaha merespons dalam 48 jam",
+
+  "summary_heading": "Ringkasan Syarat",
+  "summary_rights_heading": "✓ Hak Anda:",
+  "summary_rights_list": [
+    "Memiliki sepenuhnya konten Anda",
+    "Mengekspor data kapan saja",
+    "Menggunakan layanan secara anonim",
+    "Menghapus akun kapan saja"
+  ],
+  "summary_resp_heading": "ℹ Tanggung Jawab Anda:",
+  "summary_resp_list": [
+    "Mengikuti pedoman konten",
+    "Menjaga keamanan akun",
+    "Menghormati hak pengguna lain",
+    "Membackup data penting"
+  ]
+}

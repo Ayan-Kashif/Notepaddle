@@ -1,0 +1,46 @@
+{
+  "title": "Termos de Serviço",
+  "subtitle": "Termos e condições para usar o Notepadle",
+  "header": "Termos de Serviço – Notepadle",
+  "effective": "Data de vigência",
+  "updated": "Última atualização",
+  "effective_date": "29 de dezembro de 2024",
+  "last_updated": "29 de dezembro de 2024",
+  "accept_heading": "1. Aceitação dos termos",
+  "accept_text": "Ao acessar ou usar o Notepadle (“o Serviço”), você concorda com estes Termos...",
+  "description_heading": "2. Descrição do Serviço",
+  "description_intro": "Notepadle é um aplicativo digital de notas que permite aos usuários:",
+  "description_list": [
+    "Criar, editar e organizar notas pessoais",
+    "Salvar notas localmente ou na nuvem",
+    "Exportar notas como texto, Markdown ou PDF",
+    "Compartilhar e colaborar em notas",
+    "Usar tags, categorias e busca",
+    "Proteger notas com senha",
+    "Receber notificações por email sobre atividades da conta"
+  ],
+  "description_note": "O serviço é gratuito e pode oferecer recursos premium opcionais.",
+  "contact_heading": "Informações de contato",
+  "contact_intro": "Se tiver dúvidas sobre estes Termos, entre em contato:",
+  "contact_email_label": "Email:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Assunto:",
+  "contact_subject": "Consulta sobre Termos de Serviço",
+  "contact_time_label": "Tempo de resposta:",
+  "contact_time": "Respondemos dentro de 48 horas",
+  "summary_heading": "Resumo dos termos",
+  "summary_rights_heading": "✓ Seus direitos:",
+  "summary_rights_list": [
+    "Ser proprietário total do seu conteúdo",
+    "Exportar seus dados a qualquer momento",
+    "Usar o serviço anonimamente",
+    "Excluir sua conta a qualquer momento"
+  ],
+  "summary_resp_heading": "ℹ Suas responsabilidades:",
+  "summary_resp_list": [
+    "Seguir diretrizes de conteúdo",
+    "Manter sua conta segura",
+    "Respeitar os direitos dos outros",
+    "Fazer backup de dados importantes"
+  ]
+}

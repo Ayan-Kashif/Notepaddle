@@ -1,0 +1,77 @@
+{
+  "title": "Integritetspolicy",
+  "subtitle": "Hur vi hanterar dina uppgifter och skyddar din integritet",
+  "header_title": "Integritetspolicy – Notepadle",
+  "effective_date": "Gäller från: 29 december 2024",
+  "last_updated": "Senast uppdaterad: 29 december 2024",
+  "introduction_heading": "Introduktion",
+  "introduction_body": "Notepadle (\"vi\", \"vår\" eller \"oss\") tillhandahåller en kostnadsfri onlinetjänst för anteckningar för att hjälpa användare att enkelt skriva och spara anteckningar. Denna integritetspolicy förklarar hur vi hanterar dina uppgifter och vårt engagemang för att skydda din integritet.",
+  "data_collection_heading": "1. Vilka uppgifter vi samlar in",
+  "anonymous_heading": "Anonyma användare:",
+  "anonymous_list": [
+    "Ingen personlig information samlas in från anonyma användare",
+    "Anteckningar sparas lokalt i din webbläsare med hjälp av localStorage",
+    "Temainställningar och preferenser sparas lokalt",
+    "Ingen data skickas till våra servrar"
+  ],
+  "registered_heading": "Registrerade användare (valfritt):",
+  "registered_intro": "Vi kan samla in:",
+  "registered_list": [
+    "E-postadress för att skapa konto och autentisering",
+    "Anteckningar du väljer att spara i vår molnlagring",
+    "Språk- och temapreferenser",
+    "Tidsstämplar för kontoskapande och senaste inloggning",
+    "Inställningar för delning och samarbete"
+  ],
+  "use_data_heading": "2. Hur vi använder dina uppgifter",
+  "use_data_list": [
+    "För att lagra och synkronisera dina anteckningar mellan enheter",
+    "För att ge tillgång till ditt konto och sparat innehåll",
+    "För att förbättra användarupplevelsen och appfunktionaliteten",
+    "För att möjliggöra samarbetsfunktioner när du väljer att dela anteckningar",
+    "För att ge kundsupport vid behov",
+    "För att skicka viktiga e-postmeddelanden om kontot (verifiering, lösenordsåterställning)"
+  ],
+  "email_heading": "3. E-postkommunikation",
+  "email_intro": "Vi skickar e-post från support@notepadle.com för:",
+  "email_list": [
+    "Verifiering av e-post vid kontoskapande",
+    "Begäran om lösenordsåterställning",
+    "Viktiga säkerhetsmeddelanden",
+    "Uppdateringar och ändringar av kontoinställningar",
+    "Svar från kundsupport"
+  ],
+  "email_note": "Vi skickar inte reklammeddelanden eller marknadsföringsmejl om du inte uttryckligen samtycker.",
+  "cookies_heading": "4. Cookies & LocalStorage",
+  "localstorage_heading": "Användning av LocalStorage:",
+  "localstorage_list": [
+    "Vi använder localStorage för att spara anteckningar för anonyma användare",
+    "Temainställningar (mörkt/ljust läge) lagras lokalt",
+    "Inställningar för kategorier och anteckningsorganisation"
+  ],
+  "cookies_usage_heading": "Användning av Cookies:",
+  "cookies_usage_list": [
+    "Sessionscookies för att upprätthålla inloggningsstatus",
+    "Preferenscookies för språk och tema",
+    "Inga spårningscookies eller reklamcookies används"
+  ],
+  "contact_heading": "Kontakta oss",
+  "contact_intro": "Om du har några frågor om denna integritetspolicy eller hur vi hanterar dina uppgifter, kontakta oss:",
+  "contact_email": "E-post: support@notepadle.com",
+  "contact_response": "Svarstid: Vi försöker svara inom 48 timmar",
+  "summary_heading": "Sammanfattning av integritet",
+  "summary_do": "✓ Vi gör:",
+  "summary_do_list": [
+    "Krypterar all din data",
+    "Respekterar dina integritetsval",
+    "Tillåter anonym användning",
+    "Ger dig full kontroll över dina uppgifter"
+  ],
+  "summary_dont": "✗ Vi gör inte:",
+  "summary_dont_list": [
+    "Säljer inte din personliga information",
+    "Använder inte spårningscookies",
+    "Delar inte anteckningar utan tillstånd",
+    "Samlar inte in onödiga uppgifter"
+  ]
+}

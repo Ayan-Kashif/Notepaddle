@@ -1,0 +1,46 @@
+{
+  "title": "Käyttöehdot",
+  "subtitle": "Ehdot Notepadlen käyttöön",
+  "header": "Käyttöehdot – Notepadle",
+  "effective": "Voimassa alkaen",
+  "updated": "Viimeksi päivitetty",
+  "effective_date": "29. joulukuuta 2024",
+  "last_updated": "29. joulukuuta 2024",
+  "accept_heading": "1. Ehtojen hyväksyminen",
+  "accept_text": "Käyttämällä Notepadle-sovellusta („Palvelu“) hyväksyt nämä ehdot...",
+  "description_heading": "2. Palvelun kuvaus",
+  "description_intro": "Notepadle on digitaalinen muistiinpanosovellus, joka mahdollistaa:",
+  "description_list": [
+    "Henkilökohtaisten muistiinpanojen luominen, muokkaaminen ja järjestäminen",
+    "Muistiinpanojen tallentamisen paikallisesti tai pilveen",
+    "Muistiinpanojen vienti tekstinä, Markdownina tai PDF:nä",
+    "Yhteistyön muistiinpanoissa muiden kanssa",
+    "Tagien, kategorioiden ja haun käyttö",
+    "Muistiinpanojen suojaaminen salasanalla",
+    "Sähköposti-ilmoitusten vastaanottaminen"
+  ],
+  "description_note": "Palvelu on ilmainen ja voi tarjota valinnaisia premium-ominaisuuksia.",
+  "contact_heading": "Yhteystiedot",
+  "contact_intro": "Jos sinulla on kysyttävää käyttöehdoista, ota yhteyttä:",
+  "contact_email_label": "Sähköposti:",
+  "contact_email": "support@notepadle.com",
+  "contact_subject_label": "Aihe:",
+  "contact_subject": "Kysymys käyttöehdoista",
+  "contact_time_label": "Vastausaika:",
+  "contact_time": "Vastaamme 48 tunnin sisällä",
+  "summary_heading": "Ehtojen yhteenveto",
+  "summary_rights_heading": "✓ Oikeutesi:",
+  "summary_rights_list": [
+    "Omistat sisältösi kokonaan",
+    "Vie data milloin tahansa",
+    "Käytä palvelua nimettömänä",
+    "Poista tilisi milloin tahansa"
+  ],
+  "summary_resp_heading": "ℹ Vastuualueesi:",
+  "summary_resp_list": [
+    "Noudata sisällön ohjeita",
+    "Pidä tilisi turvassa",
+    "Kunnioita muiden oikeuksia",
+    "Varmuuskopioi tärkeät tiedot"
+  ]
+}

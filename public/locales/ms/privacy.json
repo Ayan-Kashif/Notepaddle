@@ -1,0 +1,77 @@
+{
+  "title": "Dasar Privasi",
+  "subtitle": "Bagaimana kami mengendalikan data anda dan melindungi privasi anda",
+  "header_title": "Dasar Privasi – Notepadle",
+  "effective_date": "Tarikh Berkuat Kuasa: 29 Disember 2024",
+  "last_updated": "Dikemas Kini Terakhir: 29 Disember 2024",
+  "introduction_heading": "Pengenalan",
+  "introduction_body": "Notepadle (“kami”) menyediakan perkhidmatan nota dalam talian percuma untuk membolehkan pengguna menulis dan menyimpan nota dengan mudah. Dasar privasi ini menerangkan bagaimana kami mengurus data anda dan komitmen kami untuk melindungi privasi anda.",
+  "data_collection_heading": "1. Data yang Kami Kumpulkan",
+  "anonymous_heading": "Pengguna Tanpa Nama:",
+  "anonymous_list": [
+    "Tiada data peribadi dikumpul daripada pengguna tanpa nama",
+    "Nota disimpan secara tempatan pada pelayar menggunakan LocalStorage",
+    "Keutamaan tema dan tetapan disimpan secara tempatan",
+    "Tiada data dipindahkan ke pelayan kami"
+  ],
+  "registered_heading": "Pengguna Berdaftar (Pilihan):",
+  "registered_intro": "Kami mungkin mengumpul:",
+  "registered_list": [
+    "Alamat e‑mel untuk akaun dan pengesahan",
+    "Nota yang anda pilih untuk disimpan di awan",
+    "Keutamaan bahasa dan tema",
+    "Cap masa pendaftaran akaun dan log masuk terakhir",
+    "Tetapan perkongsian dan kerjasama nota"
+  ],
+  "use_data_heading": "2. Bagaimana Kami Menggunakan Data Anda",
+  "use_data_list": [
+    "Untuk menyimpan dan menyegerak nota merentas peranti",
+    "Untuk memberikan akses kepada akaun dan kandungan yang disimpan",
+    "Untuk meningkatkan pengalaman pengguna dan fungsi aplikasi",
+    "Untuk membolehkan ciri kerjasama apabila anda berkongsi nota",
+    "Untuk menyediakan sokongan pelanggan apabila diperlukan",
+    "Untuk menghantar e‑mel penting berkaitan akaun (pengesahan, semula kata laluan)"
+  ],
+  "email_heading": "3. Komunikasi E‑mel",
+  "email_intro": "Kami menghantar e‑mel dari support@notepadle.com untuk:",
+  "email_list": [
+    "Pengesahan e‑mel semasa mendaftar akaun",
+    "Permintaan untuk reset kata laluan",
+    "Notifikasi keselamatan penting",
+    "Kemas kini dan perubahan berkaitan akaun",
+    "Respons sokongan pelanggan"
+  ],
+  "email_note": "Kami tidak menghantar e‑mel promosi atau pemasaran melainkan anda memilih untuk menerimanya.",
+  "cookies_heading": "4. Cookies & LocalStorage",
+  "localstorage_heading": "Penggunaan LocalStorage:",
+  "localstorage_list": [
+    "Nota pengguna tanpa nama disimpan dalam LocalStorage",
+    "Keutamaan tema (cerah/gelap) disimpan tempatan",
+    "Tetapan kategori dan pengurusan nota disimpan tempatan"
+  ],
+  "cookies_usage_heading": "Penggunaan Cookies:",
+  "cookies_usage_list": [
+    "Cookies sesi untuk mengekalkan status log masuk",
+    "Cookies keutamaan untuk tetapan tema dan bahasa",
+    "Tiada cookies pengiklanan atau penjejakan digunakan"
+  ],
+  "contact_heading": "Hubungi Kami",
+  "contact_intro": "Jika anda mempunyai sebarang pertanyaan mengenai Dasar Privasi ini atau bagaimana data anda digunakan, sila hubungi kami:",
+  "contact_email": "E‑mel: support@notepadle.com",
+  "contact_response": "Masa Respons: Kami berusaha menjawab dalam 48 jam",
+  "summary_heading": "Ringkasan Privasi",
+  "summary_do": "✓ Kami Melakukan:",
+  "summary_do_list": [
+    "Menyulitkan semua data anda",
+    "Menghormati pilihan privasi anda",
+    "Membenarkan penggunaan tanpa nama",
+    "Memberi anda kawalan penuh ke atas data anda"
+  ],
+  "summary_dont": "✗ Kami Tidak:",
+  "summary_dont_list": [
+    "Menjual maklumat peribadi anda",
+    "Menggunakan cookies penjejakan",
+    "Berkongsi nota tanpa kebenaran",
+    "Mengumpul data yang tidak diperlukan"
+  ]
+}
