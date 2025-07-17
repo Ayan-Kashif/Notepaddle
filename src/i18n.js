@@ -350,9 +350,32 @@
 
 
 
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import HttpBackend from 'i18next-http-backend'
+// import i18n from 'i18next'
+// import { initReactI18next } from 'react-i18next'
+// import HttpBackend from 'i18next-http-backend'
+
+// i18n
+//   .use(HttpBackend)
+//   .use(initReactI18next)
+//   .init({
+//     fallbackLng: 'en',
+//     lng: 'en',
+//     ns: ['translation', 'privacy', 'terms', 'reportAbuse'],
+//     defaultNS: 'translation',
+//     interpolation: {
+//       escapeValue: false,
+//     },
+//     backend: {
+//       // It will dynamically fetch files like /locales/en/translation.json
+//       loadPath: '/locales/{{lng}}/{{ns}}.json',
+//     },
+//   })
+
+// export default i18n
+
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import HttpBackend from 'i18next-http-backend';
 
 i18n
   .use(HttpBackend)
@@ -360,15 +383,14 @@ i18n
   .init({
     fallbackLng: 'en',
     lng: 'en',
-    ns: ['translation', 'privacy', 'terms', 'reportAbuse'],
-    defaultNS: 'translation',
+    defaultNS: 'translation', // keep default
     interpolation: {
       escapeValue: false,
     },
     backend: {
-      // It will dynamically fetch files like /locales/en/translation.json
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-  })
+  });
 
-export default i18n
+export default i18n;
+
