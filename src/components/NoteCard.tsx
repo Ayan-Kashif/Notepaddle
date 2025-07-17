@@ -3,7 +3,7 @@ import { Note } from '../types';
 import { Pin, Star, MoreVertical, Trash2, Edit3, Download, Lock, Shield } from 'lucide-react';
 import ExportMenu from './ExportMenu';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 // import MDEditor from '@uiw/react-md-editor';
