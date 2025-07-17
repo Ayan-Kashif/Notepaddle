@@ -1,7 +1,9 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState ,useEffect,Suspense,lazy} from 'react';
 import { Search, Moon, Sun, Plus, LogIn, Menu, X } from 'lucide-react';
-import UserMenu from './UserMenu';
-import AuthModal from './AuthModal';
+// import UserMenu from './UserMenu';
+// import AuthModal from './AuthModal';
+const AuthModal = lazy(() => import('./components/AuthModal'));
+const UserMenu = lazy(() => import('./components/UserMenu'));
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
@@ -184,7 +186,9 @@ const Header: React.FC<HeaderProps> = ({
               </button>
 
               {isAuthenticated ? (
+       <Suspense fallback={<div>Loading...</div>}>
                 <UserMenu user={user} onLogout={onLogout} />
+               </Suspense>
               ) : (
                 <button
                  onClick={() => onOpenAuthModal(true)}
@@ -224,6 +228,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
       </header>
+        <Suspense fallback={<div>Loading...</div>}>
 
       <AuthModal
         isOpen={isAuthModalOpen}
@@ -235,6 +240,7 @@ const Header: React.FC<HeaderProps> = ({
         onVerifyEmail={onVerifyEmail}
         onResetPassword={onResetPassword}
       />
+            </Suspense>
 
           {showLangModal && (
         <div className="fixed inset-0 z-50 bg-black/50 flex justify-center items-center p-4">
