@@ -2,22 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
-    <!-- Font Optimization -->
+
+    <!-- Viewport meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <!-- Preconnect and Lazy-load Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" />
+    </noscript>
+
+    <!-- Lazy-load main CSS -->
+    <link rel="preload" href="/assets/index-DlgilRwm.css" as="style" />
+    <link rel="stylesheet" href="/assets/index-DlgilRwm.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/assets/index-DlgilRwm.css" /></noscript>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo.png" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Notepadle - Your Digital Notepad</title>
   </head>
   <body>
     <div id="root"></div>
-    
-    <!-- Defer script to prevent blocking -->
+
+    <!-- Defer scripts -->
     <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
