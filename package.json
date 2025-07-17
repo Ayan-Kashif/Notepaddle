@@ -45,7 +45,7 @@
   
     "recharts": "^3.0.2",
     "rehype-highlight": "^7.0.0",
-    "remark-gfm": "^4.0.1",
+    "remark-gfm": "^4.0.1"
   
   },
   "devDependencies": {
