@@ -10,6 +10,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { useNavigate } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 import {
@@ -48,7 +49,7 @@ const SharedNote = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [isExpanded, setIsExpanded] = useState(false);
-
+   const navigate = useNavigate();
    useEffect(() => {
   const pathParts = window.location.pathname.split('/');
   const shareId = pathParts[pathParts.length - 1];
