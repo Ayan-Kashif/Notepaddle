@@ -9,9 +9,19 @@ interface PrivacyPolicyProps {
 }
 
 const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ isOpen, onClose }) => {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      i18n.loadNamespaces('privacy').then(() => {
+        setReady(true);
+      });
+    }
+  }, [isOpen]);
+
   const { t } = useTranslation('privacy');
 
-  if (!isOpen) return null;
+  if (!isOpen || !ready) return null;
 
   return (
     <div className="fixed inset-0 bg-black/50 mt-28 md:mt-2 backdrop-blur-sm z-50 flex items-center justify-center p-4">
