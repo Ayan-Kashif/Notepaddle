@@ -187,7 +187,11 @@ console.log(import.meta.env.VITE_BASE_URL)
         console.log('No announcement available');
       }
     };
+    const timeout = setTimeout(() => {
     fetchAnnouncement();
+  }, 2000); // delay by 2 seconds
+
+  return () => clearTimeout(timeout);
   }, []);
 
   // Load notes based on auth status// In your App component, modify the loadNotes effect
