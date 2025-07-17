@@ -513,7 +513,7 @@ console.log(import.meta.env.VITE_BASE_URL)
 if (isAdminDashboard) {
   return (
     <Suspense fallback={<Loading />}>
-      <div>Hello</div>
+      </AdminDashboard>
     </Suspense>
   );
 }
