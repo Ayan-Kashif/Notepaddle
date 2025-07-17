@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 
 import '../i18n';
 import { useTranslation } from 'react-i18next';
-// import MDEditor from '@uiw/react-md-editor';
+
 
 interface NoteCardProps {
   note: Note;
