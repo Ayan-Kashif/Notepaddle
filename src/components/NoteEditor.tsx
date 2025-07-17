@@ -938,8 +938,9 @@ console.log('Note id:',note?.id,note?._id)
                 }}
                   placeholder={t('note_editor.note_content_placeholder')}
               />
+                  </Suspense>
             </div>
-              </Suspense>
+            
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 space-y-3 sm:space-y-0">
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
