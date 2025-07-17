@@ -2,10 +2,12 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useNotes } from './hooks/useNotes';
 import { useAuth } from './hooks/useAuth';
 import { Note } from './types';
+import { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import NoteCard from './components/NoteCard';
-import NoteEditor from './components/NoteEditor';
+const NoteEditor = lazy(() => import('./components/NoteEditor'));
+// import NoteEditor from './components/NoteEditor';
 import EmptyState from './components/EmptyState';
 import NoteBin from './components/NoteBin';
 import Footer from './components/Footer';
@@ -1062,6 +1064,7 @@ console.log(import.meta.env.VITE_BASE_URL)
         )}
 
         {isEditorOpen && (
+         <Suspense fallback={<div>Loading Editor...</div>}>
           <NoteEditor
             note={editingNote}
             isOpen={isEditorOpen}
@@ -1071,6 +1074,7 @@ console.log(import.meta.env.VITE_BASE_URL)
             categories={categories}
             currentUser={user}
           />
+   </Suspense>
         )}
         <NoteBin
           isOpen={isNoteBinOpen}
