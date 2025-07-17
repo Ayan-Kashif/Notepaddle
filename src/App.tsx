@@ -24,7 +24,7 @@ import { useCallback } from 'react';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 
-const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
+// const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
 const Collaborations = React.lazy(() => import('./components/Collaborations'));
 const SharedByMe = React.lazy(() => import('./components/MyCollaborations'));
 import AdminLogin from './components/AdminLogin';
@@ -509,10 +509,14 @@ console.log(import.meta.env.VITE_BASE_URL)
   if (isAdminLogin) {
     return <AdminLogin />;
   }
-  if (isAdminDashboard){
-     <Suspense fallback={<Loading />}>
-    return <AdminDashboard />
-        }
+if (isAdminDashboard) {
+  return (
+    <Suspense fallback={<Loading />}>
+      <div>Hello</div>
+    </Suspense>
+  );
+}
+
      
   if (isAdminPassword)
     return <ChangePassword />
@@ -520,9 +524,11 @@ console.log(import.meta.env.VITE_BASE_URL)
     return <VerifyEmail />;
   }
   if (isMyCollabRoute) {
-     <Suspense fallback={<Loading />}>
-    return <SharedByMe />;
+     return (
+        <Suspense fallback={<Loading />}>
+     <SharedByMe />;
         </Suspense>
+           )
   }
 
   if (isResetRoute) {
