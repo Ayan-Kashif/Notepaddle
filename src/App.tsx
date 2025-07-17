@@ -17,6 +17,7 @@ import VerifyEmail from './components/VerifyEmail';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 import SharedNote from './components/SharedNote';
+import './index.css';
 
 
 import { useNavigate } from 'react-router-dom';
