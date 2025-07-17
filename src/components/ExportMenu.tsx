@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Note } from '../types';
 import { Download, FileText, File, FileImage, FileCode } from 'lucide-react';
- import html2pdf from 'html2pdf.js';
+
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 interface ExportMenuProps {
@@ -95,6 +95,7 @@ const ExportMenu: React.FC<ExportMenuProps> = ({ note, isOpen, onClose }) => {
 const exportAsPDF = async () => {
   setIsExporting(true);
 
+  const html2pdf = (await import('html2pdf.js')).default;
   const element = document.createElement('div');
   element.innerHTML = `
     <div style="font-family: 'Times New Roman', serif; padding: 1in; color: #333; line-height: 1.8;">
