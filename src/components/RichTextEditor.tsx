@@ -8,6 +8,7 @@ import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react';
 
 import Underline from '@tiptap/extension-underline';
 import Link from '@tiptap/extension-link';
+import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import Highlight from '@tiptap/extension-highlight';
 import TextAlign from '@tiptap/extension-text-align';
