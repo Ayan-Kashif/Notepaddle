@@ -128,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({
 
               <div className="flex items-center space-x-3">
                 {/* Logo & Name */}
-                  <div onClick={()=>window.location.reload()} className="flex items-center space-x-3">
+                  <div onClick={()=>window.location.reload()} className="flex items-center cursor-pointer space-x-3">
                 <img 
                   src="/Orange and Purple Modern Gradient Arts and Crafts Service Logo (2).png" 
                   alt="Notepadle" 
