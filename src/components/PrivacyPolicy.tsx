@@ -10,7 +10,7 @@ interface PrivacyPolicyProps {
 
 const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ isOpen, onClose }) => {
   const [ready, setReady] = useState(false);
-
+ const { t ,i18n} = useTranslation('privacy');
   useEffect(() => {
     if (isOpen) {
       i18n.loadNamespaces('privacy').then(() => {
@@ -19,7 +19,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  const { t } = useTranslation('privacy');
+ 
 
   if (!isOpen || !ready) return null;
 
