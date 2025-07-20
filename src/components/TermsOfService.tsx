@@ -10,7 +10,7 @@ interface TermsOfServiceProps {
 
 const TermsOfService: React.FC<TermsOfServiceProps> = ({ isOpen, onClose }) => {
  const [ready, setReady] = useState(false);
-
+  const { t,i18n } = useTranslation('terms');
   useEffect(() => {
     if (isOpen) {
       i18n.loadNamespaces('terms').then(() => {
@@ -19,7 +19,7 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  const { t } = useTranslation('terms');
+
 
   if (!isOpen || !ready) return null;
 
