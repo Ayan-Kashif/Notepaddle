@@ -11,7 +11,7 @@ interface ReportAbusePolicyProps {
 
 const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }) => {
  const [ready, setReady] = useState(false);
-
+const { t , i18n } = useTranslation('reportAbuse');
   useEffect(() => {
     if (isOpen) {
       i18n.loadNamespaces('reportAbuse').then(() => {
@@ -20,7 +20,7 @@ const ReportAbusePolicy: React.FC<ReportAbusePolicyProps> = ({ isOpen, onClose }
     }
   }, [isOpen]);
 
-  const { t } = useTranslation('reportAbuse');
+  
 
   if (!isOpen || !ready) return null;
 
