@@ -160,12 +160,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Modals */}
+     
+      </footer>
+   {/* Modals */}
         <PrivacyPolicy isOpen={isPrivacyPolicyOpen} onClose={() => setIsPrivacyPolicyOpen(false)} />
         <TermsOfService isOpen={isTermsOfServiceOpen} onClose={() => setIsTermsOfServiceOpen(false)} />
         <ReportAbusePolicy isOpen={isReportAbusePolicyOpen} onClose={() => setIsReportAbusePolicyOpen(false)} />
-      </footer>
-
     </>
   )
 
