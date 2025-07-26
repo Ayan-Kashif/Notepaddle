@@ -158,7 +158,7 @@ const Header: React.FC<HeaderProps> = ({
 
             <div className="flex items-center space-x-2 sm:space-x-3">
               {/* Mobile search button */}
-              <button
+{/*               <button
                 onClick={() => {
                   const searchInput = document.getElementById('mobile-search');
                   if (searchInput) {
@@ -168,7 +168,7 @@ const Header: React.FC<HeaderProps> = ({
                 className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200"
               >
                 <Search className="w-5 h-5" />
-              </button>
+              </button> */}
 
               <button
                 onClick={onNewNote}
