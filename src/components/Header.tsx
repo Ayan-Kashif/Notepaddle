@@ -187,7 +187,21 @@ const Header: React.FC<HeaderProps> = ({
 
               {isAuthenticated ? (
        <Suspense fallback={<div>Loading...</div>}>
-                <UserMenu user={user} onLogout={onLogout} />
+                   <>
+                  <button
+                    onClick={() => {
+                      window.location.reload()
+                      localStorage.removeItem('token'); // or whatever your token key is
+                      onLogout(); // optional: trigger parent logout logic
+
+                    }}
+                    className="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200"
+                    title="Logout"
+                  >
+                    <LogIn className="w-5 h-5 transform rotate-180" />
+                  </button>
+                  <UserMenu user={user} onLogout={onLogout} />
+                </>
                </Suspense>
               ) : (
                 <button
