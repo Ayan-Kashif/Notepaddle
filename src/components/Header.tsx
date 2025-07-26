@@ -228,16 +228,16 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Mobile search bar */}
           <div className="md:hidden pb-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <div className="relative">
               <input
                 id="mobile-search"
                 type="text"
                 placeholder="Search notes..."
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/20 transition-all duration-200"
+                className="w-full pl-4 pr-10 py-2 bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/20 transition-all duration-200"
               />
+              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             </div>
           </div>
         </div>
