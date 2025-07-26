@@ -530,7 +530,7 @@ if (isAdminDashboard) {
   }
   if (isMyCollabRoute) {
      return (
-        <Suspense fallback=<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
      <SharedByMe />;
         </Suspense>
            )
