@@ -516,7 +516,7 @@ console.log(import.meta.env.VITE_BASE_URL)
   }
 if (isAdminDashboard) {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<div>Loading...</div>}>
       <AdminDashboard/>
     </Suspense>
   );
@@ -530,7 +530,7 @@ if (isAdminDashboard) {
   }
   if (isMyCollabRoute) {
      return (
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback=<div>Loading...</div>}>
      <SharedByMe />;
         </Suspense>
            )
