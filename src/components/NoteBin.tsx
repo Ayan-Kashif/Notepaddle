@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { DeletedNote } from '../types';
 import { X, Trash2, RotateCcw, AlertTriangle, Calendar, Search } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
@@ -42,7 +42,16 @@ const NoteBin: React.FC<NoteBinProps> = ({
   //     minute: '2-digit',
   //   }).format(date);
   // };
+  useEffect(() => {
+    deletedNotes.forEach((note) => {
+      const daysLeft = getDaysUntilDeletion(note);
 
+      if (daysLeft === 0) {
+        onPermanentDelete(note._id || note.id);
+        toast.error(`Note "${note.title}" auto-deleted!`);
+      }
+    });
+  }, [deletedNotes, getDaysUntilDeletion, onPermanentDelete]);
 
   const formatDate = (dateString: string | undefined) => {
     if (!dateString) return 'Unknown date';
