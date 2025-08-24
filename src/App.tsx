@@ -831,7 +831,7 @@ if (isAdminDashboard) {
   // Delete note from bin handler
 
   const permanentlyDeleteNote = async (noteId: string) => {
-    if (!window.confirm('Are you sure you want to permanently delete this note?')) return;
+    // if (!window.confirm('Are you sure you want to permanently delete this note?')) return;
 
     if (isAuthenticated) {
       try {
